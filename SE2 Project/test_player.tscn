@@ -1,0 +1,193 @@
+[gd_scene load_steps=46 format=3 uid="uid://dhd3x5d2kucgq"]
+
+[ext_resource type="Script" path="res://testPlayer.gd" id="1_ve0xr"]
+[ext_resource type="Texture2D" uid="uid://ddgsjg67pssae" path="res://Assets/Gameplay/characters/monsters/predator00.png" id="2_et67f"]
+[ext_resource type="Texture2D" uid="uid://l1fyu325savt" path="res://Assets/Gameplay/characters/monsters/predator01.png" id="3_8on4a"]
+[ext_resource type="Texture2D" uid="uid://ddkkl0y75kdwk" path="res://Assets/Gameplay/characters/monsters/predator02.png" id="4_5xcky"]
+[ext_resource type="Texture2D" uid="uid://b3nrvba50dj38" path="res://Assets/Gameplay/characters/monsters/predator03.png" id="5_yok4o"]
+[ext_resource type="Texture2D" uid="uid://dslyq1l5c05ij" path="res://Assets/Gameplay/characters/monsters/predator04.png" id="6_2tyta"]
+[ext_resource type="Texture2D" uid="uid://cy6pe8hbj6qse" path="res://Assets/Gameplay/characters/monsters/predator05.png" id="7_a0074"]
+[ext_resource type="Texture2D" uid="uid://dp8b7dxskymgw" path="res://Assets/Gameplay/characters/monsters/predator06.png" id="8_e2w4p"]
+[ext_resource type="Texture2D" uid="uid://wh7xf0q0qymg" path="res://Assets/Gameplay/characters/monsters/predator07.png" id="9_k10t1"]
+[ext_resource type="Texture2D" uid="uid://conu8iynnbmfo" path="res://Assets/Gameplay/characters/monsters/predator08.png" id="10_36omb"]
+[ext_resource type="Texture2D" uid="uid://bo5e3t554sn2s" path="res://Assets/Gameplay/characters/monsters/predator09.png" id="11_ivb8a"]
+[ext_resource type="Texture2D" uid="uid://yk21ekuxtpys" path="res://Assets/Gameplay/characters/monsters/predator10.png" id="12_m36wa"]
+[ext_resource type="Texture2D" uid="uid://3vw22fpkvj07" path="res://Assets/Gameplay/characters/monsters/predator11.png" id="13_8as4l"]
+[ext_resource type="Texture2D" uid="uid://xbw0rpe6dtvo" path="res://Assets/Gameplay/characters/monsters/predator12.png" id="14_fuowv"]
+[ext_resource type="Texture2D" uid="uid://db137ej0fpdey" path="res://Assets/Gameplay/characters/monsters/predator13.png" id="15_tqu6h"]
+[ext_resource type="Texture2D" uid="uid://c27i6xjxpolgm" path="res://Assets/Gameplay/characters/monsters/predator14.png" id="16_w5ac0"]
+[ext_resource type="Texture2D" uid="uid://c41fdpybieqdo" path="res://Assets/Gameplay/characters/monsters/predator15.png" id="17_t8wfs"]
+[ext_resource type="Texture2D" uid="uid://dqfvqvl20u4rl" path="res://Assets/Gameplay/characters/monsters/predator16.png" id="18_cdli4"]
+[ext_resource type="Texture2D" uid="uid://ckqumt2otmxg1" path="res://Assets/Gameplay/characters/monsters/predator17.png" id="19_fq6cl"]
+[ext_resource type="Texture2D" uid="uid://7romyb7kbrki" path="res://Assets/Gameplay/characters/monsters/predator18.png" id="20_4lvtu"]
+[ext_resource type="Texture2D" uid="uid://crdr62xp8eys7" path="res://Assets/Gameplay/characters/monsters/predator19.png" id="21_ualq7"]
+[ext_resource type="Texture2D" uid="uid://cqodls6dp2ds4" path="res://Assets/Gameplay/characters/monsters/predator20.png" id="22_wpx3a"]
+[ext_resource type="Texture2D" uid="uid://dara8cuoy2i6k" path="res://Assets/Gameplay/characters/monsters/predator21.png" id="23_snclm"]
+[ext_resource type="Texture2D" uid="uid://bshmeymb4cav5" path="res://Assets/Gameplay/characters/monsters/predator22.png" id="24_d5k80"]
+[ext_resource type="Texture2D" uid="uid://cvfaotfyl3qs6" path="res://Assets/Gameplay/characters/monsters/predator23.png" id="25_a806s"]
+[ext_resource type="Texture2D" uid="uid://gyux8jmsv2fv" path="res://Assets/Gameplay/characters/monsters/predator24.png" id="26_snp8q"]
+[ext_resource type="Texture2D" uid="uid://dej0df2gmrhxo" path="res://Assets/Gameplay/characters/monsters/predator25.png" id="27_mncpo"]
+[ext_resource type="Texture2D" uid="uid://df0khp3oje437" path="res://Assets/Gameplay/characters/monsters/predator26.png" id="28_nr2vl"]
+[ext_resource type="Texture2D" uid="uid://bfp3u17oky2n" path="res://Assets/Gameplay/characters/monsters/predator27.png" id="29_n4msf"]
+[ext_resource type="Texture2D" uid="uid://djlmcgwmbcoro" path="res://Assets/Gameplay/characters/monsters/predator28.png" id="30_f01u3"]
+[ext_resource type="Texture2D" uid="uid://c7850pkc3ksg7" path="res://Assets/Gameplay/characters/monsters/predator29.png" id="31_csfv6"]
+[ext_resource type="Texture2D" uid="uid://gdarvau4kfv0" path="res://Assets/Gameplay/characters/monsters/predator30.png" id="32_5i60v"]
+[ext_resource type="Texture2D" uid="uid://squog1cd7epw" path="res://Assets/Gameplay/characters/monsters/predator31.png" id="33_v48fi"]
+[ext_resource type="Texture2D" uid="uid://dor5sxi5gi5fo" path="res://Assets/Gameplay/characters/monsters/predator32.png" id="34_jjrn4"]
+[ext_resource type="Texture2D" uid="uid://bketiqmtgol4f" path="res://Assets/Gameplay/characters/monsters/predator33.png" id="35_3uoxx"]
+[ext_resource type="Texture2D" uid="uid://cofatlup1svx6" path="res://Assets/Gameplay/characters/monsters/predator34.png" id="36_dl4o2"]
+[ext_resource type="Texture2D" uid="uid://25lw71ns4htk" path="res://Assets/Gameplay/characters/monsters/predator35.png" id="37_5o868"]
+[ext_resource type="Texture2D" uid="uid://bi8kf1nr6v48v" path="res://Assets/Gameplay/characters/monsters/predator36.png" id="38_fp41j"]
+[ext_resource type="Texture2D" uid="uid://dxf6o5e20n34r" path="res://Assets/Gameplay/characters/monsters/predator37.png" id="39_qwyq0"]
+[ext_resource type="Texture2D" uid="uid://b6sjtcpxfcenx" path="res://Assets/Gameplay/characters/monsters/predator38.png" id="40_frqmn"]
+[ext_resource type="Texture2D" uid="uid://ouq8ylo6jexe" path="res://Assets/Gameplay/characters/monsters/predator39.png" id="41_3k3s0"]
+[ext_resource type="Texture2D" uid="uid://dfnc0rku76ad" path="res://Assets/Gameplay/characters/monsters/predator40.png" id="42_kmiai"]
+[ext_resource type="Texture2D" uid="uid://ccbx4k1qovcr1" path="res://Assets/Gameplay/characters/monsters/predator41.png" id="43_1prjt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qrx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_et67f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8on4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5xcky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yok4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2tyta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a0074")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e2w4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k10t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_36omb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ivb8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m36wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8as4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fuowv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tqu6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w5ac0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t8wfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cdli4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fq6cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4lvtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ualq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wpx3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_snclm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_d5k80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_a806s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_snp8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mncpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_nr2vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_n4msf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_f01u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_csfv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_5i60v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_v48fi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_jjrn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3uoxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dl4o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_5o868")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_fp41j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_qwyq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_frqmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_3k3s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_kmiai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_1prjt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nukvx"]
+radius = 8.0
+
+[node name="testPlayer" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ve0xr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4qrx4")
+frame_progress = 0.408764
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nukvx")

@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8jyavdq360hb"]
+
+[ext_resource type="PackedScene" uid="uid://csxr3iix3qop" path="res://Assets/Player/player.tscn" id="1_ergco"]
+[ext_resource type="Texture2D" uid="uid://bpdcuekea6a8r" path="res://icon.svg" id="2_mwmrp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgi5r"]
+size = Vector2(650.786, 25.7804)
+
+[node name="TestLevel" type="Node"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(448, 656)
+scale = Vector2(7.17468, 1.00475)
+texture = ExtResource("2_mwmrp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(376, 664)
+scale = Vector2(-1.2825, -1.50804)
+shape = SubResource("RectangleShape2D_xgi5r")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_top = 648.0
+offset_right = 40.0
+offset_bottom = 688.0
+scale = Vector2(75.6211, 3.62248)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(312, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(24, 232)
+rotation = 1.57079
+scale = Vector2(1.2825, 1.50804)
+shape = SubResource("RectangleShape2D_xgi5r")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_top = 648.0
+offset_right = 11.0
+offset_bottom = 659.0
+rotation = -1.57079
+scale = Vector2(75.6211, 3.62248)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(208, 608)
+
+[node name="Player" parent="." instance=ExtResource("1_ergco")]
+position = Vector2(208, 608)

@@ -1,0 +1,265 @@
+[gd_scene load_steps=53 format=3 uid="uid://csxr3iix3qop"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_74o6m"]
+[ext_resource type="Texture2D" uid="uid://ddgsjg67pssae" path="res://Assets/Gameplay/characters/monsters/predator00.png" id="2_tid1k"]
+[ext_resource type="Texture2D" uid="uid://l1fyu325savt" path="res://Assets/Gameplay/characters/monsters/predator01.png" id="3_ltkc0"]
+[ext_resource type="Script" path="res://state_manager.gd" id="3_wplhp"]
+[ext_resource type="Texture2D" uid="uid://ddkkl0y75kdwk" path="res://Assets/Gameplay/characters/monsters/predator02.png" id="4_aoqbb"]
+[ext_resource type="Script" path="res://Idle.gd" id="4_loosi"]
+[ext_resource type="Texture2D" uid="uid://b3nrvba50dj38" path="res://Assets/Gameplay/characters/monsters/predator03.png" id="5_sa1rg"]
+[ext_resource type="Script" path="res://Assets/Player/Run.gd" id="5_ypxnf"]
+[ext_resource type="Script" path="res://Assets/Player/Jump.gd" id="6_cwi2s"]
+[ext_resource type="Texture2D" uid="uid://dslyq1l5c05ij" path="res://Assets/Gameplay/characters/monsters/predator04.png" id="6_ro00h"]
+[ext_resource type="Texture2D" uid="uid://cy6pe8hbj6qse" path="res://Assets/Gameplay/characters/monsters/predator05.png" id="7_04w53"]
+[ext_resource type="Script" path="res://Assets/Player/Dash.gd" id="7_jnnir"]
+[ext_resource type="Script" path="res://Assets/Player/Fall.gd" id="8_1kowk"]
+[ext_resource type="Texture2D" uid="uid://dp8b7dxskymgw" path="res://Assets/Gameplay/characters/monsters/predator06.png" id="8_350ru"]
+[ext_resource type="Script" path="res://Assets/Player/Climb.gd" id="9_32qww"]
+[ext_resource type="Texture2D" uid="uid://wh7xf0q0qymg" path="res://Assets/Gameplay/characters/monsters/predator07.png" id="9_piuuf"]
+[ext_resource type="Texture2D" uid="uid://conu8iynnbmfo" path="res://Assets/Gameplay/characters/monsters/predator08.png" id="10_fslt8"]
+[ext_resource type="Texture2D" uid="uid://bo5e3t554sn2s" path="res://Assets/Gameplay/characters/monsters/predator09.png" id="11_bsl0o"]
+[ext_resource type="Texture2D" uid="uid://yk21ekuxtpys" path="res://Assets/Gameplay/characters/monsters/predator10.png" id="12_0h43n"]
+[ext_resource type="Texture2D" uid="uid://3vw22fpkvj07" path="res://Assets/Gameplay/characters/monsters/predator11.png" id="13_0gnx7"]
+[ext_resource type="Texture2D" uid="uid://xbw0rpe6dtvo" path="res://Assets/Gameplay/characters/monsters/predator12.png" id="14_45sh7"]
+[ext_resource type="Texture2D" uid="uid://db137ej0fpdey" path="res://Assets/Gameplay/characters/monsters/predator13.png" id="15_e8dlj"]
+[ext_resource type="Texture2D" uid="uid://c27i6xjxpolgm" path="res://Assets/Gameplay/characters/monsters/predator14.png" id="16_khxt8"]
+[ext_resource type="Texture2D" uid="uid://c41fdpybieqdo" path="res://Assets/Gameplay/characters/monsters/predator15.png" id="17_hk0e1"]
+[ext_resource type="Texture2D" uid="uid://dqfvqvl20u4rl" path="res://Assets/Gameplay/characters/monsters/predator16.png" id="18_oekqk"]
+[ext_resource type="Texture2D" uid="uid://ckqumt2otmxg1" path="res://Assets/Gameplay/characters/monsters/predator17.png" id="19_k00jw"]
+[ext_resource type="Texture2D" uid="uid://7romyb7kbrki" path="res://Assets/Gameplay/characters/monsters/predator18.png" id="20_24w1p"]
+[ext_resource type="Texture2D" uid="uid://crdr62xp8eys7" path="res://Assets/Gameplay/characters/monsters/predator19.png" id="21_vlo1t"]
+[ext_resource type="Texture2D" uid="uid://cqodls6dp2ds4" path="res://Assets/Gameplay/characters/monsters/predator20.png" id="22_3l3dt"]
+[ext_resource type="Texture2D" uid="uid://dara8cuoy2i6k" path="res://Assets/Gameplay/characters/monsters/predator21.png" id="23_kjfdr"]
+[ext_resource type="Texture2D" uid="uid://bshmeymb4cav5" path="res://Assets/Gameplay/characters/monsters/predator22.png" id="24_juv1x"]
+[ext_resource type="Texture2D" uid="uid://cvfaotfyl3qs6" path="res://Assets/Gameplay/characters/monsters/predator23.png" id="25_hsdsk"]
+[ext_resource type="Texture2D" uid="uid://gyux8jmsv2fv" path="res://Assets/Gameplay/characters/monsters/predator24.png" id="26_a01ao"]
+[ext_resource type="Texture2D" uid="uid://dej0df2gmrhxo" path="res://Assets/Gameplay/characters/monsters/predator25.png" id="27_1b4pi"]
+[ext_resource type="Texture2D" uid="uid://df0khp3oje437" path="res://Assets/Gameplay/characters/monsters/predator26.png" id="28_dpwlw"]
+[ext_resource type="Texture2D" uid="uid://bfp3u17oky2n" path="res://Assets/Gameplay/characters/monsters/predator27.png" id="29_2g06q"]
+[ext_resource type="Texture2D" uid="uid://djlmcgwmbcoro" path="res://Assets/Gameplay/characters/monsters/predator28.png" id="30_vhqd6"]
+[ext_resource type="Texture2D" uid="uid://c7850pkc3ksg7" path="res://Assets/Gameplay/characters/monsters/predator29.png" id="31_00jna"]
+[ext_resource type="Texture2D" uid="uid://gdarvau4kfv0" path="res://Assets/Gameplay/characters/monsters/predator30.png" id="32_s2uvq"]
+[ext_resource type="Texture2D" uid="uid://squog1cd7epw" path="res://Assets/Gameplay/characters/monsters/predator31.png" id="33_oj377"]
+[ext_resource type="Texture2D" uid="uid://dor5sxi5gi5fo" path="res://Assets/Gameplay/characters/monsters/predator32.png" id="34_5pyfw"]
+[ext_resource type="Texture2D" uid="uid://bketiqmtgol4f" path="res://Assets/Gameplay/characters/monsters/predator33.png" id="35_8tvb8"]
+[ext_resource type="Texture2D" uid="uid://cofatlup1svx6" path="res://Assets/Gameplay/characters/monsters/predator34.png" id="36_6a8ey"]
+[ext_resource type="Texture2D" uid="uid://25lw71ns4htk" path="res://Assets/Gameplay/characters/monsters/predator35.png" id="37_o33b2"]
+[ext_resource type="Texture2D" uid="uid://bi8kf1nr6v48v" path="res://Assets/Gameplay/characters/monsters/predator36.png" id="38_drwbm"]
+[ext_resource type="Texture2D" uid="uid://dxf6o5e20n34r" path="res://Assets/Gameplay/characters/monsters/predator37.png" id="39_ef5av"]
+[ext_resource type="Texture2D" uid="uid://b6sjtcpxfcenx" path="res://Assets/Gameplay/characters/monsters/predator38.png" id="40_8dajl"]
+[ext_resource type="Texture2D" uid="uid://ouq8ylo6jexe" path="res://Assets/Gameplay/characters/monsters/predator39.png" id="41_55frs"]
+[ext_resource type="Texture2D" uid="uid://dfnc0rku76ad" path="res://Assets/Gameplay/characters/monsters/predator40.png" id="42_0exw6"]
+[ext_resource type="Texture2D" uid="uid://ccbx4k1qovcr1" path="res://Assets/Gameplay/characters/monsters/predator41.png" id="43_g6rbx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3546g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tid1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ltkc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aoqbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sa1rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ro00h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_04w53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_350ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_piuuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fslt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bsl0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0h43n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0gnx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_45sh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_e8dlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_khxt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hk0e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oekqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_k00jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_24w1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vlo1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3l3dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_kjfdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_juv1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hsdsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_a01ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1b4pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_dpwlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_2g06q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_vhqd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_00jna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_s2uvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_oj377")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5pyfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_8tvb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_6a8ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_o33b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_drwbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ef5av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8dajl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_55frs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_0exw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_g6rbx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1sl6"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_74o6m")
+metadata/_edit_horizontal_guides_ = [-8.0]
+metadata/_edit_vertical_guides_ = [0.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3546g")
+autoplay = "default"
+
+[node name="Player_Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a1sl6")
+
+[node name="state_manager" type="Node" parent="."]
+script = ExtResource("3_wplhp")
+starting_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="state_manager"]
+script = ExtResource("4_loosi")
+run_node = NodePath("../Run")
+jump_node = NodePath("../Jump")
+dash_node = NodePath("../Dash")
+fall_node = NodePath("../Fall")
+climb_node = NodePath("../Climb")
+
+[node name="Run" type="Node" parent="state_manager"]
+script = ExtResource("5_ypxnf")
+SPEED = 120.0
+idle_node = NodePath("../Idle")
+jump_node = NodePath("../Jump")
+dash_node = NodePath("../Dash")
+fall_node = NodePath("../Fall")
+climb_node = NodePath("../Climb")
+
+[node name="Jump" type="Node" parent="state_manager"]
+script = ExtResource("6_cwi2s")
+air_move_speed = 120.0
+jump_height = 36.0
+jump_time_to_peak = 0.35
+idle_node = NodePath("../Idle")
+run_node = NodePath("../Run")
+dash_node = NodePath("../Dash")
+fall_node = NodePath("../Fall")
+climb_node = NodePath("../Climb")
+
+[node name="Dash" type="Node" parent="state_manager"]
+script = ExtResource("7_jnnir")
+dash_speed = 270.0
+dash_time = 0.2
+idle_node = NodePath("../Idle")
+run_node = NodePath("../Run")
+jump_node = NodePath("../Jump")
+fall_node = NodePath("../Fall")
+climb_node = NodePath("../Climb")
+
+[node name="Fall" type="Node" parent="state_manager"]
+script = ExtResource("8_1kowk")
+air_move_speed = 120.0
+max_fall_speed = 300.0
+jump_height = 50.0
+jump_time_to_descent = 0.3
+idle_node = NodePath("../Idle")
+run_node = NodePath("../Run")
+jump_node = NodePath("../Jump")
+dash_node = NodePath("../Dash")
+climb_node = NodePath("../Climb")
+
+[node name="Climb" type="Node" parent="state_manager"]
+script = ExtResource("9_32qww")
+climb_speed = 30.0
+idle_node = NodePath("../Idle")
+run_node = NodePath("../Run")
+jump_node = NodePath("../Jump")
+dash_node = NodePath("../Dash")
+fall_node = NodePath("../Fall")
