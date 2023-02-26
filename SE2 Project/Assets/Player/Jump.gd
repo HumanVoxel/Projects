@@ -24,6 +24,7 @@ extends State
 
 func enter():
 	owner.velocity.y = jump_velocity
+	var wall_direction = -owner.get_wall_normal()
 	#owner.velocity.y = -jump_height
 	print("is-jumping")
 		
@@ -34,13 +35,17 @@ func input(event: InputEvent) -> State:
 	return null
 
 func physics_process(delta: float) -> State:
-#	if !owner.is_on_floor() and owner.is_on_wall() and Input.is_action_pressed("climb"):
-#		return climb_state
+	var direction = get_side_movement()
+	if owner.is_on_wall() and Input.is_action_pressed("climb") and Input.is_action_just_pressed("jump" aSadwsa):
+		var wall_direction = -owner.get_wall_normal()
+		if direction == wall_direction.x:
+			owner.velocity.x = -wall_direction.x * air_move_speed * 3
+		
 	if Input.is_action_just_pressed("dash") and owner.is_dash_ready == true:
 		return dash_state
 		
-	get_side_movement()
 
+#	get_side_movement()
 		
 	if Input.is_action_just_released("jump"):
 		return fall_state
@@ -53,7 +58,7 @@ func physics_process(delta: float) -> State:
 
 	return null
 	
-func get_side_movement() -> void:
+func get_side_movement() -> float:
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction and direction != owner.face_direction:
 		owner.face_direction = direction
@@ -61,3 +66,5 @@ func get_side_movement() -> void:
 		owner.velocity.x = direction * air_move_speed
 	else:
 		owner.velocity.x = move_toward(owner.velocity.x, 0, air_move_speed)
+		
+	return owner.velocity.x
