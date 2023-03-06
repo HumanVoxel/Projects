@@ -1,6 +1,7 @@
-extends Path2D
+extends Node2D
 
-@onready var tween : Tween = get_tree().create_tween()
+var velocity : Vector2
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

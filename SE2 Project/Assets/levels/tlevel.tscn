@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dj0hy3gftk0jp"]
+[gd_scene load_steps=117 format=3 uid="uid://b5av140qwrvwv"]
 
 [ext_resource type="Texture2D" uid="uid://dr0ifrbg1inil" path="res://Assets/celeste/bgs/10/skybrighter.png" id="1_2rcch"]
 [ext_resource type="Texture2D" uid="uid://b14nyln877l08" path="res://Assets/celeste/bgs/03/bg3.png" id="1_q5j0b"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://poqbgc5rh8o2" path="res://Assets/celeste/scenery/payphone.png" id="5_mewbr"]
 [ext_resource type="Texture2D" uid="uid://q06e5ji1nqus" path="res://Assets/Mobile - Metal Slug Attack - Special Phoebe.png" id="6_qqjww"]
 [ext_resource type="Texture2D" uid="uid://cthdslisd7ou1" path="res://Assets/shrooms.png" id="7_3sk7b"]
-[ext_resource type="PackedScene" uid="uid://ctekiso3xduvu" path="res://moving_platform.tscn" id="7_ssbnm"]
 [ext_resource type="PackedScene" uid="uid://by1efubhxpj31" path="res://tentacle.tscn" id="12_tdfsh"]
 [ext_resource type="PackedScene" uid="uid://boeme3i26ypts" path="res://wiggly.tscn" id="13_lvbg3"]
 [ext_resource type="Texture2D" uid="uid://c7tweoyaffrlg" path="res://Assets/efxs/Animation Pack/Ice/Ball of ice.png" id="14_uyi7c"]
@@ -89,7 +88,9 @@
 [ext_resource type="Texture2D" uid="uid://c5hxqq561boqd" path="res://Assets/batch-ex-Slice 18.png" id="88_jyyiw"]
 [ext_resource type="Texture2D" uid="uid://dx351f0ttpp1s" path="res://Assets/batch-ex-Slice 19.png" id="89_4o0l4"]
 [ext_resource type="PackedScene" uid="uid://c2y6uvxyj1k66" path="res://src/Player/player.tscn" id="89_sj02p"]
+[ext_resource type="PackedScene" uid="uid://ctekiso3xduvu" path="res://moving_platform_horizontal.tscn" id="90_d1sxh"]
 [ext_resource type="Texture2D" uid="uid://qcf7q4bi67eo" path="res://Celestial_Resort_berry_21.jpg" id="90_ly4b8"]
+[ext_resource type="PackedScene" uid="uid://xok3g3nywdsv" path="res://moving_platform_vertical.tscn" id="91_3nhr8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi77o"]
 
@@ -1823,44 +1824,6 @@ sources/2 = SubResource("TileSetAtlasSource_7rdti")
 sources/3 = SubResource("TileSetAtlasSource_3ps5f")
 sources/4 = SubResource("TileSetAtlasSource_wtfhj")
 
-[sub_resource type="Animation" id="Animation_n5gx2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("moving_platform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(120, 128)]
-}
-
-[sub_resource type="Animation" id="Animation_x5txx"]
-resource_name = "move_platform"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("moving_platform:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(120, 128), Vector2(250, 128), Vector2(120, 128)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_teglc"]
-_data = {
-"RESET": SubResource("Animation_n5gx2"),
-"move_platform": SubResource("Animation_x5txx")
-}
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu6ef"]
 atlas = ExtResource("14_uyi7c")
 region = Rect2(0, 256, 128, 128)
@@ -2259,21 +2222,125 @@ position = Vector2(224.75, 138.311)
 scale = Vector2(0.677778, 0.677778)
 texture = ExtResource("5_mewbr")
 
-[node name="moving_platform" parent="." instance=ExtResource("7_ssbnm")]
-position = Vector2(120, 128)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "move_platform"
-libraries = {
-"": SubResource("AnimationLibrary_teglc")
-}
-
 [node name="tentacle" parent="." instance=ExtResource("12_tdfsh")]
 position = Vector2(128, 160)
 autoplay = "default"
 
-[node name="wiggly" parent="." instance=ExtResource("13_lvbg3")]
-position = Vector2(158, 159)
+[node name="wigglies" type="Node2D" parent="."]
+position = Vector2(1, 158)
+rotation = 3.14159
+
+[node name="wiggly19" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-15, 0.499908)
+
+[node name="wiggly20" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-23, 0.499886)
+
+[node name="wiggly21" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-19, 0.499908)
+
+[node name="wiggly22" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-3.00001, 0.499969)
+
+[node name="wiggly23" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-10, 0.499939)
+
+[node name="wiggly24" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-7.00001, 0.499954)
+
+[node name="wiggly25" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-39, 0.499802)
+
+[node name="wiggly26" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-47, 0.499748)
+
+[node name="wiggly27" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-43, 0.499771)
+
+[node name="wiggly28" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-27, 0.499847)
+
+[node name="wiggly29" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-34, 0.499817)
+
+[node name="wiggly30" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-31, 0.499832)
+
+[node name="wiggly31" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-63, 0.49968)
+
+[node name="wiggly32" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-71, 0.499657)
+
+[node name="wiggly33" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-67, 0.49968)
+
+[node name="wiggly34" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-51, 0.499741)
+
+[node name="wiggly35" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-58, 0.49971)
+
+[node name="wiggly36" parent="wigglies" instance=ExtResource("13_lvbg3")]
+position = Vector2(-55, 0.499725)
+
+[node name="wigglies2" type="Node2D" parent="."]
+position = Vector2(2, 77)
+rotation = 4.71238
+
+[node name="wiggly19" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-15, 0.499908)
+
+[node name="wiggly20" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-23, 0.499886)
+
+[node name="wiggly21" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-19, 0.499908)
+
+[node name="wiggly22" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-3.00001, 0.499969)
+
+[node name="wiggly23" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-10, 0.499939)
+
+[node name="wiggly24" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-7.00001, 0.499954)
+
+[node name="wiggly25" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-39, 0.499802)
+
+[node name="wiggly26" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-47, 0.499748)
+
+[node name="wiggly27" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-43, 0.499771)
+
+[node name="wiggly28" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-27, 0.499847)
+
+[node name="wiggly29" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-34, 0.499817)
+
+[node name="wiggly30" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-31, 0.499832)
+
+[node name="wiggly31" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-63, 0.49968)
+
+[node name="wiggly32" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-71, 0.499657)
+
+[node name="wiggly33" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-67, 0.49968)
+
+[node name="wiggly34" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-51, 0.499741)
+
+[node name="wiggly35" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-58, 0.49971)
+
+[node name="wiggly36" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+position = Vector2(-55, 0.499725)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(248, 112)
@@ -2298,13 +2365,13 @@ texture = SubResource("CanvasTexture_phynl")
 [node name="Rainfall" parent="." instance=ExtResource("18_df0s1")]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(200, 120)
+position = Vector2(360, 128)
 sprite_frames = SubResource("SpriteFrames_vo251")
 autoplay = "default"
 frame_progress = 0.0155134
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(56, 80)
+position = Vector2(456, 104)
 sprite_frames = SubResource("SpriteFrames_ne61q")
 autoplay = "default"
 frame_progress = 0.877279
@@ -2351,6 +2418,13 @@ environment = SubResource("Environment_6hmb0")
 camera_attributes = SubResource("CameraAttributesPractical_nd3b4")
 
 [node name="CelestialResortBerry22" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(480, 83)
 texture = ExtResource("90_ly4b8")
+
+[node name="moving_platform_horizontal" parent="." instance=ExtResource("90_d1sxh")]
+position = Vector2(104, 72)
+
+[node name="moving_platform_vertical" parent="." instance=ExtResource("91_3nhr8")]
+position = Vector2(320, 153)
