@@ -32,6 +32,24 @@ func input(event: InputEvent) -> void:
 func change_state(new_state: State) -> void:
 	if current_state:
 		current_state.exit()
-
+		
 	current_state = new_state
+	change_animation_state()
 	current_state.enter()
+
+func change_animation_state() -> void:
+	if current_state == $Idle:
+		owner.animation_state.travel("idle")
+	elif current_state == $Run:
+		owner.animation_state.travel("walk")
+	elif current_state == $Jump:
+		owner.animation_state.travel("jump")
+	elif current_state == $Dash:
+		owner.animation_state.travel("dash")
+	elif current_state == $Fall:
+		owner.animation_state.travel("fall")
+	elif current_state == $Climb:
+		owner.animation_state.travel("climb")
+	elif current_state == $Climb:
+		owner.animation_state.travel("climb")
+	pass

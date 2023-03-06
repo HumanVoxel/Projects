@@ -1,0 +1,82 @@
+[gd_scene load_steps=19 format=3 uid="uid://by1efubhxpj31"]
+
+[ext_resource type="Texture2D" uid="uid://c7mkaeu3672rh" path="res://Assets/celeste/danger/tentacles00.png" id="1_hlfxq"]
+[ext_resource type="Texture2D" uid="uid://bggd0hsyb5l40" path="res://Assets/celeste/danger/tentacles01.png" id="2_pq8ae"]
+[ext_resource type="Texture2D" uid="uid://khim5wj20ytn" path="res://Assets/celeste/danger/tentacles02.png" id="3_c0snl"]
+[ext_resource type="Texture2D" uid="uid://b448euhunr56a" path="res://Assets/celeste/danger/tentacles03.png" id="4_871tm"]
+[ext_resource type="Texture2D" uid="uid://c25ddi5s4sexn" path="res://Assets/celeste/danger/tentacles04.png" id="5_ud7yl"]
+[ext_resource type="Texture2D" uid="uid://8p36f05uonbh" path="res://Assets/celeste/danger/tentacles05.png" id="6_k4gu8"]
+[ext_resource type="Texture2D" uid="uid://bvehydk8pfrj7" path="res://Assets/celeste/danger/tentacles06.png" id="7_1ed58"]
+[ext_resource type="Texture2D" uid="uid://0ua4u4srieet" path="res://Assets/celeste/danger/tentacles07.png" id="8_hsba3"]
+[ext_resource type="Texture2D" uid="uid://b5k85e6gytvj5" path="res://Assets/celeste/danger/tentacles08.png" id="9_d2kte"]
+[ext_resource type="Texture2D" uid="uid://to1dd7evigy2" path="res://Assets/celeste/danger/tentacles09.png" id="10_72h3j"]
+[ext_resource type="Texture2D" uid="uid://dbxdrf6nt8l67" path="res://Assets/celeste/danger/tentacles10.png" id="11_am3tl"]
+[ext_resource type="Texture2D" uid="uid://dgiqm6uae1v3l" path="res://Assets/celeste/danger/tentacles11.png" id="12_iu0nm"]
+[ext_resource type="Texture2D" uid="uid://bpbq1kod3u2cm" path="res://Assets/celeste/danger/tentacles12.png" id="13_64wv0"]
+[ext_resource type="Texture2D" uid="uid://wuo3mrygi8v6" path="res://Assets/celeste/danger/tentacles13.png" id="14_b0lmi"]
+[ext_resource type="Texture2D" uid="uid://bgu5usgoxwmkk" path="res://Assets/celeste/danger/tentacles14.png" id="15_gfu2a"]
+[ext_resource type="Texture2D" uid="uid://ca51mdh672krs" path="res://Assets/celeste/danger/tentacles15.png" id="16_sa5yh"]
+[ext_resource type="Texture2D" uid="uid://cr8jkmxesdrfs" path="res://Assets/celeste/danger/tentacles16.png" id="17_w7gpn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lttix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hlfxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pq8ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c0snl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_871tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ud7yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k4gu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1ed58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hsba3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d2kte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_72h3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_am3tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iu0nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_64wv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b0lmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gfu2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sa5yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w7gpn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="tentacle" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lttix")
+frame_progress = 0.763798

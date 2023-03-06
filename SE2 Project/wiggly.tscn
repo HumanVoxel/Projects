@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://boeme3i26ypts"]
+
+[ext_resource type="Texture2D" uid="uid://c5wctqvhu5ftc" path="res://Assets/celeste/danger/triggertentacle/wiggle_v00.png" id="1_ygj2x"]
+[ext_resource type="Texture2D" uid="uid://n8j4s0txgtv6" path="res://Assets/celeste/danger/triggertentacle/wiggle_v01.png" id="2_xnjbn"]
+[ext_resource type="Texture2D" uid="uid://brvhyjooyvtob" path="res://Assets/celeste/danger/triggertentacle/wiggle_v02.png" id="3_1lrvj"]
+[ext_resource type="Texture2D" uid="uid://c6jjcde0scdgh" path="res://Assets/celeste/danger/triggertentacle/wiggle_v03.png" id="4_1qaf1"]
+[ext_resource type="Texture2D" uid="uid://bk828graqnrge" path="res://Assets/celeste/danger/triggertentacle/wiggle_v04.png" id="5_18ip0"]
+[ext_resource type="Texture2D" uid="uid://bg5m85tut2ty2" path="res://Assets/celeste/danger/triggertentacle/wiggle_v05.png" id="6_he7t0"]
+[ext_resource type="Texture2D" uid="uid://cme2fik5isxep" path="res://Assets/celeste/danger/triggertentacle/wiggle_v06.png" id="7_th4l3"]
+[ext_resource type="Texture2D" uid="uid://q5yctvw3bgxj" path="res://Assets/celeste/danger/triggertentacle/wiggle_v07.png" id="8_uro80"]
+[ext_resource type="Texture2D" uid="uid://qfklu7memifn" path="res://Assets/celeste/danger/triggertentacle/wiggle_v08.png" id="9_1xh5g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdodb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ygj2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xnjbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1lrvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1qaf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_18ip0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_he7t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_th4l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uro80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1xh5g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="wiggly" type="AnimatedSprite2D"]
+self_modulate = Color(0.8, 0.113725, 0.313726, 1)
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_fdodb")
+autoplay = "default"
+frame_progress = 0.799282
+speed_scale = 1.74
