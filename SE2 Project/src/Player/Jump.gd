@@ -9,7 +9,7 @@ extends State
 
 @onready var jump_velocity = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
-
+@onready var wall_detector = $"../../wall_detector"
 
 @export var idle_node : NodePath
 @export var run_node : NodePath
@@ -37,6 +37,9 @@ func input(event: InputEvent) -> State:
 
 func physics_process(delta: float) -> State:
 	var direction = get_side_movement()
+	if owner.is_on_wall() and Input.is_action_pressed("climb") and wall_detector.is_colliding():
+		return climb_state
+		
 	if owner.is_on_wall() and Input.is_action_pressed("climb") and Input.is_action_just_pressed("jump"):
 		var wall_direction = -owner.get_wall_normal()
 		if direction == wall_direction.x:

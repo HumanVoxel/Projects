@@ -3,6 +3,7 @@ extends State
 @onready var animation_tree : AnimationTree = $"../../AnimationTree"
 @export var SPEED : float = 300.0
 @export var run_acceleration : float = 0.3
+@onready var wall_detector = $"../../wall_detector"
 
 @export var idle_node : NodePath
 @export var jump_node : NodePath
@@ -35,7 +36,7 @@ func physics_process(delta: float) -> State:
 	if owner.is_on_floor():
 		owner.is_dash_ready = true
 		
-	if owner.is_on_wall() and Input.is_action_pressed("climb"):
+	if owner.is_on_wall() and Input.is_action_pressed("climb") and wall_detector.is_colliding():
 		return climb_state
 		
 	if !owner.is_on_floor():

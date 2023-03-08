@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://c2y6uvxyj1k66"]
+[gd_scene load_steps=119 format=3 uid="uid://c2y6uvxyj1k66"]
 
 [ext_resource type="Script" path="res://src/Player/Player.gd" id="1_jshba"]
 [ext_resource type="Texture2D" uid="uid://bgav71mscy2cb" path="res://Assets/character/character_sheet.png" id="2_blqom"]
@@ -866,6 +866,9 @@ graph_offset = Vector2(-504.33, 20.1571)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_yekqc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4lfc"]
+size = Vector2(14, 10)
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_jshba")
@@ -921,8 +924,8 @@ climb_node = NodePath("../Climb")
 script = ExtResource("49_a5qf8")
 air_move_speed = 120.0
 max_fall_speed = 300.0
-jump_height = 50.0
-jump_time_to_descent = 0.3
+jump_height = 36.0
+jump_time_to_descent = 0.315
 idle_node = NodePath("../Idle")
 run_node = NodePath("../Run")
 jump_node = NodePath("../Jump")
@@ -981,3 +984,10 @@ parameters/walk/blend_position = -0.400215
 visible = false
 position = Vector2(217.143, 22.8571)
 texture = ExtResource("2_blqom")
+
+[node name="wall_detector" type="ShapeCast2D" parent="."]
+visible = false
+position = Vector2(0.353951, 3.89348)
+shape = SubResource("RectangleShape2D_y4lfc")
+target_position = Vector2(0.0692291, 1.4229)
+collision_mask = 513

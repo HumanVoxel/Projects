@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://b5av140qwrvwv"]
+[gd_scene load_steps=119 format=3 uid="uid://b5av140qwrvwv"]
 
 [ext_resource type="Texture2D" uid="uid://dr0ifrbg1inil" path="res://Assets/celeste/bgs/10/skybrighter.png" id="1_2rcch"]
 [ext_resource type="Texture2D" uid="uid://b14nyln877l08" path="res://Assets/celeste/bgs/03/bg3.png" id="1_q5j0b"]
@@ -88,9 +88,11 @@
 [ext_resource type="Texture2D" uid="uid://c5hxqq561boqd" path="res://Assets/batch-ex-Slice 18.png" id="88_jyyiw"]
 [ext_resource type="Texture2D" uid="uid://dx351f0ttpp1s" path="res://Assets/batch-ex-Slice 19.png" id="89_4o0l4"]
 [ext_resource type="PackedScene" uid="uid://c2y6uvxyj1k66" path="res://src/Player/player.tscn" id="89_sj02p"]
+[ext_resource type="Script" path="res://Assets/levels/RemoteTransform2D.gd" id="89_ts32d"]
 [ext_resource type="PackedScene" uid="uid://ctekiso3xduvu" path="res://moving_platform_horizontal.tscn" id="90_d1sxh"]
 [ext_resource type="Texture2D" uid="uid://qcf7q4bi67eo" path="res://Celestial_Resort_berry_21.jpg" id="90_ly4b8"]
 [ext_resource type="PackedScene" uid="uid://xok3g3nywdsv" path="res://moving_platform_vertical.tscn" id="91_3nhr8"]
+[ext_resource type="PackedScene" uid="uid://bx0uk7i4f1inl" path="res://src/objects/spring/spring.tscn" id="92_lrglm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi77o"]
 
@@ -2298,6 +2300,7 @@ position = Vector2(-23, 0.499886)
 position = Vector2(-19, 0.499908)
 
 [node name="wiggly22" parent="wigglies2" instance=ExtResource("13_lvbg3")]
+visible = false
 position = Vector2(-3.00001, 0.499969)
 
 [node name="wiggly23" parent="wigglies2" instance=ExtResource("13_lvbg3")]
@@ -2402,16 +2405,8 @@ motion_scale = Vector2(0, 0)
 y_sort_enabled = true
 position = Vector2(64, 152)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(80, -56)
-process_callback = 0
-limit_left = -16
-limit_top = 0
-limit_right = 1008
-limit_bottom = 180
-limit_smoothed = true
-position_smoothing_enabled = true
-editor_draw_screen = false
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+script = ExtResource("89_ts32d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6hmb0")
@@ -2424,7 +2419,25 @@ position = Vector2(480, 83)
 texture = ExtResource("90_ly4b8")
 
 [node name="moving_platform_horizontal" parent="." instance=ExtResource("90_d1sxh")]
-position = Vector2(104, 72)
+position = Vector2(488, 128)
 
 [node name="moving_platform_vertical" parent="." instance=ExtResource("91_3nhr8")]
-position = Vector2(320, 153)
+position = Vector2(200, 152)
+
+[node name="moving_platform_vertical2" parent="." instance=ExtResource("91_3nhr8")]
+position = Vector2(304, 148)
+
+[node name="spring" parent="." instance=ExtResource("92_lrglm")]
+position = Vector2(8, 152)
+rotation = 0.785397
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 152)
+process_callback = 0
+limit_left = -16
+limit_top = 0
+limit_right = 1008
+limit_bottom = 180
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_screen = false

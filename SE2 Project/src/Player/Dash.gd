@@ -4,7 +4,7 @@ extends State
 @export var dash_speed : float =  300.0
 @export var dash_time : float = .015
 var dash_direction : Vector2
-
+@onready var wall_detector = $"../../wall_detector"
 @export var idle_node : NodePath
 @export var run_node : NodePath
 @export var jump_node : NodePath
@@ -52,7 +52,7 @@ func physics_process(delta: float) -> State:
 			
 
 	else:
-		if owner.is_on_wall() and Input.is_action_pressed("climb"):
+		if owner.is_on_wall() and Input.is_action_pressed("climb") and wall_detector.is_colliding():
 			return climb_state
 		elif owner.is_on_floor() and owner.velocity.x != 0:
 			return run_state

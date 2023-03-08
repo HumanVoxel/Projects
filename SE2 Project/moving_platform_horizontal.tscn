@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctekiso3xduvu"]
+[gd_scene load_steps=6 format=3 uid="uid://ctekiso3xduvu"]
 
 [ext_resource type="Texture2D" uid="uid://bpdcuekea6a8r" path="res://icon.svg" id="1_0mn0v"]
-[ext_resource type="Script" path="res://moving_platform_horizontal.gd" id="1_4se2i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a08ei"]
 size = Vector2(40, 12)
@@ -34,8 +33,8 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(200, 0)]
+"update": 2,
+"values": [Vector2(0, 0), Vector2(100, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yfy8o"]
@@ -45,9 +44,10 @@ _data = {
 }
 
 [node name="moving_platform_horizontal" type="Node2D"]
-script = ExtResource("1_4se2i")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 513
+collision_mask = 513
 
 [node name="Icon" type="Sprite2D" parent="AnimatableBody2D"]
 scale = Vector2(0.3125, 0.09375)

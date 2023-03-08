@@ -10,7 +10,7 @@ var wall_direction : Vector2
 @onready var animation_player = $AnimationPlayer
 @onready var states = $state_manager
 @onready var face_direction : int = 1
-
+@onready var original_parent = get_parent()
 func _ready() -> void:
 	states.init()
 

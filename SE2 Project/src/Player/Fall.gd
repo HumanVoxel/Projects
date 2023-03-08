@@ -7,7 +7,7 @@ extends State
 @export var jump_height : float
 @export var jump_time_to_descent : float
 @onready var fall_gravity = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
-
+@onready var wall_detector = $"../../wall_detector"
 @export var idle_node : NodePath
 @export var run_node : NodePath
 @export var jump_node : NodePath
@@ -32,7 +32,7 @@ func physics_process(delta: float) -> State:
 	if Input.is_action_just_pressed("dash") and owner.is_dash_ready == true:
 		return dash_state
 	
-	if !owner.is_on_floor() and owner.is_on_wall() and Input.is_action_pressed("climb"):
+	if owner.is_on_wall() and Input.is_action_pressed("climb") and wall_detector.is_colliding():
 		return climb_state
 		
 	if owner.is_on_floor():
