@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cit4exxd7seui"
+path="res://.godot/imported/SuperGrottoEscape.ogg-149d5c096325f11d7eb32c39bcfdfdac.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/ansimuz/super grotto/SuperGrottoEScape Audio Music Files/SuperGrottoEscape.ogg"
+dest_files=["res://.godot/imported/SuperGrottoEscape.ogg-149d5c096325f11d7eb32c39bcfdfdac.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

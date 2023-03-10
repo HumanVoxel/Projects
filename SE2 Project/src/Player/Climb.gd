@@ -28,9 +28,9 @@ func enter():
 	if wall_detector.is_colliding() and Input.is_action_pressed("climb"):
 		print("wall_detected")
 		var wall = wall_detector.get_collider(0)
-#		if wall.get_class() == "MovingPlatform":
-		print("changed parent to ", wall.name)
-		owner.reparent(wall)
+		if wall.name == "moving_platform":
+			print("changed parent to ", wall.name)
+			owner.reparent(wall)
 	print("is-climbing")
 
 func exit():

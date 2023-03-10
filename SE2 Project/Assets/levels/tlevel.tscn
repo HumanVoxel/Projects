@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://b5av140qwrvwv"]
+[gd_scene load_steps=120 format=3 uid="uid://b5av140qwrvwv"]
 
 [ext_resource type="Texture2D" uid="uid://dr0ifrbg1inil" path="res://Assets/celeste/bgs/10/skybrighter.png" id="1_2rcch"]
 [ext_resource type="Texture2D" uid="uid://b14nyln877l08" path="res://Assets/celeste/bgs/03/bg3.png" id="1_q5j0b"]
@@ -89,10 +89,11 @@
 [ext_resource type="Texture2D" uid="uid://dx351f0ttpp1s" path="res://Assets/batch-ex-Slice 19.png" id="89_4o0l4"]
 [ext_resource type="PackedScene" uid="uid://c2y6uvxyj1k66" path="res://src/Player/player.tscn" id="89_sj02p"]
 [ext_resource type="Script" path="res://Assets/levels/RemoteTransform2D.gd" id="89_ts32d"]
-[ext_resource type="PackedScene" uid="uid://ctekiso3xduvu" path="res://moving_platform_horizontal.tscn" id="90_d1sxh"]
 [ext_resource type="Texture2D" uid="uid://qcf7q4bi67eo" path="res://Celestial_Resort_berry_21.jpg" id="90_ly4b8"]
 [ext_resource type="PackedScene" uid="uid://xok3g3nywdsv" path="res://moving_platform_vertical.tscn" id="91_3nhr8"]
 [ext_resource type="PackedScene" uid="uid://bx0uk7i4f1inl" path="res://src/objects/spring/spring.tscn" id="92_lrglm"]
+[ext_resource type="PackedScene" uid="uid://cuqo7vve8g8yq" path="res://unevensprite.tscn" id="94_1tpbc"]
+[ext_resource type="PackedScene" uid="uid://d2tdap10i3jlj" path="res://dash_shard.tscn" id="94_maowa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hi77o"]
 
@@ -2205,8 +2206,8 @@ auto_exposure_enabled = true
 dof_blur_far_enabled = true
 
 [node name="tlevel" type="Node"]
-metadata/_edit_vertical_guides_ = [1008.0, -16.0]
-metadata/_edit_horizontal_guides_ = [16.0]
+metadata/_edit_vertical_guides_ = [1008.0]
+metadata/_edit_horizontal_guides_ = [180.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -2216,19 +2217,23 @@ layer_0/tile_data = PackedInt32Array(655360, 65537, 6, 655361, 65537, 5, 655362,
 metadata/_edit_lock_ = true
 
 [node name="Lamp" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(192, 120)
 texture = ExtResource("4_5ej4l")
 
 [node name="Payphone" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(224.75, 138.311)
 scale = Vector2(0.677778, 0.677778)
 texture = ExtResource("5_mewbr")
 
 [node name="tentacle" parent="." instance=ExtResource("12_tdfsh")]
+visible = false
 position = Vector2(128, 160)
 autoplay = "default"
 
 [node name="wigglies" type="Node2D" parent="."]
+visible = false
 position = Vector2(1, 158)
 rotation = 3.14159
 
@@ -2287,6 +2292,7 @@ position = Vector2(-58, 0.49971)
 position = Vector2(-55, 0.499725)
 
 [node name="wigglies2" type="Node2D" parent="."]
+visible = false
 position = Vector2(2, 77)
 rotation = 4.71238
 
@@ -2346,6 +2352,7 @@ position = Vector2(-58, 0.49971)
 position = Vector2(-55, 0.499725)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(248, 112)
 sprite_frames = SubResource("SpriteFrames_hnq4d")
 animation = &"ice"
@@ -2353,6 +2360,7 @@ autoplay = "ice"
 frame_progress = 0.0624867
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_7i446")
 position = Vector2(320, 160)
 scale = Vector2(321, 161)
@@ -2368,12 +2376,14 @@ texture = SubResource("CanvasTexture_phynl")
 [node name="Rainfall" parent="." instance=ExtResource("18_df0s1")]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(360, 128)
 sprite_frames = SubResource("SpriteFrames_vo251")
 autoplay = "default"
 frame_progress = 0.0155134
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(456, 104)
 sprite_frames = SubResource("SpriteFrames_ne61q")
 autoplay = "default"
@@ -2408,29 +2418,6 @@ position = Vector2(64, 152)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 script = ExtResource("89_ts32d")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6hmb0")
-camera_attributes = SubResource("CameraAttributesPractical_nd3b4")
-
-[node name="CelestialResortBerry22" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(480, 83)
-texture = ExtResource("90_ly4b8")
-
-[node name="moving_platform_horizontal" parent="." instance=ExtResource("90_d1sxh")]
-position = Vector2(488, 128)
-
-[node name="moving_platform_vertical" parent="." instance=ExtResource("91_3nhr8")]
-position = Vector2(200, 152)
-
-[node name="moving_platform_vertical2" parent="." instance=ExtResource("91_3nhr8")]
-position = Vector2(304, 148)
-
-[node name="spring" parent="." instance=ExtResource("92_lrglm")]
-position = Vector2(8, 152)
-rotation = 0.785397
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(64, 152)
 process_callback = 0
@@ -2441,3 +2428,26 @@ limit_bottom = 180
 limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_screen = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6hmb0")
+camera_attributes = SubResource("CameraAttributesPractical_nd3b4")
+
+[node name="CelestialResortBerry22" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(480, 83)
+texture = ExtResource("90_ly4b8")
+
+[node name="spring" parent="." instance=ExtResource("92_lrglm")]
+position = Vector2(536, 140)
+rotation = 0.785397
+
+[node name="moving_platform_vertical" parent="." instance=ExtResource("91_3nhr8")]
+position = Vector2(200, 136)
+
+[node name="unevensprite" parent="." instance=ExtResource("94_1tpbc")]
+position = Vector2(-1, -1)
+
+[node name="dash_shard" parent="." instance=ExtResource("94_maowa")]
+position = Vector2(80, 80)

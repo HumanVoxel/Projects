@@ -1,0 +1,220 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuqo7vve8g8yq"]
+
+[ext_resource type="Shader" path="res://unevensprite.gdshader" id="1_3w7dd"]
+[ext_resource type="Texture2D" uid="uid://cvpmtw4y0p1o5" path="res://Assets/Mobile - Metal Slug Attack - Regular Di Cokka Regular Di Cokka Golden.png" id="1_xxnrd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdrlj"]
+
+[sub_resource type="Animation" id="Animation_n87le"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fiawc"]
+resource_name = "to_right"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("attack1/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("plume", "snuff"),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attack2/AnimationPlayer2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("plume", "snuff"),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack3/AnimationPlayer3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("plume", "snuff"),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "animation"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("attack4/AnimationPlayer4")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": PackedStringArray("plume", "snuff"),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(352, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_krf31"]
+_data = {
+"RESET": SubResource("Animation_n87le"),
+"to_right": SubResource("Animation_fiawc")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yx6g1"]
+shader = ExtResource("1_3w7dd")
+shader_parameter/speed = 2.0
+shader_parameter/dis = 20.0
+
+[sub_resource type="Animation" id="Animation_34jqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(46, 849, 52, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_j0uqm"]
+resource_name = "plume"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(367, 841, 156, 54), Rect2(534, 841, 155, 53), Rect2(706, 839, 156, 55), Rect2(872, 840, 151, 53), Rect2(1044, 839, 148, 53), Rect2(1198, 838, 156, 54), Rect2(706, 839, 156, 55), Rect2(872, 840, 151, 53), Rect2(1044, 839, 148, 53), Rect2(1198, 838, 156, 54)]
+}
+
+[sub_resource type="Animation" id="Animation_k0dm3"]
+resource_name = "snuff"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(44, 919, 157, 54), Rect2(209, 917, 160, 55), Rect2(545, 920, 165, 55), Rect2(718, 918, 166, 55), Rect2(891, 917, 168, 58), Rect2(1069, 917, 170, 58)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ouyfl"]
+_data = {
+"RESET": SubResource("Animation_34jqi"),
+"plume": SubResource("Animation_j0uqm"),
+"snuff": SubResource("Animation_k0dm3")
+}
+
+[node name="unevensprite" type="Node2D"]
+material = SubResource("ShaderMaterial_hdrlj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../to_right")
+autoplay = "to_right"
+libraries = {
+"": SubResource("AnimationLibrary_krf31")
+}
+
+[node name="to_right" type="Node2D" parent="."]
+
+[node name="attack1" type="Node2D" parent="to_right"]
+position = Vector2(-88, 56)
+
+[node name="Sprite2D" type="Sprite2D" parent="to_right/attack1"]
+material = SubResource("ShaderMaterial_yx6g1")
+texture = ExtResource("1_xxnrd")
+region_enabled = true
+region_rect = Rect2(46, 849, 52, 44)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="to_right/attack1"]
+root_node = NodePath("../Sprite2D")
+autoplay = "plume"
+libraries = {
+"": SubResource("AnimationLibrary_ouyfl")
+}
+
+[node name="attack2" type="Node2D" parent="to_right"]
+position = Vector2(-88, 156)
+
+[node name="Sprite2D" type="Sprite2D" parent="to_right/attack2"]
+material = SubResource("ShaderMaterial_yx6g1")
+texture = ExtResource("1_xxnrd")
+region_enabled = true
+region_rect = Rect2(46, 849, 52, 44)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="to_right/attack2"]
+root_node = NodePath("../../attack3/Sprite2D")
+autoplay = "plume"
+libraries = {
+"": SubResource("AnimationLibrary_ouyfl")
+}
+
+[node name="attack3" type="Node2D" parent="to_right"]
+position = Vector2(-88, 188)
+
+[node name="Sprite2D" type="Sprite2D" parent="to_right/attack3"]
+material = SubResource("ShaderMaterial_yx6g1")
+texture = ExtResource("1_xxnrd")
+region_enabled = true
+region_rect = Rect2(46, 849, 52, 44)
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="to_right/attack3"]
+root_node = NodePath("../../attack2/Sprite2D")
+autoplay = "plume"
+libraries = {
+"": SubResource("AnimationLibrary_ouyfl")
+}
+
+[node name="attack4" type="Node2D" parent="to_right"]
+position = Vector2(-88, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="to_right/attack4"]
+material = SubResource("ShaderMaterial_yx6g1")
+texture = ExtResource("1_xxnrd")
+region_enabled = true
+region_rect = Rect2(46, 849, 52, 44)
+
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="to_right/attack4"]
+root_node = NodePath("../Sprite2D")
+autoplay = "plume"
+libraries = {
+"": SubResource("AnimationLibrary_ouyfl")
+}

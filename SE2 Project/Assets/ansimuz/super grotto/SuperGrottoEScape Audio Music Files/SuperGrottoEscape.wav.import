@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dm8vxwmk0a5we"
+path="res://.godot/imported/SuperGrottoEscape.wav-00b4dbb053f5b3c2c4bb81a7a5765436.sample"
+
+[deps]
+
+source_file="res://Assets/ansimuz/super grotto/SuperGrottoEScape Audio Music Files/SuperGrottoEscape.wav"
+dest_files=["res://.godot/imported/SuperGrottoEscape.wav-00b4dbb053f5b3c2c4bb81a7a5765436.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

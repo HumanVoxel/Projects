@@ -906,6 +906,7 @@ jump_height = 36.0
 jump_time_to_peak = 0.35
 idle_node = NodePath("../Idle")
 run_node = NodePath("../Run")
+jump_node = NodePath(".")
 dash_node = NodePath("../Dash")
 fall_node = NodePath("../Fall")
 climb_node = NodePath("../Climb")

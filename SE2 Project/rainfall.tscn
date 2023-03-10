@@ -44,3 +44,6 @@ process_material = SubResource("ParticleProcessMaterial_3lpy5")
 texture = ExtResource("2_fx6gx")
 lifetime = 5.0
 draw_order = 0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(1, 0, 1, 1)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://clc5cujl6hn1t"
+path="res://.godot/imported/fantasy Dragon.mp3-23fbbae57d3d5896a74003e7500726a9.mp3str"
+
+[deps]
+
+source_file="res://Assets/ansimuz/sideview fantasy/Sideview Fantasy Patreon Collection/Music/Fantasy Dragon Music/fantasy Dragon.mp3"
+dest_files=["res://.godot/imported/fantasy Dragon.mp3-23fbbae57d3d5896a74003e7500726a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

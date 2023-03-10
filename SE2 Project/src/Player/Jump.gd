@@ -13,19 +13,22 @@ extends State
 
 @export var idle_node : NodePath
 @export var run_node : NodePath
+@export var jump_node : NodePath
 @export var dash_node : NodePath
 @export var fall_node : NodePath
 @export var climb_node : NodePath
 
 @onready var idle_state : State = get_node(idle_node)
 @onready var run_state : State = get_node(run_node)
+@onready var jump_state : State = get_node(jump_node)
 @onready var dash_state : State = get_node(dash_node)
 @onready var fall_state : State = get_node(fall_node)
 @onready var climb_state : State = get_node(climb_node)
+var wall_direction
 
 func enter():
 	owner.velocity.y = jump_velocity
-	var wall_direction = -owner.get_wall_normal()
+
 	#owner.velocity.y = -jump_height
 	print("is-jumping")
 		
@@ -37,13 +40,22 @@ func input(event: InputEvent) -> State:
 
 func physics_process(delta: float) -> State:
 	var direction = get_side_movement()
-	if owner.is_on_wall() and Input.is_action_pressed("climb") and wall_detector.is_colliding():
-		return climb_state
+	if Input.is_action_just_released("jump"):
+		return fall_state
+	else:
+		owner.velocity.y += jump_gravity * delta
 		
-	if owner.is_on_wall() and Input.is_action_pressed("climb") and Input.is_action_just_pressed("jump"):
+	if get_parent().previous_state == climb_state and Input.is_action_just_pressed("jump"):
+#	if owner.is_on_wall() and Input.is_action_pressed("climb") and Input.is_action_just_pressed("jump"):
+#	if Input.is_action_pressed("climb") and Input.is_action_just_pressed("jump"):
+#		if direction == wall_direction.x:
+		get_parent().previous_state == jump_state
 		var wall_direction = -owner.get_wall_normal()
-		if direction == wall_direction.x:
-			owner.velocity.x = -wall_direction.x * air_move_speed * 3
+		owner.velocity.x = -wall_direction.x * air_move_speed
+		owner.velocity.y = jump_velocity
+		print("wall_jumped")
+		
+
 		
 	if Input.is_action_just_pressed("dash") and owner.is_dash_ready == true:
 		return dash_state
@@ -51,15 +63,14 @@ func physics_process(delta: float) -> State:
 
 #	get_side_movement()
 		
-	if Input.is_action_just_released("jump"):
-		return fall_state
-	else:
-		owner.velocity.y += jump_gravity * delta
-		
+	
 	if owner.velocity.y > 0:
 		return fall_state
 	owner.move_and_slide()
-
+	
+	if owner.is_on_wall() and Input.is_action_pressed("climb"):# and wall_detector.is_colliding():
+		return climb_state
+		
 	return null
 	
 func get_side_movement() -> float:

@@ -24,11 +24,14 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 [dialogic]
 
 editor/character_preview_mode=0
-editor/current_editor=&"Character Editor"
-editor/current_resources={}
-editor/last_resources=[]
+editor/current_editor=&"Layout"
+editor/current_resources={
+"Character Editor": "res://player.dch",
+"Timeline Editor": "res://intro.dtl"
+}
+editor/last_resources=["res://player.dch", "res://intro.dtl"]
 editor/current_timeline_path="res://timeline.dtl"
-editor/last/resources=[]
+editor/last/resources=["res://player.dch", "res://intro.dtl"]
 history/history_system=true
 history/full_history=true
 history/text_history=true
@@ -50,8 +53,12 @@ layout/export_overrides={
 "bold_italic_font": "\"res://Assets/fonts/monogram/ttf/monogram.ttf\"",
 "italic_font": "\"res://Assets/fonts/monogram/ttf/monogram.ttf\"",
 "name_label_font": "\"res://Assets/fonts/monogram/ttf/monogram.ttf\"",
-"normal_font": "\"res://Assets/fonts/monogram/ttf/monogram.ttf\""
+"name_label_font_size": "30.0",
+"normal_font": "\"res://Assets/fonts/monogram/ttf/monogram.ttf\"",
+"text_alignment": "0",
+"text_size": "30.0"
 }
+editor/visual_timeline_editor_sidebar=200.0
 
 [display]
 
@@ -65,6 +72,10 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[gui]
+
+theme/custom_font="res://Assets/fonts/monogram/ttf/monogram.ttf"
 
 [input]
 
