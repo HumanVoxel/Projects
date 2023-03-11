@@ -41,9 +41,9 @@ func process(delta: float) -> State:
 	return null
 	
 func physics_process(delta: float) -> State:
-	if owner.is_on_floor():
-		owner.is_dash_ready = true
-		
+#	if owner.is_on_floor():
+#		owner.is_dash_ready = true
+#
 	if dash_timer.time_left > 0:
 		if dash_direction:
 			owner.velocity = dash_direction * dash_speed

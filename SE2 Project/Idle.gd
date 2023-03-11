@@ -14,6 +14,7 @@ extends State
 @onready var climb_state : State = get_node(climb_node)
 
 func enter() -> void:
+	owner.velocity = Vector2.ZERO
 	print('is-idle')
 
 func input(event: InputEvent) -> State:

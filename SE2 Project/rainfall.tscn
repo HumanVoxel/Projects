@@ -46,4 +46,5 @@ lifetime = 5.0
 draw_order = 0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(1, 0, 1, 1)

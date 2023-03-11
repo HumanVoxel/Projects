@@ -28,7 +28,7 @@ var wall_direction
 
 func enter():
 	owner.velocity.y = jump_velocity
-
+	print(owner.face_direction)
 	#owner.velocity.y = -jump_height
 	print("is-jumping")
 		

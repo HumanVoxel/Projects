@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 func update_animation_parameters() -> void:
 	animation_tree.set("parameters/climb/blend_position", Vector2(wall_direction.x, velocity.y))
 	animation_tree.set("parameters/dash/blend_position", velocity.x)
-	animation_tree.set("parameters/fall/blend_position", velocity.x)
-	animation_tree.set("parameters/jump/blend_position", velocity.x)
+	animation_tree.set("parameters/fall/blend_position", (face_direction if velocity.x == 0 else velocity.x))
+	animation_tree.set("parameters/jump/blend_position", (face_direction if velocity.x == 0 else velocity.x))
 	animation_tree.set("parameters/walk/blend_position", velocity.x)
 	pass
