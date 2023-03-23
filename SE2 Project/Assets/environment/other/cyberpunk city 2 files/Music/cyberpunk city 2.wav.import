@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqaj01ppnq7jv"
+path="res://.godot/imported/cyberpunk city 2.wav-9168135931163a225c93bc5dfa4cfbea.sample"
+
+[deps]
+
+source_file="res://Assets/environment/other/cyberpunk city 2 files/Music/cyberpunk city 2.wav"
+dest_files=["res://.godot/imported/cyberpunk city 2.wav-9168135931163a225c93bc5dfa4cfbea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

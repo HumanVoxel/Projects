@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtfs2dpwn560x"]
+
+[ext_resource type="Texture2D" uid="uid://dl8jm07ntl2te" path="res://Assets/virus/virus.png" id="1_0tq1i"]
+[ext_resource type="Script" path="res://virus.gd" id="1_uvuco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwjqw"]
+radius = 7.0
+
+[node name="Virus" type="CharacterBody2D"]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_uvuco")
+SPEED = 130.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0tq1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fwjqw")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+avoidance_enabled = true
+radius = 30.2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fwjqw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

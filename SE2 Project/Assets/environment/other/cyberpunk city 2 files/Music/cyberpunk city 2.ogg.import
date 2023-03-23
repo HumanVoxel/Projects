@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://br7gql2j524p4"
+path="res://.godot/imported/cyberpunk city 2.ogg-2579ed316ea18f394f4451ca9aa91f15.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/environment/other/cyberpunk city 2 files/Music/cyberpunk city 2.ogg"
+dest_files=["res://.godot/imported/cyberpunk city 2.ogg-2579ed316ea18f394f4451ca9aa91f15.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,9 @@
-[gd_scene load_steps=119 format=3 uid="uid://c2y6uvxyj1k66"]
+[gd_scene load_steps=121 format=3 uid="uid://c2y6uvxyj1k66"]
 
 [ext_resource type="Script" path="res://src/Player/Player.gd" id="1_jshba"]
 [ext_resource type="Texture2D" uid="uid://bgav71mscy2cb" path="res://Assets/character/character_sheet.png" id="2_blqom"]
 [ext_resource type="Script" path="res://src/Player/Attack.gd" id="9_qkynj"]
+[ext_resource type="Script" path="res://src/Player/hostile_detector.gd" id="11_4c00d"]
 [ext_resource type="Script" path="res://state_manager.gd" id="44_8crf5"]
 [ext_resource type="Script" path="res://Idle.gd" id="45_kogk8"]
 [ext_resource type="Script" path="res://src/Player/Run.gd" id="46_vdpd7"]
@@ -907,8 +908,12 @@ graph_offset = Vector2(-504.33, 20.1571)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4lfc"]
 size = Vector2(14, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j23c"]
+size = Vector2(10, 15)
+
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
+collision_mask = 9
 script = ExtResource("1_jshba")
 
 [node name="Player_Collider" type="CollisionShape2D" parent="."]
@@ -1030,3 +1035,14 @@ position = Vector2(0.353951, 3.89348)
 shape = SubResource("RectangleShape2D_y4lfc")
 target_position = Vector2(0.0692291, 1.4229)
 collision_mask = 513
+
+[node name="hostile_detector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("11_4c00d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hostile_detector"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_0j23c")
+
+[connection signal="area_entered" from="hostile_detector" to="." method="_on_hostile_detector_area_entered"]

@@ -107,3 +107,5 @@ autoplay = "loop"
 libraries = {
 "": SubResource("AnimationLibrary_unm80")
 }
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]

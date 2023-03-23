@@ -61,3 +61,5 @@ autoplay = "move_right"
 libraries = {
 "": SubResource("AnimationLibrary_yfy8o")
 }
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]

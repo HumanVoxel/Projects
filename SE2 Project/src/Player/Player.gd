@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
+var health = 100
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_dash_ready : bool
 var wall_direction : Vector2
@@ -36,3 +37,21 @@ func update_animation_parameters() -> void:
 	animation_tree.set("parameters/jump/blend_position", (face_direction if velocity.x == 0 else velocity.x))
 	animation_tree.set("parameters/walk/blend_position", velocity.x)
 	pass
+
+
+func _on_hostile_detector_body_entered(body):
+	print("touched hostile")
+	queue_free()
+	pass # Replace with function body.
+
+
+func _on_hostile_detector_area_entered(area):
+	print("touched hostile")
+	queue_free()
+	pass # Replace with function body.
+	
+func damage(damage : float) -> void:
+	health -= damage
+	print(health)
+	pass
+	

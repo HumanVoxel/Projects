@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3t7djfmrfkwx"]
+
+[ext_resource type="Texture2D" uid="uid://cibp0her25cnd" path="res://Assets/celeste/danger/crystal/fg_purple00.png" id="1_77fxp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_me1h0"]
+texture = ExtResource("1_77fxp")
+margins = Vector2i(4, 5)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6.5, -8, 0, -4.5, 7, 3, 8, 8, 6, 8, -3, 6, -7, -0.5, -8)
+
+[sub_resource type="TileSet" id="TileSet_2j1nt"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_me1h0")
+
+[node name="spring_pad" type="Node2D"]
+position = Vector2(65, 29)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2j1nt")
+format = 2
