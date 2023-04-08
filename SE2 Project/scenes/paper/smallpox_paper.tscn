@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://3sdpi3s3igtc"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_v3u77"]
+
+[node name="smallpox_paper" instance=ExtResource("1_v3u77")]
+
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
+[node name="RichTextLabel" parent="paper/MarginContainer" index="0"]
+text = "[center]Smallpox is an infectious disease caused by the variola virus. The history of smallpox is a long and devastating one. The disease is estimated to have killed hundreds of millions of people throughout history and played a significant role in shaping the course of human history.
+
+In 1796, the English physician Edward Jenner developed the first successful vaccine for smallpox, which involved inoculating people with a milder form of the disease called cowpox. This discovery revolutionized public health and led to the eventual eradication of smallpox.
+
+Smallpox vaccination campaigns began in the early 1800s and continued throughout the 20th century. The World Health Organization (WHO) launched a global smallpox eradication campaign in 1967, which was successful in eradicating the disease by 1980. This achievement was a major milestone in the history of public health, as smallpox was the first disease to be eradicated through human efforts.
+
+Today, smallpox is no longer a public health threat, and routine vaccination against the disease is no longer necessary. However, the virus is still stored in high-security laboratories for research purposes, and there is concern about the possibility of the virus being used as a bioterrorism agent.
+
+Symptoms of smallpox typically begin with a high fever, headache, and body aches. A characteristic rash then appears, starting on the face and spreading to the arms and legs. The rash progresses from macules (flat, red spots) to papules (raised bumps), then to vesicles (fluid-filled blisters), and finally to pustules (filled with pus). The rash usually appears on the tongue, mouth, and throat as well, making swallowing difficult.
+
+Over the course of a week, the pustules begin to scab over and form crusts. After about two to four weeks, the scabs fall off, leaving pitted scars. Smallpox can be fatal, with a mortality rate of up to 30 percent in unvaccinated individuals.
+
+It is important to note that smallpox is highly contagious and can spread easily from person to person through respiratory droplets or contact with bodily fluids or contaminated objects. If you suspect you or someone you know may have smallpox, seek medical attention immediately and follow appropriate isolation and quarantine measures to prevent further spread of the virus."

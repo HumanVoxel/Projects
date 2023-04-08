@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsbgekdghodf"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_3rqmr"]
+
+[node name="influenza_paper" instance=ExtResource("1_3rqmr")]
+
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
+[node name="RichTextLabel" parent="paper/MarginContainer" index="0"]
+text = "[center]Influenza, commonly known as the flu, is a viral respiratory illness that has been affecting humans for centuries. The history of influenza can be traced back to at least the 16th century, with the first recorded influenza pandemic occurring in 1580.
+
+Throughout history, there have been several major influenza pandemics that have caused significant illness and death. The most deadly of these pandemics occurred in 1918, known as the Spanish flu pandemic. This pandemic infected an estimated 500 million people worldwide and resulted in the deaths of between 50 and 100 million people, making it one of the deadliest pandemics in human history.
+
+Influenza continued to affect people in the following decades, with additional pandemics occurring in 1957 (Asian flu) and 1968 (Hong Kong flu). In 2009, a new strain of influenza known as H1N1, or swine flu, caused a pandemic that affected millions of people worldwide.
+
+Influenza viruses are known to mutate rapidly, making it difficult to develop long-term immunity to the virus. This is why a new flu vaccine is needed each year to protect against the most prevalent strains of the virus.
+
+Efforts to prevent and control influenza continue through vaccination campaigns, antiviral medications, and public health measures such as handwashing, social distancing, and wearing masks. While influenza remains a significant public health concern, these efforts have helped to reduce the impact of the virus and prevent widespread pandemics like the Spanish flu.
+
+The symptoms of influenza can vary from person to person, but typically include:
+
+    Fever
+    Chills
+    Cough
+    Sore throat
+    Runny or stuffy nose
+    Muscle or body aches
+    Fatigue
+    Headache
+    Vomiting and diarrhea (more common in children)
+
+Influenza symptoms usually develop suddenly and can be severe. In some cases, influenza can lead to serious complications, such as pneumonia, and can be life-threatening, especially in young children, older adults, and people with weakened immune systems.
+
+Antiviral medications may be prescribed to reduce the severity and duration of symptoms, especially if started early in the course of the illness. Additionally, getting an annual flu vaccine is the best way to prevent getting the flu and reduce the severity of symptoms."

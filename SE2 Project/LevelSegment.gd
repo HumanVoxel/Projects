@@ -15,11 +15,19 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "Player":
 		camera_2d = Camera2D.new()
-		add_child(camera_2d)
 		camera_2d.enabled = true
+		add_child(camera_2d)
 		if camera_2d.is_current() == false:
 			camera_2d.make_current()
-		camera_2d.global_transform = self.global_transform
+		camera_2d.global_position = global_position
+		
+		
+		
+#		print($CollisionShape2D.shape.get_rect().size)
+#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
+#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
+#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
+#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
 		
 		print("cameraswitched")
 	pass # Replace with function body.

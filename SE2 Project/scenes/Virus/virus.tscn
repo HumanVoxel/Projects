@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://chiqsmwr0ughu"]
+
+[ext_resource type="Script" path="res://scenes/Virus/virus.gd" id="1_kwa5h"]
+[ext_resource type="Texture2D" uid="uid://dl8jm07ntl2te" path="res://Assets/virus/virus.png" id="2_fmt1e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwjqw"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ivuhu"]
+radius = 24.0
+
+[node name="Virus" type="CharacterBody2D"]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_kwa5h")
+attack_damage = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fmt1e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fwjqw")
+disabled = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+avoidance_enabled = true
+radius = 30.2
+
+[node name="player_collision_detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_collision_detector"]
+shape = SubResource("CircleShape2D_fwjqw")
+
+[node name="player_dectector" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_dectector"]
+shape = SubResource("CircleShape2D_ivuhu")
+
+[connection signal="body_entered" from="player_collision_detector" to="." method="_on_player_collision_detector_body_entered"]
+[connection signal="body_entered" from="player_dectector" to="." method="_on_player_dectector_body_entered"]

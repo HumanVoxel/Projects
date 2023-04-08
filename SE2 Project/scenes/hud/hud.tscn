@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://bve4n1efhw0y1"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_eeev5"]
+[ext_resource type="Texture2D" uid="uid://v2cg2grwhbyx" path="res://Assets/UI/healthbar/healthbar.png" id="2_82com"]
+[ext_resource type="Texture2D" uid="uid://cn7jmd6e0u0em" path="res://Assets/collectibles/facemask.png" id="3_2wu1j"]
+[ext_resource type="Texture2D" uid="uid://b0dgvx473b2ah" path="res://Assets/collectibles/dose1.png" id="4_2m7pi"]
+[ext_resource type="Texture2D" uid="uid://dptp3fsvfux08" path="res://Assets/collectibles/dose2.png" id="5_ohyk4"]
+[ext_resource type="Texture2D" uid="uid://73516narueuq" path="res://Assets/collectibles/booster.png" id="6_dtpam"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_eeev5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+offset_left = 8.0
+offset_right = 148.0
+offset_bottom = 32.0
+
+[node name="healthtext" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="healthbar" type="TextureProgressBar" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+value = 100.0
+texture_progress = ExtResource("2_82com")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = 24.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="facemask" type="TextureRect" parent="Control/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("3_2wu1j")
+
+[node name="dose1" type="TextureRect" parent="Control/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("4_2m7pi")
+
+[node name="dose2" type="TextureRect" parent="Control/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("5_ohyk4")
+
+[node name="booster" type="TextureRect" parent="Control/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("6_dtpam")

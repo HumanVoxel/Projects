@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SE2 Project"
-run/main_scene="res://Assets/levels/tlevel.tscn"
+run/main_scene="res://scenes/main menu/main_menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/image="res://Assets/splash/lemur.png"
 config/icon="res://icon.svg"
@@ -19,14 +19,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
+PlayerStats="*res://resources/PlayerStats.gd"
+Event="*res://resources/Event.gd"
 
 [dialogic]
 
 editor/character_preview_mode=0
-editor/current_editor=&"Timeline Editor"
+editor/current_editor=&"Layout"
 editor/current_resources={
-"Character Editor": "res://player.dch",
-"Timeline Editor": "res://intro.dtl"
+"Character Editor": "res://player.dch"
 }
 editor/last_resources=["res://player.dch", "res://intro.dtl"]
 editor/current_timeline_path="res://timeline.dtl"
@@ -59,6 +60,7 @@ layout/export_overrides={
 }
 editor/visual_timeline_editor_sidebar=200.0
 layout_scene="res://CustomDefaultLayout/DialogicDefaultLayout.tscn"
+editor/layout/mode=2
 
 [display]
 
@@ -68,6 +70,7 @@ window/size/always_on_top=true
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://Assets/UI/Cursor.png"
 
 [editor_plugins]
 
@@ -154,6 +157,11 @@ attack={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"echo":false,"script":null)
 ]
 }
+pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 
@@ -170,6 +178,6 @@ locale/translations_pot_files=PackedStringArray("res://testdialogue.dialogue")
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
-textures/canvas_textures/default_texture_filter=0

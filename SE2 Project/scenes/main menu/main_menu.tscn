@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://8ms3ydi7jyri"]
+
+[ext_resource type="Script" path="res://scenes/main menu/main_menu.gd" id="1_725wh"]
+[ext_resource type="Shader" path="res://resources/shaders/scroll.gdshader" id="1_m4e7t"]
+[ext_resource type="Texture2D" uid="uid://crmvge16kn2qd" path="res://Assets/environment/City/Background.png" id="2_myynb"]
+[ext_resource type="Texture2D" uid="uid://bys53v4s613i6" path="res://Assets/UI/VirucideLogo.png" id="4_n74j8"]
+[ext_resource type="Texture2D" uid="uid://bjk7wxv3tc6gk" path="res://Assets/UI/2DSimpleUIPack/Sprites/ui-large-buttons-horizontal.png" id="4_tcato"]
+[ext_resource type="Texture2D" uid="uid://dxhk5kr22lm3e" path="res://Assets/character/Custom Edited - Hollow Knight Customs - The Knight Super Mario Maker-Style.png" id="5_250pu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2sk4"]
+shader = ExtResource("1_m4e7t")
+shader_parameter/speed = 0.02
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f7ib"]
+atlas = ExtResource("4_tcato")
+region = Rect2(96, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0u1k"]
+atlas = ExtResource("4_tcato")
+region = Rect2(144, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o34a8"]
+atlas = ExtResource("4_tcato")
+region = Rect2(288, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygg23"]
+atlas = ExtResource("4_tcato")
+region = Rect2(336, 32, 48, 16)
+
+[node name="MainMenu" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_725wh")
+
+[node name="scrollingbackground" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_u2sk4")
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -320.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_myynb")
+stretch_mode = 1
+
+[node name="Logo" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 98.0
+grow_horizontal = 2
+texture = ExtResource("4_n74j8")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../Quit")
+texture_normal = SubResource("AtlasTexture_7f7ib")
+texture_pressed = SubResource("AtlasTexture_n0u1k")
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Play")
+texture_normal = SubResource("AtlasTexture_o34a8")
+texture_pressed = SubResource("AtlasTexture_ygg23")
+texture_focused = ExtResource("5_250pu")
+
+[connection signal="button_up" from="VBoxContainer/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="VBoxContainer/Quit" to="." method="_on_quit_button_up"]
