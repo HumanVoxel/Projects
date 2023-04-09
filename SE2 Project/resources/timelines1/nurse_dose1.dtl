@@ -1,0 +1,20 @@
+nurse_character: Hello there!
+nurse_character: Rough weather outside huh?
+nurse_character: How can I help you today?
+- I want to get vaccinated
+	if {dose_total} == "":
+		nurse_character: I'll be giving you the first dose then
+	elif {dose_total} == "":
+		nurse_character: It seem like you already got the first dose.
+		nurse_character: Then , I'll be giving you the second dose
+		[end_timeline]
+	elif {dose_total} == "":
+		nurse_character: It seems like you already got the first and second dose of the vaccine
+		nurse_character: The only left is the booster dose
+		nurse_character: would you like to get the booster dose?
+		- Yes, give me the booster dose
+			[end_timeline]
+		- No, maybe some other time
+			[end_timeline]
+- Nothing thank you
+	[end_timeline]

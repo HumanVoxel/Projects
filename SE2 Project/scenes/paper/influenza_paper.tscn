@@ -5,10 +5,10 @@
 [node name="influenza_paper" instance=ExtResource("1_3rqmr")]
 
 [node name="paper" parent="." index="1"]
-offset_left = 35.0
-offset_top = -180.0
-offset_right = 285.0
-offset_bottom = -9.99991
+offset_left = -125.0
+offset_top = -270.0
+offset_right = 125.0
+offset_bottom = -99.9999
 
 [node name="RichTextLabel" parent="paper/MarginContainer" index="0"]
 text = "[center]Influenza, commonly known as the flu, is a viral respiratory illness that has been affecting humans for centuries. The history of influenza can be traced back to at least the 16th century, with the first recorded influenza pandemic occurring in 1580.

@@ -4,12 +4,6 @@
 
 [node name="smallpox_paper" instance=ExtResource("1_v3u77")]
 
-[node name="paper" parent="." index="1"]
-offset_left = 35.0
-offset_top = -180.0
-offset_right = 285.0
-offset_bottom = -9.99991
-
 [node name="RichTextLabel" parent="paper/MarginContainer" index="0"]
 text = "[center]Smallpox is an infectious disease caused by the variola virus. The history of smallpox is a long and devastating one. The disease is estimated to have killed hundreds of millions of people throughout history and played a significant role in shaping the course of human history.
 

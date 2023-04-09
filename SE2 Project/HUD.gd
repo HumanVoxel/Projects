@@ -1,10 +1,9 @@
 extends CanvasLayer
 
 
-@onready var max_health : float = PlayerStats.max_health
-@onready var health : float = max_health
-@onready var doses : Array = PlayerStats.doses
-@onready var collectibles : Array = PlayerStats.collectibles
+var max_health : float
+var health : float
+var collectibles : Array
 
 
 @onready var healthbar = $Control/HBoxContainer/healthbar
@@ -17,6 +16,10 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerStats.player_collected.connect(player_collected)
+	PlayerStats.health_increased.connect(player_health_increased)
+	health = PlayerStats.max_health
+	max_health = PlayerStats.max_health
 	update()
 	pass # Replace with function body.
 
@@ -26,6 +29,11 @@ func _process(delta):
 	pass
 
 func update():
+	collectibles = PlayerStats.collectibles
+	healthbar.value = health
+	healthbar.max_value = PlayerStats.max_health
+	healthtext.text = "%s/%s" % [health,PlayerStats.max_health]
+	
 	for col in collectibles:
 		if col == "facemask":
 			facemask.show()
@@ -35,13 +43,18 @@ func update():
 			dose2.show()
 		elif col == "booster":
 			booster.show()
-			
-	healthtext.text = "%s/%s" % [health,max_health]
-	healthbar.value = health
-	healthbar.max_value = PlayerStats.compute_max_health()
-
+	
 
 func _on_player_damaged(health, damage):
 	self.health = health
 	update()
 	pass # Replace with function body.
+
+func player_collected(collectible):
+	if (collectible == "facemask") || (collectible == "dose1") || (collectible == "dose2") || (collectible == "booster"):
+		health = PlayerStats.compute_max_health()
+	update()
+	
+func player_health_increased(health):
+	self.health = health
+	update()

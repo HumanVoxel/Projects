@@ -12,15 +12,15 @@ func _process(delta):
 
 
 func _on_chapter_1_pressed():
-	get_tree().change_scene_to_file("res://scenes/chapters/chapter1.tscn")
+	get_tree().change_scene_to_file("res://scenes/chapters/chapter_1.tscn")
 	pass # Replace with function body.
 
 
 func _on_chapter_2_pressed():
-	get_tree().change_scene_to_file("res://scenes/chapters/chapter1.tscn")
+	get_tree().change_scene_to_file("res://scenes/chapters/chapter_1.tscn")
 	pass # Replace with function body.
 
 
 func _on_chapter_3_pressed():
-	get_tree().change_scene_to_file("res://scenes/chapters/chapter1.tscn")
+	get_tree().change_scene_to_file("res://scenes/chapters/chapter_1.tscn")
 	pass # Replace with function body.

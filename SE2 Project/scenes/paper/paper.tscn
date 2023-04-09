@@ -64,6 +64,7 @@ region = Rect2(1312, 1440, 128, 128)
 
 [node name="Paper" type="CanvasLayer"]
 process_mode = 3
+layer = 10
 script = ExtResource("1_7wen6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

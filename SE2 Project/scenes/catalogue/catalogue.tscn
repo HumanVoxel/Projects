@@ -1,3 +1,208 @@
-[gd_scene format=3 uid="uid://nvseheduls1"]
+[gd_scene load_steps=14 format=3 uid="uid://nvseheduls1"]
+
+[ext_resource type="Texture2D" uid="uid://d0fvtuea0805g" path="res://Assets/UI/Radl_book/RADL_Book.png" id="1_l3nmk"]
+[ext_resource type="Script" path="res://scenes/catalogue/catalogue.gd" id="1_snnaq"]
+[ext_resource type="Texture2D" uid="uid://cn7jmd6e0u0em" path="res://Assets/collectibles/facemask.png" id="2_ey24w"]
+[ext_resource type="Texture2D" uid="uid://b0dgvx473b2ah" path="res://Assets/collectibles/dose1.png" id="3_4ov6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijtfq"]
+atlas = ExtResource("1_l3nmk")
+region = Rect2(0, 0, 190, 160)
+
+[sub_resource type="Animation" id="Animation_x17xg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("book/book_sprite:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 190, 160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("book:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 90)]
+}
+
+[sub_resource type="Animation" id="Animation_ux4c8"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("book/book_sprite:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(380, 0, 190, 160), Rect2(190, 0, 190, 160), Rect2(0, 0, 190, 160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("book:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, 90), Vector2(420, 90)]
+}
+
+[sub_resource type="Animation" id="Animation_5kwhm"]
+resource_name = "flip_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("book/book_sprite:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(570, 0, 190, 160), Rect2(760, 0, 190, 160), Rect2(950, 0, 190, 160), Rect2(1140, 0, 190, 160), Rect2(570, 0, 190, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_2r2fg"]
+resource_name = "flip_right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("book/book_sprite:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(570, 0, 190, 160), Rect2(1140, 0, 190, 160), Rect2(950, 0, 190, 160), Rect2(760, 0, 190, 160), Rect2(570, 0, 190, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_x0h2e"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("book/book_sprite:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 190, 160), Rect2(190, 0, 190, 160), Rect2(380, 0, 190, 160), Rect2(570, 0, 190, 160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("book:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(420, 90), Vector2(160, 90)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ls8ej"]
+_data = {
+"RESET": SubResource("Animation_x17xg"),
+"close": SubResource("Animation_ux4c8"),
+"flip_left": SubResource("Animation_5kwhm"),
+"flip_right": SubResource("Animation_2r2fg"),
+"open": SubResource("Animation_x0h2e")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ap0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ixwc"]
 
 [node name="Catalogue" type="CanvasLayer"]
+script = ExtResource("1_snnaq")
+
+[node name="book" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="book_sprite" type="Sprite2D" parent="book"]
+texture = SubResource("AtlasTexture_ijtfq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="book"]
+root_node = NodePath("../..")
+autoplay = "open"
+libraries = {
+"": SubResource("AnimationLibrary_ls8ej")
+}
+
+[node name="Page 1" type="MarginContainer" parent="book"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -50.0
+offset_right = 56.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="book/Page 1"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="book/Page 1/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ey24w")
+expand_mode = 4
+
+[node name="Button" type="Button" parent="book/Page 1/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ap0t")
+text = "Facemask"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="book/Page 1"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="book/Page 1/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_4ov6c")
+expand_mode = 4
+
+[node name="Button" type="Button" parent="book/Page 1/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ixwc")
+text = "1st Dose"

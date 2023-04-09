@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctofd3c41078d"]
+
+[ext_resource type="PackedScene" uid="uid://c87c0gk1avrl5" path="res://scenes/chapters/chapter.tscn" id="1_6j24a"]
+[ext_resource type="PackedScene" uid="uid://cp3chuqg6rggf" path="res://scenes/camera_segment/camera_segment.tscn" id="2_f6rhi"]
+[ext_resource type="PackedScene" uid="uid://de7cmguomdpu7" path="res://scenes/nurse/nurse.tscn" id="3_pfo4k"]
+[ext_resource type="PackedScene" uid="uid://dhhoi347qsiq2" path="res://scenes/collectible/collectible.tscn" id="4_x5f6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk6ab"]
+size = Vector2(40, 32)
+
+[node name="Chapter1" instance=ExtResource("1_6j24a")]
+
+[node name="Virus" parent="NavigationRegion2D" index="1"]
+attack_damage = 0.0
+
+[node name="CameraSegment" parent="." index="5" instance=ExtResource("2_f6rhi")]
+
+[node name="CameraSegment2" parent="." index="6" instance=ExtResource("2_f6rhi")]
+position = Vector2(480, 88)
+
+[node name="Nurse" parent="." index="7" node_paths=PackedStringArray("dialogue_area") instance=ExtResource("3_pfo4k")]
+position = Vector2(608, 160)
+dialogue_area = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nurse" index="4"]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_uk6ab")
+
+[node name="Collectible" parent="." index="8" instance=ExtResource("4_x5f6f")]
+position = Vector2(120, 128)
+paper_resource = "res://scenes/paper/smallpox_paper.tscn"

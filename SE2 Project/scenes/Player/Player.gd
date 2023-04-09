@@ -5,7 +5,7 @@ signal damaged
 signal gameOver
 signal collected
 
-var health = PlayerStats.compute_max_health()
+@onready var health = PlayerStats.max_health
 var is_dash_ready : bool
 var wall_direction : Vector2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -16,7 +16,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var states = $state_manager
 @onready var face_direction : int = 1
 @onready var original_parent = get_parent()
+
+
 func _ready() -> void:
+	collected.connect(PlayerStats.collectibles_append)
+	PlayerStats.health_increased.connect(player_health_increased)
+	if "facemask" in PlayerStats.collectibles:
+		$Sprite2D.texture = load("res://Assets/character/character_sheet_masked.png")
 	states.init()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -57,8 +63,11 @@ func player_damaged(damage : float) -> void:
 	print(health)
 	pass
 	
-func player_collected(collectable):
-	PlayerStats.collectibles.append(collectable)
-	emit_signal("collected")
-	if collectable == "facemask":
+func player_collected(collectible):
+	emit_signal("collected", collectible)
+	if collectible == "facemask":
 		$Sprite2D.texture = load("res://Assets/character/character_sheet_masked.png")
+
+func player_health_increased(health):
+	self.health = health
+

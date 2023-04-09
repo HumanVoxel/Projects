@@ -3,6 +3,9 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$paper/MarginContainer/RichTextLabel.grab_focus()
+	var new_paused_state = not get_tree().paused
+	get_tree().paused = new_paused_state
+	visible = new_paused_state
 	pass # Replace with function body.
 
 func _input(event):

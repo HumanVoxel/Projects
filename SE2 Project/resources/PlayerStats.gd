@@ -1,10 +1,14 @@
 extends Node
 
+signal player_collected
+signal health_increased
+
 var total_deaths : int
 var doses : Array = []
-var collectibles : Array = ["facemask","dose1","dose2","booster"]
+var collectibles : Array = ["facemask"]
 var total_playtime : int
-var max_health : float
+var max_health : float = 10
+var total_doses : float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,14 +21,25 @@ func _process(delta):
 	pass
 
 func compute_max_health() -> float:
-	max_health = 0
+	max_health = 10
+	total_doses = 0
 	for col in collectibles:
 		if col == "facemask":
 			max_health += 10
 		elif col == "dose1":
-			max_health += 25
-		elif col == "dose2":
-			max_health += 35
-		elif col == "booster":
 			max_health += 30
+			total_doses += 1
+		elif col == "dose2":
+			max_health += 30
+			total_doses += 1
+		elif col == "booster":
+			max_health += 20
+			total_doses += 1
 	return max_health
+
+func collectibles_append(collectible : String) -> void:
+	collectibles.append(collectible)
+	compute_max_health()
+	emit_signal("player_collected", collectible)
+	if (collectible == "facemask") || (collectible == "dose1") || (collectible == "dose2") || (collectible == "booster"):
+		emit_signal("health_increased", max_health)
