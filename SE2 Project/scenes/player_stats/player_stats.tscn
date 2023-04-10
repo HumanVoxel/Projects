@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6jfftm6plfg7"]
+
+[ext_resource type="Script" path="res://scenes/player_stats/player_stats.gd" id="1_7rpsj"]
+[ext_resource type="Texture2D" uid="uid://4161m3f6e4aw" path="res://Assets/UI/Free Pack/Free Pixel Paper/Spritesheet/0.png" id="2_lhr2c"]
+[ext_resource type="FontFile" uid="uid://bdmj4ha7mq1um" path="res://Assets/fonts/monogram/ttf/monogram-extended.ttf" id="3_qtsdy"]
+
+[sub_resource type="Animation" id="Animation_kao26"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("paper:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, -180)]
+}
+
+[sub_resource type="Animation" id="Animation_13o4f"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("paper:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(35, 5), Vector2(35, -180)]
+}
+
+[sub_resource type="Animation" id="Animation_202c7"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("paper:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(35, -180), Vector2(35, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_551ir"]
+_data = {
+"RESET": SubResource("Animation_kao26"),
+"close": SubResource("Animation_13o4f"),
+"open": SubResource("Animation_202c7")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc51y"]
+atlas = ExtResource("2_lhr2c")
+region = Rect2(1312, 1440, 128, 128)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4x2s3"]
+
+[node name="player_stats" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_7rpsj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "open"
+libraries = {
+"": SubResource("AnimationLibrary_551ir")
+}
+
+[node name="paper" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99988
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_tc51y")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="paper"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="paper/MarginContainer"]
+layout_mode = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(0.227451, 0.172549, 0.117647, 1)
+theme_override_fonts/normal_font = ExtResource("3_qtsdy")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4x2s3")
+bbcode_enabled = true

@@ -3,8 +3,7 @@ extends Node
 signal player_collected
 signal health_increased
 
-var total_deaths : int
-var doses : Array = []
+var total_deaths : int = 0
 var collectibles : Array = ["facemask"]
 var total_playtime : int
 var max_health : float = 10
@@ -14,11 +13,6 @@ var total_doses : float = 0
 func _ready():
 	compute_max_health()
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func compute_max_health() -> float:
 	max_health = 10

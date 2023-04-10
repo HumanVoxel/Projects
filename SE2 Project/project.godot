@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 PlayerStats="*res://resources/PlayerStats.gd"
 Event="*res://resources/Event.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+AudioBus="*res://resources/AudioBus.gd"
 
 [dialogic]
 
@@ -73,7 +74,7 @@ mouse_cursor/custom_image="res://Assets/UI/Cursor.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/gdfxr/plugin.cfg")
 
 [gui]
 

@@ -59,6 +59,7 @@ func player_damaged(damage : float) -> void:
 	health -= damage
 	emit_signal("damaged", health, damage)
 	if health <= 0:
+		PlayerStats.total_deaths += 1
 		emit_signal("gameOver")
 	print(health)
 	pass

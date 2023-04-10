@@ -33,6 +33,13 @@ horizontal_alignment = 1
 
 [node name="Restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Main Menu")
 text = "Restart"
 
+[node name="Main Menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Restart")
+text = "Quit to Main Menu"
+
 [connection signal="button_up" from="VBoxContainer/Restart" to="." method="_on_restart_button_up"]
+[connection signal="button_up" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_button_up"]

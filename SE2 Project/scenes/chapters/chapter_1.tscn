@@ -1,24 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctofd3c41078d"]
+[gd_scene load_steps=9 format=3 uid="uid://dc5x0okfedxps"]
 
 [ext_resource type="PackedScene" uid="uid://c87c0gk1avrl5" path="res://scenes/chapters/chapter.tscn" id="1_6j24a"]
 [ext_resource type="PackedScene" uid="uid://cp3chuqg6rggf" path="res://scenes/camera_segment/camera_segment.tscn" id="2_f6rhi"]
 [ext_resource type="PackedScene" uid="uid://de7cmguomdpu7" path="res://scenes/nurse/nurse.tscn" id="3_pfo4k"]
 [ext_resource type="PackedScene" uid="uid://dhhoi347qsiq2" path="res://scenes/collectible/collectible.tscn" id="4_x5f6f"]
+[ext_resource type="PackedScene" uid="uid://81en6wt25n80" path="res://scenes/grocery_store/convenience_store.tscn" id="5_qs52s"]
+[ext_resource type="PackedScene" uid="uid://dkfwnccod50g6" path="res://scenes/health_centre/health_centre.tscn" id="6_rxlh4"]
+[ext_resource type="PackedScene" uid="uid://x0scta8756v5" path="res://scenes/grocery_store/convenience_store_inside.tscn" id="7_fhhae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk6ab"]
 size = Vector2(40, 32)
 
 [node name="Chapter1" instance=ExtResource("1_6j24a")]
 
-[node name="Virus" parent="NavigationRegion2D" index="1"]
-attack_damage = 0.0
+[node name="grocery_store_inside" parent="." index="3" instance=ExtResource("7_fhhae")]
+position = Vector2(24, 216)
+teleport_marker = NodePath("../convenience_store/Marker2D")
 
-[node name="CameraSegment" parent="." index="5" instance=ExtResource("2_f6rhi")]
+[node name="Marker2D" type="Marker2D" parent="grocery_store_inside" index="4"]
+position = Vector2(64, 136)
 
-[node name="CameraSegment2" parent="." index="6" instance=ExtResource("2_f6rhi")]
+[node name="CameraSegment" parent="." index="6" instance=ExtResource("2_f6rhi")]
+
+[node name="CameraSegment2" parent="." index="7" instance=ExtResource("2_f6rhi")]
 position = Vector2(480, 88)
 
-[node name="Nurse" parent="." index="7" node_paths=PackedStringArray("dialogue_area") instance=ExtResource("3_pfo4k")]
+[node name="Nurse" parent="." index="8" node_paths=PackedStringArray("dialogue_area") instance=ExtResource("3_pfo4k")]
 position = Vector2(608, 160)
 dialogue_area = NodePath("CollisionShape2D")
 
@@ -26,6 +33,16 @@ dialogue_area = NodePath("CollisionShape2D")
 position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_uk6ab")
 
-[node name="Collectible" parent="." index="8" instance=ExtResource("4_x5f6f")]
+[node name="Collectible" parent="." index="9" instance=ExtResource("4_x5f6f")]
 position = Vector2(120, 128)
 paper_resource = "res://scenes/paper/smallpox_paper.tscn"
+
+[node name="convenience_store" parent="." index="10" instance=ExtResource("5_qs52s")]
+position = Vector2(104, 128)
+teleport_marker = NodePath("../grocery_store_inside/Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="convenience_store" index="2"]
+position = Vector2(40, 32)
+
+[node name="health_centre" parent="." index="11" instance=ExtResource("6_rxlh4")]
+position = Vector2(400, 96)

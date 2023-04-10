@@ -27,7 +27,7 @@ size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Chapter 1")
 text = "Chapter 2
 
-\"Grocery\""
+\"Convenience Store\""
 
 [node name="Chapter 3" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -35,7 +35,7 @@ size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Chapter 2")
 text = "Chapter 3
 
-\"Coming Home\""
+\"Homecoming\""
 
 [connection signal="pressed" from="HBoxContainer/Chapter 1" to="." method="_on_chapter_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/Chapter 2" to="." method="_on_chapter_2_pressed"]

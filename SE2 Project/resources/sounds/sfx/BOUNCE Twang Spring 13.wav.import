@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r8rmw73jqo8r"
+path="res://.godot/imported/BOUNCE Twang Spring 13.wav-9e677d6951dc445d56b79d8d79a53eb2.sample"
+
+[deps]
+
+source_file="res://resources/sounds/sfx/BOUNCE Twang Spring 13.wav"
+dest_files=["res://.godot/imported/BOUNCE Twang Spring 13.wav-9e677d6951dc445d56b79d8d79a53eb2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

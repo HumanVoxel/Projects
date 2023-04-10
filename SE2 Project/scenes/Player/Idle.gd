@@ -14,6 +14,9 @@ extends State
 @onready var climb_state : State = get_node(climb_node)
 
 func enter() -> void:
+	var ground_sound = AudioBus.play_sound_2d(AudioBus.GROUNDED)
+	add_child(ground_sound)
+	ground_sound.play()
 	owner.velocity = Vector2.ZERO
 	print('is-idle')
 
