@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/pause/pause.gd" id="1_vs1fg"]
 
 [node name="Pause" type="CanvasLayer"]
-process_mode = 3
+process_mode = 2
 layer = 0
 script = ExtResource("1_vs1fg")
 

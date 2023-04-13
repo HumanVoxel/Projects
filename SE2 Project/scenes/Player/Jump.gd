@@ -27,9 +27,10 @@ extends State
 var wall_direction
 
 func enter():
-	var jump_sound = AudioBus.play_sound_2d(AudioBus.JUMP)
-	add_child(jump_sound)
-	jump_sound.play()
+#	var jump_sound = AudioBus.play_sound_2d(AudioBus.JUMP)
+#	add_child(jump_sound)
+#	jump_sound.play()
+	AudioBus.play_sound(AudioBus.JUMP)
 	owner.velocity.y = jump_velocity
 	print(owner.face_direction)
 	#owner.velocity.y = -jump_height

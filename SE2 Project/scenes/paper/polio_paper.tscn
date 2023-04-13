@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cophobhuemgmp"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_3rc2d"]
+[ext_resource type="Texture2D" uid="uid://cjga1lait25qo" path="res://Assets/UI/virus images/polio/Hospital respiratory ward in Los Angeles, 1952.jpg" id="2_iccd3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_77tpv"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="polio_paper" instance=ExtResource("1_3rc2d")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Polio"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(150, 100)
+texture = ExtResource("2_iccd3")
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Polio also known as poliomyelitis, a highly infectious viral disease that attacks the nervous system and can cause paralysis, has affected millions of people worldwide since the beginning of the 20th century. According to the World Health Organization (WHO), prior to the introduction of polio vaccines, the disease caused an estimated 16 million cases of paralysis annually.
+
+The United States experienced several major polio epidemics in the 20th century, with the worst outbreak occurring in 1952. During that year, over 58,000 cases of polio were reported, resulting in 3,000 deaths and 21,000 cases of paralysis.
+
+Polio is a viral disease that primarily affects the nervous system and can cause paralysis. The history of polio dates back to ancient times, with depictions of people with symptoms similar to polio found in Egyptian carvings and Indian manuscripts.
+
+However, it wasn't until the 20th century that polio became a major public health concern. In the early 1900s, polio outbreaks began to occur in Europe and North America, affecting mostly children. In the 1940s and 1950s, polio reached epidemic proportions in the United States, with tens of thousands of cases reported each year.
+
+In 1955, the first effective polio vaccine, developed by Dr. Jonas Salk, was introduced. This vaccine, which was administered as an injection, led to a dramatic decrease in polio cases in the United States and other countries.
+
+In 1961, a new type of polio vaccine, developed by Dr. Albert Sabin, was introduced. This vaccine, which was administered orally, was easier to administer and helped to eradicate polio in many parts of the world.
+
+The history of polio is marked by the development of effective vaccines and a concerted effort by the global health community to eradicate the disease. While polio still poses a threat in some parts of the world, the development of effective vaccines and public health interventions have helped to greatly reduce the impact of this debilitating disease.
+
+The symptoms of polio can vary from mild to severe and can include fever, sore throat, headache, vomiting, fatigue, stiffness in the neck and back muscle pain and spasm, weakness or paralysis (most commonly in the legs).
+
+In some cases, polio can lead to permanent paralysis or even death. The most severe form of polio is called paralytic polio, which occurs when the virus attacks the nerves that control muscles, leading to paralysis.
+
+Polio is most commonly spread through contact with infected fecal matter, usually through contaminated water or food. The virus can also be spread through contact with respiratory secretions, such as saliva or mucus.
+
+There is no cure for polio, but vaccines are available to prevent infection. The polio vaccine is typically administered as a series of shots during childhood and is highly effective at preventing polio."
+label_settings = SubResource("LabelSettings_77tpv")
+horizontal_alignment = 1
+autowrap_mode = 3

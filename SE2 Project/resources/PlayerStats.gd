@@ -4,7 +4,7 @@ signal player_collected
 signal health_increased
 
 var total_deaths : int = 0
-var collectibles : Array = ["facemask"]
+var collectibles : Array = []
 var total_playtime : int
 var max_health : float = 10
 var total_doses : float = 0
@@ -33,7 +33,6 @@ func compute_max_health() -> float:
 
 func collectibles_append(collectible : String) -> void:
 	collectibles.append(collectible)
-	compute_max_health()
 	emit_signal("player_collected", collectible)
 	if (collectible == "facemask") || (collectible == "dose1") || (collectible == "dose2") || (collectible == "booster"):
-		emit_signal("health_increased", max_health)
+		emit_signal("health_increased", compute_max_health())

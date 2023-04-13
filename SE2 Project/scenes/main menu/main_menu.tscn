@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://8ms3ydi7jyri"]
+[gd_scene load_steps=7 format=3 uid="uid://8ms3ydi7jyri"]
 
 [ext_resource type="Script" path="res://scenes/main menu/main_menu.gd" id="1_725wh"]
 [ext_resource type="Shader" path="res://resources/shaders/scroll.gdshader" id="1_m4e7t"]
 [ext_resource type="Texture2D" uid="uid://crmvge16kn2qd" path="res://Assets/environment/City/Background.png" id="2_myynb"]
 [ext_resource type="Texture2D" uid="uid://bys53v4s613i6" path="res://Assets/UI/VirucideLogo.png" id="4_n74j8"]
+[ext_resource type="Theme" uid="uid://b1agldm4pc558" path="res://resources/simple_theme.tres" id="5_m4wlh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2sk4"]
 shader = ExtResource("1_m4e7t")
@@ -56,16 +57,19 @@ alignment = 1
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_m4wlh")
 text = "Play"
 
 [node name="Player_Stats" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_m4wlh")
 text = "Player Stats"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_m4wlh")
 text = "Quit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -16,4 +16,13 @@ func _process(delta):
 func _on_exit_body_entered(body):
 	if body.name == "Player":
 		body.global_position = teleport_marker_node.global_position
+		body.is_indoors = false
+	pass # Replace with function body.
+
+
+func _on_camera_segment_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_camera_segment_body_exited(body):
 	pass # Replace with function body.

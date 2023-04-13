@@ -1,5 +1,6 @@
-[gd_scene load_steps=63 format=3 uid="uid://bu0503ddisnxp"]
+[gd_scene load_steps=65 format=3]
 
+[ext_resource type="PackedScene" uid="uid://81en6wt25n80" path="res://scenes/convenience_store/convenience_store.tscn" id="1_gwyum"]
 [ext_resource type="Texture2D" uid="uid://di0l8h0g2seug" path="res://Assets/environment/CityTileSetTransparent.png" id="1_lpdkl"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_dvmvm"]
@@ -178,6 +179,9 @@ tile_data = PackedInt32Array(0, 6225922, 28, 65536, 6225922, 29, 131072, 6225922
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_oh5y8"]
 tile_data = PackedInt32Array(0, 6488066, 30, 65536, 6488066, 31, 131072, 6488066, 32)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g0dwv"]
+scenes/1/scene = ExtResource("1_gwyum")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cadrd"]
 texture = ExtResource("1_lpdkl")
@@ -22838,6 +22842,7 @@ texture = ExtResource("1_lpdkl")
 [sub_resource type="TileSet" id="TileSet_3yci5"]
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_cadrd")
+sources/0 = SubResource("TileSetScenesCollectionSource_g0dwv")
 pattern_0 = SubResource("TileMapPattern_dvmvm")
 pattern_1 = SubResource("TileMapPattern_x51yt")
 pattern_2 = SubResource("TileMapPattern_ie8tr")

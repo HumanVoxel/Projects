@@ -1,38 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsbgekdghodf"]
+[gd_scene load_steps=4 format=3 uid="uid://dsbgekdghodf"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_3rqmr"]
+[ext_resource type="Texture2D" uid="uid://duw83yllsc70i" path="res://Assets/UI/virus images/influenza/Emergency hospital during 1918 influenza epidemic, Camp Funston, Kansas.jpg" id="2_c83e2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ky01q"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
 [node name="influenza_paper" instance=ExtResource("1_3rqmr")]
 
-[node name="paper" parent="." index="1"]
-offset_left = -125.0
-offset_top = -270.0
-offset_right = 125.0
-offset_bottom = -99.9999
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Influenza"
 
-[node name="RichTextLabel" parent="paper/MarginContainer" index="0"]
-text = "[center]Influenza, commonly known as the flu, is a viral respiratory illness that has been affecting humans for centuries. The history of influenza can be traced back to at least the 16th century, with the first recorded influenza pandemic occurring in 1580.
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(150, 100)
+texture = ExtResource("2_c83e2")
 
-Throughout history, there have been several major influenza pandemics that have caused significant illness and death. The most deadly of these pandemics occurred in 1918, known as the Spanish flu pandemic. This pandemic infected an estimated 500 million people worldwide and resulted in the deaths of between 50 and 100 million people, making it one of the deadliest pandemics in human history.
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "The Spanish flu, also known as the 1918 influenza pandemic, was a deadly global pandemic that occurred during World War I. It is estimated to have infected about one-third of the world's population and caused the deaths of tens of millions of people.
 
-Influenza continued to affect people in the following decades, with additional pandemics occurring in 1957 (Asian flu) and 1968 (Hong Kong flu). In 2009, a new strain of influenza known as H1N1, or swine flu, caused a pandemic that affected millions of people worldwide.
+The spanish flue pandemic occurred before the development of modern vaccines as we know them today. During the time of the Spanish flu, vaccines were not available for the H1N1 strain of the influenza virus that caused the pandemic. In fact, the concept of viral vaccines was still in its early stages of development.
 
-Influenza viruses are known to mutate rapidly, making it difficult to develop long-term immunity to the virus. This is why a new flu vaccine is needed each year to protect against the most prevalent strains of the virus.
+At the time, the understanding of viruses and how they cause diseases was limited, and there were no effective antiviral drugs or vaccines available to combat the influenza virus. The primary methods of dealing with the Spanish flu were supportive care, such as bed rest, hydration, and symptom relief, as well as non-pharmaceutical interventions like quarantine, isolation, and social distancing.
 
-Efforts to prevent and control influenza continue through vaccination campaigns, antiviral medications, and public health measures such as handwashing, social distancing, and wearing masks. While influenza remains a significant public health concern, these efforts have helped to reduce the impact of the virus and prevent widespread pandemics like the Spanish flu.
+It wasn't until many years later, in the 1930s, that researchers and scientists began developing vaccines for influenza. These early vaccines were not as effective as modern vaccines and were primarily used in military settings during World War II. Over the years, advancements in scientific research and technology led to the development of more effective influenza vaccines, which are now routinely used in seasonal influenza vaccination programs.
 
-The symptoms of influenza can vary from person to person, but typically include:
-
-    Fever
-    Chills
-    Cough
-    Sore throat
-    Runny or stuffy nose
-    Muscle or body aches
-    Fatigue
-    Headache
-    Vomiting and diarrhea (more common in children)
-
-Influenza symptoms usually develop suddenly and can be severe. In some cases, influenza can lead to serious complications, such as pneumonia, and can be life-threatening, especially in young children, older adults, and people with weakened immune systems.
-
-Antiviral medications may be prescribed to reduce the severity and duration of symptoms, especially if started early in the course of the illness. Additionally, getting an annual flu vaccine is the best way to prevent getting the flu and reduce the severity of symptoms."
+The experience of the Spanish flu pandemic, along with subsequent influenza pandemics and epidemics, has highlighted the importance of vaccines as a key tool in preventing and controlling infectious diseases. Today, influenza vaccines are widely available and recommended for individuals at risk of complications from influenza, such as the elderly, young children, pregnant women, and individuals with certain underlying health conditions. In the face of the ongoing threat of influenza and other infectious diseases, vaccines remain a critical component of public health efforts to prevent and control the spread of diseases."
+label_settings = SubResource("LabelSettings_ky01q")
+horizontal_alignment = 1
+autowrap_mode = 3

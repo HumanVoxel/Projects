@@ -2,8 +2,13 @@ extends Area2D
 
 var camera_2d
 
+@export var zoom : Vector2
+@export var collision_shape : CollisionShape2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if collision_shape:
+		$CollisionShape2D.transform = collision_shape.transform
 	pass # Replace with function body.
 
 
@@ -16,6 +21,8 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		camera_2d = Camera2D.new()
 		camera_2d.enabled = true
+		if zoom:
+			camera_2d.zoom = zoom
 		add_child(camera_2d)
 		if camera_2d.is_current() == false:
 			camera_2d.make_current()

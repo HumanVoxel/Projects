@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhhoi347qsiq2"]
+[gd_scene load_steps=7 format=3 uid="uid://dhhoi347qsiq2"]
 
 [ext_resource type="Script" path="res://Collectible.gd" id="1_fldil"]
-[ext_resource type="Texture2D" uid="uid://bgvj2t0y34vo0" path="res://Assets/collectibles/paper.png" id="2_108to"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g8mf"]
 size = Vector2(16, 16)
@@ -124,7 +123,6 @@ _data = {
 script = ExtResource("1_fldil")
 
 [node name="collectible_sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_108to")
 
 [node name="Player_Detector" type="Area2D" parent="."]
 
@@ -132,6 +130,7 @@ texture = ExtResource("2_108to")
 shape = SubResource("RectangleShape2D_2g8mf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "float"
 libraries = {
 "": SubResource("AnimationLibrary_f1b4k")
 }

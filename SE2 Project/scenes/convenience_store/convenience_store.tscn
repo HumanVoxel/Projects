@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://81en6wt25n80"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://scenes/grocery_store/convenience_store.gd" id="1_fuv8m"]
+[ext_resource type="Script" path="res://scenes/convenience_store/convenience_store.gd" id="1_fuv8m"]
 [ext_resource type="Texture2D" uid="uid://kwbgcdio8gig" path="res://Assets/environment/grocery_store.png" id="2_1wynt"]
 [ext_resource type="Texture2D" uid="uid://dr5gk6lmwvvyy" path="res://Assets/environment/Door1WideOpen.png" id="3_lsi08"]
 

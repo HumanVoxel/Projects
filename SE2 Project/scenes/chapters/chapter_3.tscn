@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://iga7134ustay"]
+
+[ext_resource type="PackedScene" uid="uid://c87c0gk1avrl5" path="res://scenes/chapters/chapter.tscn" id="1_ggy5c"]
+[ext_resource type="Texture2D" uid="uid://d4cfc4sd5p7pi" path="res://Assets/environment/City/Ocean Background.png" id="2_6kcdu"]
+
+[node name="chapter_3" instance=ExtResource("1_ggy5c")]
+
+[node name="TextureRect" parent="GameLevel/Background" index="0"]
+offset_left = -120.0
+offset_top = -8.0
+offset_right = 472.0
+offset_bottom = 200.0
+texture = ExtResource("2_6kcdu")
+stretch_mode = 1
+
+[node name="convenience_store" parent="GameLevel" index="7"]
+position = Vector2(112, 128)
+
+[node name="chapter_complete_area" parent="GameLevel" index="11"]
+position = Vector2(616, 136)
+chapter_resource = ""
+
+[node name="Player" parent="." index="2"]
+position = Vector2(96, 616)

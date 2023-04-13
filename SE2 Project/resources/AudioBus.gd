@@ -31,6 +31,7 @@ const SPLAT = preload("res://resources/sounds/sfx/SPLAT Crush 01.wav")
 func _ready():
 	global_music.bus = "Music"
 	add_child(global_music)
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	pass # Replace with function body.
 
 

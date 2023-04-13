@@ -9,6 +9,7 @@ signal collected
 var is_dash_ready : bool
 var wall_direction : Vector2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var  is_indoors : bool = false
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
@@ -32,8 +33,6 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall():
 		wall_direction = -get_wall_normal()
 			
-	if Input.is_action_just_pressed("attack"):
-		animation_player.play("attack")
 	update_animation_parameters()
 	states.physics_process(delta)
 		
@@ -47,12 +46,6 @@ func update_animation_parameters() -> void:
 	animation_tree.set("parameters/jump/blend_position", (face_direction if velocity.x == 0 else velocity.x))
 	animation_tree.set("parameters/walk/blend_position", velocity.x)
 	pass
-
-
-func _on_hostile_detector_area_entered(area):
-	print("touched hostile")
-#	queue_free()jjjj
-	pass # Replace with function body.
 	
 
 func player_damaged(damage : float) -> void:
@@ -71,4 +64,3 @@ func player_collected(collectible):
 
 func player_health_increased(health):
 	self.health = health
-

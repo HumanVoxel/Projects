@@ -1,15 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://3sdpi3s3igtc"]
+[gd_scene load_steps=6 format=3 uid="uid://3sdpi3s3igtc"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_v3u77"]
+[ext_resource type="Texture2D" uid="uid://bsswpghd3jb6g" path="res://Assets/UI/virus images/smallpox/Rash of pustules on the hand of a patient.jpg" id="2_xr6se"]
+[ext_resource type="Texture2D" uid="uid://cdxbeaib7d3ed" path="res://Assets/UI/virus images/smallpox/Vaccination: Dr Jenner performing his first vaccination, 1796. Oil painting by Ernest Board..jpg" id="3_i2v1u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mu6bm"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_boeb7"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
 
 [node name="smallpox_paper" instance=ExtResource("1_v3u77")]
 
-[node name="RichTextLabel" parent="paper/MarginContainer" index="0"]
-text = "[center]Smallpox is an infectious disease caused by the variola virus. The history of smallpox is a long and devastating one. The disease is estimated to have killed hundreds of millions of people throughout history and played a significant role in shaping the course of human history.
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
 
-In 1796, the English physician Edward Jenner developed the first successful vaccine for smallpox, which involved inoculating people with a milder form of the disease called cowpox. This discovery revolutionized public health and led to the eventual eradication of smallpox.
+[node name="ScrollContainer" parent="paper/MarginContainer" index="0"]
+clip_contents = false
 
-Smallpox vaccination campaigns began in the early 1800s and continued throughout the 20th century. The World Health Organization (WHO) launched a global smallpox eradication campaign in 1967, which was successful in eradicating the disease by 1980. This achievement was a major milestone in the history of public health, as smallpox was the first disease to be eradicated through human efforts.
+[node name="VBoxContainer" parent="paper/MarginContainer/ScrollContainer" index="0"]
+clip_contents = false
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Smallpox"
+label_settings = SubResource("LabelSettings_mu6bm")
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = ExtResource("2_xr6se")
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "    Smallpox is an infectious disease caused by the variola virus. The history of smallpox is a long and devastating one. The disease is estimated to have killed hundreds of millions of people throughout history and played a significant role in shaping the course of human history.
+
+    In 1796, the English physician Edward Jenner developed the first successful vaccine for smallpox, which involved inoculating people with a milder form of the disease called cowpox. This discovery revolutionized public health and led to the eventual eradication of smallpox.
+"
+label_settings = SubResource("LabelSettings_boeb7")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_i2v1u")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="4"]
+layout_mode = 2
+text = "Smallpox vaccination campaigns began in the early 1800s and continued throughout the 20th century. The World Health Organization (WHO) launched a global smallpox eradication campaign in 1967, which was successful in eradicating the disease by 1980. This achievement was a major milestone in the history of public health, as smallpox was the first disease to be eradicated through human efforts.
 
 Today, smallpox is no longer a public health threat, and routine vaccination against the disease is no longer necessary. However, the virus is still stored in high-security laboratories for research purposes, and there is concern about the possibility of the virus being used as a bioterrorism agent.
 
@@ -18,3 +62,6 @@ Symptoms of smallpox typically begin with a high fever, headache, and body aches
 Over the course of a week, the pustules begin to scab over and form crusts. After about two to four weeks, the scabs fall off, leaving pitted scars. Smallpox can be fatal, with a mortality rate of up to 30 percent in unvaccinated individuals.
 
 It is important to note that smallpox is highly contagious and can spread easily from person to person through respiratory droplets or contact with bodily fluids or contaminated objects. If you suspect you or someone you know may have smallpox, seek medical attention immediately and follow appropriate isolation and quarantine measures to prevent further spread of the virus."
+label_settings = SubResource("LabelSettings_boeb7")
+horizontal_alignment = 1
+autowrap_mode = 3

@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 @export var dialogue_resource : DialogueResource
 @export var dialogue_start : String = "start"
-@export var dialogue_area : CollisionShape2D
+@export var dialogue_area_shape : CollisionShape2D
 
 var player_in_area : bool = false
 var is_talking : bool = false
 
 func _ready():
-	dialogue_area.reparent($dialogue_area)
+	dialogue_area_shape.reparent($dialogue_area)
 	DialogueManager.set_process_mode(PROCESS_MODE_ALWAYS)
 	pass
 	

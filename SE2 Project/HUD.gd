@@ -31,8 +31,9 @@ func _process(delta):
 func update():
 	collectibles = PlayerStats.collectibles
 	healthbar.value = health
-	healthbar.max_value = PlayerStats.max_health
-	healthtext.text = "%s/%s" % [health,PlayerStats.max_health]
+	max_health = PlayerStats.max_health
+	healthbar.max_value = max_health
+	healthtext.text = "%s/%s" % [health,max_health]
 	
 	for col in collectibles:
 		if col == "facemask":
@@ -56,5 +57,6 @@ func player_collected(collectible):
 	update()
 	
 func player_health_increased(health):
-	self.health = health
-	update()
+#	self.health = health
+#	update()
+	pass
