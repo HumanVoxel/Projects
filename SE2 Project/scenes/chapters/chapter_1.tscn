@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://buhvn32w8pufk"]
+[gd_scene load_steps=13 format=3 uid="uid://buhvn32w8pufk"]
 
 [ext_resource type="PackedScene" uid="uid://c87c0gk1avrl5" path="res://scenes/chapters/chapter.tscn" id="1_6j24a"]
 [ext_resource type="PackedScene" uid="uid://dhhoi347qsiq2" path="res://scenes/collectible/collectible.tscn" id="4_x5f6f"]
 [ext_resource type="PackedScene" uid="uid://cfo6g3u2vgd6k" path="res://scenes/moving_platform/moving_platform.tscn" id="5_panxk"]
+[ext_resource type="PackedScene" uid="uid://dmnkyo8k887lc" path="res://scenes/objective/objective.tscn" id="6_wmqlo"]
 [ext_resource type="Texture2D" uid="uid://bgvj2t0y34vo0" path="res://Assets/collectibles/paper.png" id="9_5kt2k"]
 [ext_resource type="Texture2D" uid="uid://cn7jmd6e0u0em" path="res://Assets/collectibles/facemask.png" id="10_ojcka"]
 
@@ -188,3 +189,5 @@ autoplay = "move"
 libraries = {
 "": SubResource("AnimationLibrary_84efr")
 }
+
+[node name="Objective" parent="." index="11" instance=ExtResource("6_wmqlo")]

@@ -21,7 +21,7 @@ func _ready() -> void:
 #	global_position = navigation_points.front()
 	
 func _physics_process(delta):
-	if player.global_position != player_initial_pos and not active:
+	if player.global_position != player_initial_pos and not active and not player.is_indoors:
 		active = true
 		await get_tree().create_timer(grace_period).timeout
 		seek_player = true

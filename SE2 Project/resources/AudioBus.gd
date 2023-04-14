@@ -22,6 +22,7 @@ const VERYLUSH = preload("res://resources/sounds/music/very-lush-and-swag-loop-7
 const HEALTH_CENTRE = preload("res://resources/sounds/ambiance/conveniencestorering-96090.mp3")
 const CONVENIENCE_STORE = preload("res://resources/sounds/ambiance/conveniencestorering-96090.mp3")
 
+const WHISTLE = preload("res://resources/sounds/sfx/metal-whistle-6121_rKZWiMUv.mp3")
 const GAME_OVER = preload("res://resources/sounds/sfx/videogame-death-sound-43894.mp3")
 const SPLAT = preload("res://resources/sounds/sfx/SPLAT Crush 01.wav")
 
