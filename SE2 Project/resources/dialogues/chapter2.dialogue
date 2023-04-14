@@ -1,0 +1,25 @@
+~ start
+TV: Weeks since the region was placed under Enhanced Community Quarantine(ECQ), it has finally been brought down to a General Community Quarantine(GCQ).
+TV: Residents can only step out to access essential goods and services and work in permitted offices or establishments....
+Nathan: It has been two weeks since I've left the apartment.
+Nathan: Man, I'm so hungry.
+Nathan: I should grab something to eat from the fridge.
+=> END
+
+
+~ empty_fridge
+Nathan: Empty?!!
+Nathan: I have to get some food or i'll starve to death.
+=> END
+
+~ mask_interact
+Nathan: I should wear this.
+- Wear the mask
+	Nathan: This will protect me and others.
+	Nathan: It's the responsible thing to do.
+	=> END
+- Don't wear the mask
+	Nathan: I can't breathe properly under this.
+	Nathan: The store is just a few blocks away. I'm just gonna risk it.
+	=> END
+=> END

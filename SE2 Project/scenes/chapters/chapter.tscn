@@ -1,9 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://c87c0gk1avrl5"]
+[gd_scene load_steps=56 format=3 uid="uid://c87c0gk1avrl5"]
 
 [ext_resource type="Script" path="res://scenes/chapters/chapter.gd" id="1_68osk"]
 [ext_resource type="Texture2D" uid="uid://crmvge16kn2qd" path="res://Assets/environment/City/Background.png" id="2_bjyp8"]
 [ext_resource type="Texture2D" uid="uid://cnk4s5hvsfbuu" path="res://Assets/celeste/tilesets/cement.png" id="2_e37ta"]
-[ext_resource type="PackedScene" uid="uid://cp3chuqg6rggf" path="res://scenes/camera_segment/camera_segment.tscn" id="2_lrfbr"]
 [ext_resource type="Texture2D" uid="uid://ch1cgfcqikf7t" path="res://Assets/virus/virus_blocks.png" id="3_uftaq"]
 [ext_resource type="PackedScene" uid="uid://dp08xdnnwn0ff" path="res://scenes/spring_pad/spring_pad.tscn" id="3_v8a24"]
 [ext_resource type="Texture2D" uid="uid://bgp1ssxrg45hf" path="res://Assets/environment/vehicles/spr_estatecar_0.png" id="5_7n4tj"]
@@ -28,6 +27,254 @@
 [ext_resource type="PackedScene" uid="uid://2a2rupvihhre" path="res://scenes/apartment/apartment.tscn" id="23_gd7dp"]
 [ext_resource type="PackedScene" uid="uid://bwk4bm5v74vik" path="res://scenes/apartment/apartment_inside.tscn" id="24_8a7xp"]
 [ext_resource type="PackedScene" uid="uid://diti5x5c35rat" path="res://scenes/chapter_complete/chapter_complete_area.tscn" id="25_dywve"]
+
+[sub_resource type="GDScript" id="GDScript_l8wlm"]
+script/source = "extends Area2D
+
+@export var collision_shape : CollisionShape2D
+@onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
+@export var zoom : Vector2 = Vector2.ZERO
+@export var limit_left : int = -10000000
+@export var limit_top : int = -10000000
+@export var limit_right : int = 10000000
+@export var limit_bottom : int = 10000000
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+#	collision_shape.reparent(self)
+#	if collision_shape:
+#		collision_shape_internal.transform = collision_shape.transform
+#		collision_shape.queue_free()
+#		print(\"trasnformed\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+#		var camera_node = Camera2D.new()
+#		camera_node.enabled = true
+		var camera_node = body.camera_2d
+		if zoom:
+			camera_node.zoom = zoom
+		camera_node.set_limit(SIDE_LEFT, limit_left)
+		camera_node.set_limit(SIDE_TOP, limit_top)
+		camera_node.set_limit(SIDE_RIGHT, limit_right)
+		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
+#		if camera_node.is_current() == false:
+#			camera_node.make_current()
+#		camera_node.reparent(body)
+#		body.add_child(camera_node)
+
+#		print($CollisionShape2D.shape.get_rect().size)
+#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
+#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
+#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
+#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
+		
+		print(\"cameraswitched\")
+	pass # Replace with function body.
+
+
+func _on_body_exited(body):
+#	if body.name == \"Player\":
+#		body.camera_2d.queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qscpl"]
+size = Vector2(3840, 179.5)
+
+[sub_resource type="GDScript" id="GDScript_1y0yx"]
+script/source = "extends Area2D
+
+@export var collision_shape : CollisionShape2D
+@onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
+@export var zoom : Vector2 = Vector2.ZERO
+@export var limit_left : int = -10000000
+@export var limit_top : int = -10000000
+@export var limit_right : int = 10000000
+@export var limit_bottom : int = 10000000
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+#	collision_shape.reparent(self)
+#	if collision_shape:
+#		collision_shape_internal.transform = collision_shape.transform
+#		collision_shape.queue_free()
+#		print(\"trasnformed\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+#		var camera_node = Camera2D.new()
+#		camera_node.enabled = true
+		var camera_node = body.camera_2d
+		if zoom:
+			camera_node.zoom = zoom
+		camera_node.set_limit(SIDE_LEFT, limit_left)
+		camera_node.set_limit(SIDE_TOP, limit_top)
+		camera_node.set_limit(SIDE_RIGHT, limit_right)
+		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
+#		if camera_node.is_current() == false:
+#			camera_node.make_current()
+#		camera_node.reparent(body)
+#		body.add_child(camera_node)
+
+#		print($CollisionShape2D.shape.get_rect().size)
+#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
+#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
+#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
+#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
+		
+		print(\"cameraswitched\")
+	pass # Replace with function body.
+
+
+func _on_body_exited(body):
+#	if body.name == \"Player\":
+#		body.camera_2d.queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g2st"]
+size = Vector2(408, 194)
+
+[sub_resource type="GDScript" id="GDScript_wt5nw"]
+script/source = "extends Area2D
+
+@export var collision_shape : CollisionShape2D
+@onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
+@export var zoom : Vector2 = Vector2.ZERO
+@export var limit_left : int = -10000000
+@export var limit_top : int = -10000000
+@export var limit_right : int = 10000000
+@export var limit_bottom : int = 10000000
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+#	collision_shape.reparent(self)
+#	if collision_shape:
+#		collision_shape_internal.transform = collision_shape.transform
+#		collision_shape.queue_free()
+#		print(\"trasnformed\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+#		var camera_node = Camera2D.new()
+#		camera_node.enabled = true
+		var camera_node = body.camera_2d
+		if zoom:
+			camera_node.zoom = zoom
+		camera_node.set_limit(SIDE_LEFT, limit_left)
+		camera_node.set_limit(SIDE_TOP, limit_top)
+		camera_node.set_limit(SIDE_RIGHT, limit_right)
+		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
+#		if camera_node.is_current() == false:
+#			camera_node.make_current()
+#		camera_node.reparent(body)
+#		body.add_child(camera_node)
+
+#		print($CollisionShape2D.shape.get_rect().size)
+#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
+#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
+#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
+#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
+		
+		print(\"cameraswitched\")
+	pass # Replace with function body.
+
+
+func _on_body_exited(body):
+#	if body.name == \"Player\":
+#		body.camera_2d.queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5mj5"]
+size = Vector2(320, 179.5)
+
+[sub_resource type="GDScript" id="GDScript_l1bo5"]
+script/source = "extends Area2D
+
+@export var collision_shape : CollisionShape2D
+@onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
+@export var zoom : Vector2 = Vector2.ZERO
+@export var limit_left : int = -10000000
+@export var limit_top : int = -10000000
+@export var limit_right : int = 10000000
+@export var limit_bottom : int = 10000000
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+#	collision_shape.reparent(self)
+#	if collision_shape:
+#		collision_shape_internal.transform = collision_shape.transform
+#		collision_shape.queue_free()
+#		print(\"trasnformed\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+#		var camera_node = Camera2D.new()
+#		camera_node.enabled = true
+		var camera_node = body.camera_2d
+		if zoom:
+			camera_node.zoom = zoom
+		camera_node.set_limit(SIDE_LEFT, limit_left)
+		camera_node.set_limit(SIDE_TOP, limit_top)
+		camera_node.set_limit(SIDE_RIGHT, limit_right)
+		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
+#		if camera_node.is_current() == false:
+#			camera_node.make_current()
+#		camera_node.reparent(body)
+#		body.add_child(camera_node)
+
+#		print($CollisionShape2D.shape.get_rect().size)
+#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
+#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
+#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
+#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
+		
+		print(\"cameraswitched\")
+	pass # Replace with function body.
+
+
+func _on_body_exited(body):
+#	if body.name == \"Player\":
+#		body.camera_2d.queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbfxg"]
+size = Vector2(464, 180)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmbso"]
 texture = ExtResource("5_f5kea")
@@ -7990,26 +8237,27 @@ texture_region_size = Vector2i(8, 8)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8pbm"]
 texture = ExtResource("3_uftaq")
 texture_region_size = Vector2i(8, 8)
+0:0/next_alternative_id = 2
+0:0/animation_columns = 2
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:0/0/custom_data_0 = 1.0
+1:0/next_alternative_id = 2
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-1:0/0/custom_data_0 = 1.0
+0:1/next_alternative_id = 2
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:1/0/custom_data_0 = 1.0
+1:1/next_alternative_id = 2
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-1:1/0/custom_data_0 = 1.0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_goniv"]
 scenes/1/scene = ExtResource("3_v8a24")
@@ -8036,89 +8284,63 @@ metadata/_edit_horizontal_guides_ = [180.0]
 
 [node name="Cameras" type="Node2D" parent="."]
 
-[node name="CameraSegment" parent="Cameras" instance=ExtResource("2_lrfbr")]
+[node name="CameraSegment" type="Area2D" parent="Cameras"]
+position = Vector2(160, 88)
+script = SubResource("GDScript_l8wlm")
+zoom = Vector2(1, 1)
+limit_left = 0
+limit_top = 0
+limit_bottom = 180
 
-[node name="CameraSegment2" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(480, 88)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment"]
+position = Vector2(1760, 0)
+shape = SubResource("RectangleShape2D_qscpl")
 
-[node name="CameraSegment3" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(800, 88)
+[node name="CameraSegment2" type="Area2D" parent="Cameras"]
+position = Vector2(192, 598)
+script = SubResource("GDScript_1y0yx")
+zoom = Vector2(1, 1)
 
-[node name="CameraSegment4" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(1120, 88)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment2"]
+position = Vector2(0, 2.25)
+shape = SubResource("RectangleShape2D_5g2st")
 
-[node name="CameraSegment5" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(1440, 88)
+[node name="CameraSegment3" type="Area2D" parent="Cameras"]
+position = Vector2(1016, 648)
+script = SubResource("GDScript_wt5nw")
+zoom = Vector2(1, 1)
 
-[node name="CameraSegment6" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(1760, 88)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment3"]
+position = Vector2(0, 2.25)
+shape = SubResource("RectangleShape2D_x5mj5")
 
-[node name="CameraSegment7" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(2080, 88)
+[node name="CameraSegment4" type="Area2D" parent="Cameras"]
+position = Vector2(2304, 704)
+script = SubResource("GDScript_l1bo5")
+zoom = Vector2(1, 1)
 
-[node name="CameraSegment8" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(2400, 88)
-
-[node name="CameraSegment9" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(2720, 88)
-
-[node name="CameraSegment10" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(3040, 88)
-
-[node name="CameraSegment11" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(3360, 88)
-
-[node name="CameraSegment12" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(3680, 88)
-
-[node name="CameraSegment13" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(160, -92)
-
-[node name="CameraSegment14" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(480, -92)
-
-[node name="CameraSegment15" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(800, -92)
-
-[node name="CameraSegment16" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(1120, -92)
-
-[node name="CameraSegment17" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(1440, -92)
-
-[node name="CameraSegment18" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(1760, -92)
-
-[node name="CameraSegment19" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(2080, -92)
-
-[node name="CameraSegment20" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(2400, -92)
-
-[node name="CameraSegment21" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(2720, -92)
-
-[node name="CameraSegment22" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(3040, -92)
-
-[node name="CameraSegment23" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(3360, -92)
-
-[node name="CameraSegment24" parent="Cameras" instance=ExtResource("2_lrfbr")]
-position = Vector2(3680, -92)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment4"]
+position = Vector2(0, 2.25)
+shape = SubResource("RectangleShape2D_hbfxg")
 
 [node name="GameLevel" type="Node2D" parent="."]
 
-[node name="Background" type="CanvasLayer" parent="GameLevel"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="GameLevel"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="GameLevel/ParallaxLayer"]
+scroll_base_scale = Vector2(1.047, 1.047)
+
+[node name="Background" type="CanvasLayer" parent="GameLevel/ParallaxLayer/ParallaxBackground"]
 layer = -2
 
-[node name="TextureRect" type="TextureRect" parent="GameLevel/Background"]
+[node name="TextureRect" type="TextureRect" parent="GameLevel/ParallaxLayer/ParallaxBackground"]
+modulate = Color(0.941176, 0.941176, 0.941176, 1)
 offset_left = -464.0
 offset_top = -144.0
 offset_right = 1136.0
 offset_bottom = 176.0
 texture = ExtResource("2_bjyp8")
-stretch_mode = 2
+stretch_mode = 1
 
 [node name="world_tiles" type="TileMap" parent="GameLevel"]
 tile_set = SubResource("TileSet_syhta")
@@ -8202,7 +8424,14 @@ layer_5/tile_data = PackedInt32Array()
 [node name="platforms8x8" type="TileMap" parent="GameLevel" groups=["environment"]]
 tile_set = SubResource("TileSet_hlc50")
 format = 2
-layer_0/tile_data = PackedInt32Array(1441792, 196608, 0, 1441793, 0, 0, 1441794, 131072, 0, 1441795, 65536, 0, 1441796, 65536, 0, 1441797, 196608, 0, 1441798, 196608, 0, 1441799, 131072, 0, 1441800, 196608, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 196608, 0, 1441804, 196608, 0, 1441805, 0, 0, 1441806, 65536, 0, 1441807, 65536, 0, 1441808, 196608, 0, 1441809, 196608, 0, 1441810, 65536, 0, 1441811, 0, 0, 1441812, 65536, 0, 1441813, 131072, 0, 1441814, 0, 0, 1441815, 196608, 0, 1441816, 196608, 0, 1441817, 196608, 0, 1441818, 65536, 0, 1441819, 196608, 0, 1441820, 131072, 0, 1441821, 131072, 0, 1441822, 65536, 0, 1441823, 131072, 0, 1441824, 196608, 0, 1441825, 0, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 65536, 0, 1441829, 65536, 0, 1441830, 196608, 0, 1441831, 0, 0, 1441832, 196608, 0, 1441833, 65536, 0, 1441834, 131072, 0, 1441835, 0, 0, 1441836, 0, 0, 1441837, 131072, 0, 1441838, 0, 0, 1441839, 0, 0, 1441840, 196608, 0, 1441841, 65536, 0, 1441842, 131072, 0, 1441843, 131072, 0, 1441844, 131072, 0, 1441845, 131072, 0, 1441846, 0, 0, 1441847, 131072, 0, 1441848, 196608, 0, 1441849, 131072, 0, 1441850, 131072, 0, 1441851, 131072, 0, 1441852, 0, 0, 1441853, 131072, 0, 1441854, 0, 0, 1441855, 0, 0, 1441856, 65536, 0, 1441857, 65536, 0, 1441858, 131072, 0, 1441859, 131072, 0, 1441860, 0, 0, 1441861, 196608, 0, 1441862, 131072, 0, 1441863, 131072, 0, 1441864, 65536, 0, 1441865, 65536, 0, 1441866, 0, 0, 1441867, 65536, 0, 1441868, 65536, 0, 1441869, 0, 0, 1441870, 196608, 0, 1441871, 131072, 0, 65535, 0, 0, 131071, 196608, 0, 196607, 65536, 0, 262143, 196608, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 131072, 0, 589823, 0, 0, 655359, 131072, 0, 720895, 131072, 0, 786431, 196608, 0, 851967, 131072, 0, 917503, 65536, 0, 983039, 65536, 0, 1048575, 131072, 0, 1114111, 131072, 0, 1179647, 0, 0, 1245183, 131072, 0, 1310719, 131072, 0, 1376255, 196608, 0, 1441791, 196608, 0, 1507327, 65536, 0, 1441872, 65536, 0, 1376336, 131072, 0, 1310800, 131072, 0, 1245264, 65536, 0, 1179728, 0, 0, 1114192, 65536, 0, 1048656, 196608, 0, 983120, 65536, 0, 917584, 196608, 0, 852048, 0, 0, 786512, 65536, 0, 720976, 0, 0, 655440, 0, 0, 589904, 0, 0, 524368, 0, 0, 458832, 131072, 0, 393296, 0, 0, 327760, 131072, 0, 262224, 196608, 0, 196688, 65536, 0, 131152, 0, 0, 65616, 65536, 0, 80, 0, 0)
+layer_0/name = "contaminated_blocks"
+layer_1/name = "platform_blocks"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
 metadata/_edit_lock_ = true
 
 [node name="scenetiles" type="TileMap" parent="GameLevel"]
@@ -8225,7 +8454,7 @@ teleport_marker = NodePath("../health_centre/Marker2D")
 position = Vector2(184, 104)
 
 [node name="convenience_store" parent="GameLevel" node_paths=PackedStringArray("player_body") instance=ExtResource("21_s7ssw")]
-position = Vector2(144, 496)
+position = Vector2(-192, 592)
 teleport_marker = NodePath("../convenience_store_inside/Marker2D")
 player_body = NodePath("../../Player")
 
@@ -8258,12 +8487,20 @@ position = Vector2(1680, 560)
 ui_resource = "res://scenes/chapter_complete/chapter_complete.tscn"
 chapter_resource = "res://scenes/chapters/chapter_2.tscn"
 
-[node name="Player" parent="." instance=ExtResource("7_sqq1r")]
-position = Vector2(152, 168)
-
 [node name="Virus" parent="." instance=ExtResource("8_gtoua")]
 position = Vector2(24, -64)
 
+[node name="Player" parent="." instance=ExtResource("7_sqq1r")]
+position = Vector2(152, 168)
+
 [node name="HUD" parent="." instance=ExtResource("11_4y61k")]
 
+[connection signal="body_entered" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="Cameras/CameraSegment2" to="Cameras/CameraSegment2" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="Cameras/CameraSegment2" to="Cameras/CameraSegment2" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="Cameras/CameraSegment3" to="Cameras/CameraSegment3" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="Cameras/CameraSegment3" to="Cameras/CameraSegment3" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="Cameras/CameraSegment4" to="Cameras/CameraSegment4" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="Cameras/CameraSegment4" to="Cameras/CameraSegment4" method="_on_body_exited" flags=18]
 [connection signal="damaged" from="Player" to="HUD" method="_on_player_damaged"]

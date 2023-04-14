@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://scenes/Player/hostile_detector.gd" id="10_tagcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2xxe"]
-size = Vector2(8.71429, 11.4286)
+size = Vector2(8.71429, 14.4286)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ddw5"]
 atlas = ExtResource("10_16gik")
@@ -868,7 +868,7 @@ graph_offset = Vector2(-504.33, 339.252)
 size = Vector2(14, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j23c"]
-size = Vector2(11, 16)
+size = Vector2(12, 16)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -876,7 +876,7 @@ collision_mask = 9
 script = ExtResource("1_7o7i4")
 
 [node name="Player_Collider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.71429)
+position = Vector2(0, 1.21429)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_d2xxe")
 
@@ -894,6 +894,7 @@ climb_node = NodePath("../Climb")
 
 [node name="Run" type="Node" parent="state_manager"]
 script = ExtResource("4_kcmyh")
+SPEED = 100.0
 idle_node = NodePath("../Idle")
 jump_node = NodePath("../Jump")
 dash_node = NodePath("../Dash")
@@ -902,6 +903,7 @@ climb_node = NodePath("../Climb")
 
 [node name="Jump" type="Node" parent="state_manager"]
 script = ExtResource("5_eo2jg")
+air_move_speed = 100.0
 idle_node = NodePath("../Idle")
 run_node = NodePath("../Run")
 jump_node = NodePath(".")
@@ -911,6 +913,7 @@ climb_node = NodePath("../Climb")
 
 [node name="Dash" type="Node" parent="state_manager"]
 script = ExtResource("6_7e4j0")
+dash_speed = 220.0
 idle_node = NodePath("../Idle")
 run_node = NodePath("../Run")
 jump_node = NodePath("../Jump")
@@ -919,6 +922,7 @@ climb_node = NodePath("../Climb")
 
 [node name="Fall" type="Node" parent="state_manager"]
 script = ExtResource("7_6xmw6")
+air_move_speed = 100.0
 idle_node = NodePath("../Idle")
 run_node = NodePath("../Run")
 jump_node = NodePath("../Jump")
@@ -927,6 +931,7 @@ climb_node = NodePath("../Climb")
 
 [node name="Climb" type="Node" parent="state_manager"]
 script = ExtResource("8_egx06")
+climb_speed = 50.0
 idle_node = NodePath("../Idle")
 run_node = NodePath("../Run")
 jump_node = NodePath("../Jump")
@@ -978,7 +983,11 @@ collision_layer = 0
 script = ExtResource("10_tagcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hostile_detector"]
-position = Vector2(0.5, 4)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_0j23c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [connection signal="body_shape_entered" from="hostile_detector" to="hostile_detector" method="_on_body_shape_entered"]

@@ -4,7 +4,6 @@ extends State
 @export var SPEED : float = 300.0
 @export var wall_slide_gravity: float = 10
 @export var climb_speed : float = 10
-@export var climb_jump_speed : float = 30
 var was_on_wall : bool
 @onready var wall_detector : ShapeCast2D = $"../../wall_detector"
 var wall_direction 

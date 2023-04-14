@@ -5,11 +5,13 @@ signal damaged
 signal gameOver
 signal collected
 
+
+
 @onready var health = PlayerStats.max_health
 var is_dash_ready : bool
 var wall_direction : Vector2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var  is_indoors : bool = false
+@export var is_indoors : bool = false
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
@@ -17,7 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var states = $state_manager
 @onready var face_direction : int = 1
 @onready var original_parent = get_parent()
-
+@onready var camera_2d : Camera2D = $Camera2D
 
 func _ready() -> void:
 	collected.connect(PlayerStats.collectibles_append)
@@ -54,7 +56,6 @@ func player_damaged(damage : float) -> void:
 	if health <= 0:
 		PlayerStats.total_deaths += 1
 		emit_signal("gameOver")
-	print(health)
 	pass
 	
 func player_collected(collectible):
