@@ -3,7 +3,7 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 #	$paper/MarginContainer/ScrollContainer/VBoxContainer/RichTextLabel.grab_focus()
-	AudioBus.play_sound(AudioBus.WHISTLE)
+	AudioBus.play_sound_ambient(AudioBus.WHISTLE)
 	get_tree().paused = true
 	pass # Replace with function body.
 

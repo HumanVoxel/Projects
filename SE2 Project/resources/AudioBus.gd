@@ -1,11 +1,12 @@
 extends Node
 
 
-const JUMP = preload("res://resources/sounds/sfx/Jump.wav")
+const JUMP = preload("res://resources/sounds/sfx/player sounds/zapsplat_foley_stick_or_thin_object_swipe_swoosh_whip_through_air_fast_001_69681.mp3")
 const DASH = preload("res://resources/sounds/sfx/zapsplat_foley_stick_branch_medium_sized_swing_whoosh_swoosh_through_air_003_90354.mp3")
 const CLIMB = preload("res://resources/sounds/sfx/42_Cling_climb_03.wav")
 const PLAYER_HIT = preload("res://resources/sounds/sfx/playerhit-43108.mp3")
 const GROUNDED = preload("res://resources/sounds/sfx/42_Cling_climb_03.wav")
+const HURT = preload("res://resources/sounds/sfx/Hit damage 1.wav")
 
 
 const CHANGE_FOCUS = preload("res://resources/sounds/sfx/Select.wav")
@@ -26,6 +27,9 @@ const WHISTLE = preload("res://resources/sounds/sfx/metal-whistle-6121_rKZWiMUv.
 const GAME_OVER = preload("res://resources/sounds/sfx/videogame-death-sound-43894.mp3")
 const SPLAT = preload("res://resources/sounds/sfx/SPLAT Crush 01.wav")
 
+const BUBBLE_ENTER = preload("res://resources/sounds/sfx/bubble_booster/Bubble heavy 1.wav")
+const BUBBLE_POP = preload("res://resources/sounds/sfx/bubble_booster/Bubble 1.wav")
+
 @onready var global_music : AudioStreamPlayer = AudioStreamPlayer.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -36,7 +40,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func play_sound(sound):
+func play_sound_ambient(sound):
 	var audioStreamPlayer = OTAudioPlayer.new()
 	audioStreamPlayer.name = sound.resource_path.get_file().trim_suffix('.tres')
 	audioStreamPlayer.stream = sound as AudioStream
@@ -46,6 +50,16 @@ func play_sound(sound):
 	await audioStreamPlayer.finished
 	audioStreamPlayer.queue_free()
 	
+func play_sound_fx(sound):
+	var audioStreamPlayer = OTAudioPlayer.new()
+	audioStreamPlayer.name = sound.resource_path.get_file().trim_suffix('.tres')
+	audioStreamPlayer.stream = sound as AudioStream
+	audioStreamPlayer.bus = "SoundEffects"
+	add_child(audioStreamPlayer)
+	audioStreamPlayer.play()
+	await audioStreamPlayer.finished
+	audioStreamPlayer.queue_free()
+
 func play_sound_2d(sound) -> OTAudioPlayer2D:
 	var audioStreamPlayer2D = OTAudioPlayer2D.new()
 	audioStreamPlayer2D.name = sound.resource_path.get_file().trim_suffix('.tres')

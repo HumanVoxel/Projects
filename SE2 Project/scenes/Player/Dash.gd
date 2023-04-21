@@ -23,7 +23,7 @@ func enter() -> void:
 #	var dash_sound = AudioBus.play_sound_2d(AudioBus.DASH)
 #	add_child(dash_sound)
 #	dash_sound.play()
-	AudioBus.play_sound(AudioBus.DASH)
+	AudioBus.play_sound_fx(AudioBus.DASH)
 	dash_timer = get_tree().create_timer(dash_time)
 	owner.velocity.y = 0
 	dash_direction = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down")).normalized()

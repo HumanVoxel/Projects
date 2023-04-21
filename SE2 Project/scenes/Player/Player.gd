@@ -9,6 +9,7 @@ signal collected
 
 @onready var health = PlayerStats.max_health
 var is_dash_ready : bool
+var is_wearing_mask : bool
 var wall_direction : Vector2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var is_indoors : bool = false
@@ -32,6 +33,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	states.input(event)
 
 func _physics_process(delta: float) -> void:
+	update_sprite()
 	if is_on_wall():
 		wall_direction = -get_wall_normal()
 			
@@ -53,6 +55,7 @@ func update_animation_parameters() -> void:
 func player_damaged(damage : float) -> void:
 	health -= damage
 	emit_signal("damaged", health, damage)
+	AudioBus.play_sound_fx(AudioBus.HURT)
 	if health <= 0:
 		PlayerStats.total_deaths += 1
 		emit_signal("gameOver")
@@ -61,7 +64,20 @@ func player_damaged(damage : float) -> void:
 func player_collected(collectible):
 	emit_signal("collected", collectible)
 	if collectible == "facemask":
-		$Sprite2D.texture = load("res://Assets/character/character_sheet_masked.png")
+		is_wearing_mask = true
+
 
 func player_health_increased(health):
 	self.health = health
+
+func update_sprite():
+	if is_wearing_mask:
+		if is_dash_ready:
+			$Sprite2D.texture = load("res://Assets/character/character_masked_dash_ready.png")
+		else:
+			$Sprite2D.texture = load("res://Assets/character/character_masked_dash_not_ready.png")
+	else:
+		if is_dash_ready:
+			$Sprite2D.texture = load("res://Assets/character/character_dash_ready.png")
+		else:
+			$Sprite2D.texture = load("res://Assets/character/character_dash_not_ready.png")

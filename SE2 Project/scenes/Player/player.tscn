@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://b4rkgq03fu6ha"]
+[gd_scene load_steps=107 format=3 uid="uid://b4rkgq03fu6ha"]
 
 [ext_resource type="Script" path="res://scenes/Player/Player.gd" id="1_7o7i4"]
 [ext_resource type="Script" path="res://scenes/Player/state_manager.gd" id="2_x33hv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/Player/Dash.gd" id="6_7e4j0"]
 [ext_resource type="Script" path="res://scenes/Player/Fall.gd" id="7_6xmw6"]
 [ext_resource type="Script" path="res://scenes/Player/Climb.gd" id="8_egx06"]
+[ext_resource type="Script" path="res://scenes/Player/Super_Dash.gd" id="9_eao3i"]
 [ext_resource type="Texture2D" uid="uid://bgav71mscy2cb" path="res://Assets/character/character_sheet.png" id="10_16gik"]
 [ext_resource type="Texture2D" uid="uid://dfeltb7pivi0l" path="res://Assets/character/character_sheet2.png" id="10_qmush"]
 [ext_resource type="Script" path="res://scenes/Player/hostile_detector.gd" id="10_tagcr"]
@@ -880,9 +881,10 @@ position = Vector2(0, 1.21429)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_d2xxe")
 
-[node name="state_manager" type="Node" parent="."]
+[node name="state_manager" type="Node" parent="." node_paths=PackedStringArray("super_dash_state")]
 script = ExtResource("2_x33hv")
 starting_state = NodePath("Idle")
+super_dash_state = NodePath("Super_Dash")
 
 [node name="Idle" type="Node" parent="state_manager"]
 script = ExtResource("3_vnao7")
@@ -937,6 +939,15 @@ run_node = NodePath("../Run")
 jump_node = NodePath("../Jump")
 dash_node = NodePath("../Dash")
 fall_node = NodePath("../Fall")
+
+[node name="Super_Dash" type="Node" parent="state_manager"]
+script = ExtResource("9_eao3i")
+idle_node = NodePath("../Idle")
+run_node = NodePath("../Run")
+jump_node = NodePath("../Jump")
+dash_node = NodePath("../Dash")
+fall_node = NodePath("../Fall")
+climb_node = NodePath("../Climb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false

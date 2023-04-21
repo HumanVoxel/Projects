@@ -17,7 +17,7 @@ func enter() -> void:
 #	var ground_sound = AudioBus.play_sound_2d(AudioBus.GROUNDED)
 #	add_child(ground_sound)
 #	ground_sound.play()
-	AudioBus.play_sound(AudioBus.GROUNDED)
+	AudioBus.play_sound_fx(AudioBus.GROUNDED)
 	owner.velocity = Vector2.ZERO
 	print('is-idle')
 

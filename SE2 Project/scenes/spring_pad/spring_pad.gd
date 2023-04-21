@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@export var spring_force : float = 300 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,4 +14,5 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		$AnimatedSprite2D.play("default")
+		body.velocity = global_position.direction_to($Marker2D.global_position) * spring_force
 	pass # Replace with function body.

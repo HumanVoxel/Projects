@@ -6,10 +6,11 @@ var player_in_area : bool = false
 @export var player_body : CharacterBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$U.hide()
 	pass # Replace with function body.
 
 func _unhandled_input(event):
-	if player_in_area and event.is_action_pressed("ui_up"):
+	if player_in_area and event.is_action_pressed("dialogic_default_action"):
 		player_body.global_position = teleport_marker_node.global_position
 		player_body.is_indoors = true
 		pass
@@ -22,6 +23,7 @@ func _on_entrance_body_entered(body):
 		var convenience_store_sound = AudioBus.play_sound_2d(AudioBus.CONVENIENCE_STORE)
 		add_child(convenience_store_sound)
 		convenience_store_sound.play()
+		$U.show()
 	pass # Replace with function body.
 
 
@@ -30,4 +32,5 @@ func _on_entrance_body_exited(body):
 		$convenience_store_sprite/Door1WideOpen.hide()
 		player_in_area = false
 		player_body = null
+		$U.hide()
 	pass # Replace with function body.

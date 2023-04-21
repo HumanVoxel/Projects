@@ -6,8 +6,8 @@ func _ready():
 #	var game_over_sound = AudioBus.play_sound_2d(AudioBus.GAME_OVER)
 #	add_child(game_over_sound)
 #	game_over_sound.play()
-	AudioBus.play_sound(AudioBus.GAME_OVER)
-	AudioBus.play_sound(AudioBus.SPLAT)
+	AudioBus.play_sound_ambient(AudioBus.GAME_OVER)
+	AudioBus.play_sound_ambient(AudioBus.SPLAT)
 	get_tree().paused = true
 	$VBoxContainer/Restart.grab_focus()
 	pass # Replace with function body.

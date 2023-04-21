@@ -1048,8 +1048,8 @@ shape = SubResource("RectangleShape2D_x4efo")
 visible = false
 position = Vector2(160, 112)
 collision_layer = 0
-zoom = Vector2(0.8, 0.8)
 collision_shape = NodePath("CollisionShape2D2")
+zoom = Vector2(0.8, 0.8)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraSegment"]
 position = Vector2(0, -15)

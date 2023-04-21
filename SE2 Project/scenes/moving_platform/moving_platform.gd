@@ -1,9 +1,9 @@
-extends Node2D
+extends AnimatableBody2D
 
 #@export var platform : Node
 @export var timelapse : float
 #@export var path2d_external : Path2D
-
+@onready var collision_shape_2d = $CollisionShape2D
 
 func _ready():
 #	platform.reparent($PathFollow2D)

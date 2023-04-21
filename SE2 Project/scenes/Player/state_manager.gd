@@ -2,6 +2,7 @@ class_name StateManager
 extends Node
 
 @export var starting_state : NodePath
+@export var super_dash_state : State
 var current_state: State
 var previous_state: State
 
@@ -14,13 +15,13 @@ func process(delta: float) -> void:
 	var new_state = current_state.process(delta)
 	if new_state:
 		change_state(new_state)
-		change_animation_state(new_state)
+
 
 func physics_process(delta: float) -> void:
 	var new_state = current_state.physics_process(delta)
 	if new_state:
 		change_state(new_state)
-		change_animation_state(new_state)
+
 	
 	if owner.face_direction == 1 and $"../AnimatedSprite2D".flip_h == true:
 		$"../AnimatedSprite2D".flip_h = false
@@ -32,7 +33,7 @@ func input(event: InputEvent) -> void:
 	var new_state = current_state.input(event)
 	if new_state:
 		change_state(new_state)
-		change_animation_state(new_state)
+
 
 func change_state(new_state: State) -> void:
 	previous_state = current_state
@@ -41,6 +42,7 @@ func change_state(new_state: State) -> void:
 		
 	current_state = new_state
 	current_state.enter()
+	change_animation_state(new_state)
 
 func change_animation_state(new_state: State) -> void:
 	if new_state == $Idle:
@@ -55,6 +57,6 @@ func change_animation_state(new_state: State) -> void:
 		owner.animation_state.travel("fall")
 	elif new_state == $Climb:
 		owner.animation_state.travel("climb")
-	elif new_state == $Climb:
-		owner.animation_state.travel("climb")
+	elif new_state == $Super_Dash:
+		owner.animation_state.travel("dash")
 	pass

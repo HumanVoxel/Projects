@@ -29,7 +29,7 @@ func enter():
 		var wall = wall_detector.get_collider(0)
 		if wall.name == "moving_platform":
 			print("changed parent to ", wall.name)
-			owner.reparent(wall)
+			owner.reparent(wall.collision_shape_2d)
 	print("is-climbing")
 
 func exit():

@@ -16,6 +16,7 @@ func _ready():
 func _on_player_detector_body_entered(body):
 	if body.name == "Player":
 		body.player_collected(name)
+		print("player collected %s" % name)
 		$AnimationPlayer.play("collected")
 		await $AnimationPlayer.animation_finished
 		if scene:
