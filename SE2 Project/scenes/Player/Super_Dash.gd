@@ -2,7 +2,7 @@ extends State
 
 @onready var animation_tree : AnimationTree = $"../../AnimationTree"
 @export var dash_speed : float =  270.0
-@export var dash_delay : float = 1
+@export var dash_delay : float = 0.5
 var dash_direction : Vector2
 @onready var wall_detector = $"../../wall_detector"
 @export var idle_node : NodePath

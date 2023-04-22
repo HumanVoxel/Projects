@@ -17,6 +17,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_right = NodePath("../Chapter 2")
+disabled = true
 text = "Chapter 1
 
 \"Outbreak\""
@@ -25,6 +26,8 @@ text = "Chapter 1
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Chapter 1")
+focus_neighbor_right = NodePath("../Chapter 3")
+disabled = true
 text = "Chapter 2
 
 \"Convenience Store\""
@@ -33,6 +36,7 @@ text = "Chapter 2
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Chapter 2")
+disabled = true
 text = "Chapter 3
 
 \"Homecoming\""

@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu2ib7va121uk"]
+
+[ext_resource type="Texture2D" uid="uid://dptb7jb6x5u0i" path="res://Assets/objects/breakblock/breakblock.png" id="1_mcitk"]
+[ext_resource type="Script" path="res://scenes/break_block/break_block.gd" id="1_owup8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e453"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irwdy"]
+size = Vector2(10, 10)
+
+[sub_resource type="Animation" id="Animation_2nrug"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("breakblocksprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_531mg"]
+resource_name = "break"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("breakblocksprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3j3tp"]
+_data = {
+"RESET": SubResource("Animation_2nrug"),
+"break": SubResource("Animation_531mg")
+}
+
+[node name="break_block" type="StaticBody2D"]
+script = ExtResource("1_owup8")
+regen_time = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0e453")
+
+[node name="player_detector" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_detector"]
+shape = SubResource("RectangleShape2D_irwdy")
+
+[node name="breakblocksprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_mcitk")
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3j3tp")
+}
+
+[connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="player_detector" to="." method="_on_player_detector_body_exited"]

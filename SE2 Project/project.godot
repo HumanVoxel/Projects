@@ -15,6 +15,7 @@ run/main_scene="res://scenes/main menu/main_menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/image="res://Assets/splash/lemur.png"
 config/icon="res://icon.svg"
+config/openai_api="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"
 
 [autoload]
 
@@ -74,7 +75,7 @@ mouse_cursor/custom_image="res://Assets/UI/Cursor.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/GodotGPT-main/addons/GodotGPT/plugin.cfg")
 
 [gui]
 

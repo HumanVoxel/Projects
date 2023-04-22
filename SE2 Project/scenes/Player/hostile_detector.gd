@@ -12,7 +12,7 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 		print("touchedtile")
 		var current_tilemap = body
 		var collided_cell_coords = current_tilemap.get_coords_for_body_rid(body_rid)
-		var tile_data = current_tilemap.get_cell_tile_data(0, collided_cell_coords)
+		var tile_data = current_tilemap.get_cell_tile_data(3, collided_cell_coords)
 		if !tile_data is TileData:
 			return
 		get_parent().player_damaged(tile_data.get_custom_data_by_layer_id(0))

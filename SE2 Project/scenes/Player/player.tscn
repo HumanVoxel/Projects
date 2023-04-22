@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://scenes/Player/hostile_detector.gd" id="10_tagcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2xxe"]
-size = Vector2(8.71429, 14.4286)
+size = Vector2(7.00001, 13.4286)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ddw5"]
 atlas = ExtResource("10_16gik")
@@ -869,7 +869,7 @@ graph_offset = Vector2(-504.33, 339.252)
 size = Vector2(14, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j23c"]
-size = Vector2(12, 16)
+size = Vector2(12, 14)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -877,14 +877,15 @@ collision_mask = 9
 script = ExtResource("1_7o7i4")
 
 [node name="Player_Collider" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.21429)
+position = Vector2(-0.5, 1)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_d2xxe")
 
-[node name="state_manager" type="Node" parent="." node_paths=PackedStringArray("super_dash_state")]
+[node name="state_manager" type="Node" parent="." node_paths=PackedStringArray("super_dash_state", "jump_state")]
 script = ExtResource("2_x33hv")
 starting_state = NodePath("Idle")
 super_dash_state = NodePath("Super_Dash")
+jump_state = NodePath("Jump")
 
 [node name="Idle" type="Node" parent="state_manager"]
 script = ExtResource("3_vnao7")
@@ -983,7 +984,7 @@ position = Vector2(217.143, 22.8571)
 texture = ExtResource("10_16gik")
 
 [node name="wall_detector" type="ShapeCast2D" parent="."]
-position = Vector2(0.353951, 3.89348)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_y4lfc")
 target_position = Vector2(0.0692291, 1.4229)
 collision_mask = 513
@@ -994,7 +995,7 @@ collision_layer = 0
 script = ExtResource("10_tagcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hostile_detector"]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_0j23c")
 
 [node name="Camera2D" type="Camera2D" parent="."]

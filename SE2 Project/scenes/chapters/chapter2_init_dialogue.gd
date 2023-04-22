@@ -5,8 +5,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().create_timer(2).timeout
+	$"../Player".set_physics_process(false)
+	await get_tree().create_timer(1).timeout
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	await DialogueManager.dialogue_ended
+	$"../Player".set_physics_process(true)
 	queue_free()
 	pass # Replace with function body.

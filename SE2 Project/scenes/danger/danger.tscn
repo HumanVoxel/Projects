@@ -1,0 +1,371 @@
+[gd_scene load_steps=18 format=3 uid="uid://ie2h36qkwgni"]
+
+[ext_resource type="Shader" path="res://resources/shaders/scroll.gdshader" id="1_047tn"]
+[ext_resource type="Script" path="res://scenes/danger/danger.gd" id="1_u6ln6"]
+[ext_resource type="Texture2D" uid="uid://cm2dfmopb6rkt" path="res://Assets/UI/caution/tape.png" id="2_t502p"]
+[ext_resource type="Texture2D" uid="uid://cif2p4kdqt0yo" path="res://Assets/UI/caution/tape_center.png" id="3_gsdqa"]
+[ext_resource type="Texture2D" uid="uid://ckxm18v7b6va4" path="res://Assets/UI/caution/danger_graphic.png" id="4_nfp77"]
+[ext_resource type="AudioStream" uid="uid://bg8kcb1ayw13" path="res://resources/sounds/ambiance/siren-alert-96052-trimmed.mp3" id="6_acjjm"]
+[ext_resource type="Script" path="res://resources/OTAudioPlayer.gd" id="7_q4hdm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qm33e"]
+shader = ExtResource("1_047tn")
+shader_parameter/speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdbej"]
+shader = ExtResource("1_047tn")
+shader_parameter/speed = -0.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3rq5o"]
+load_path = "res://.godot/imported/tape.png-0978f8c97f114a2d0845f684a319b962.ctex"
+
+[sub_resource type="Animation" id="Animation_j3ip2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tape_top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tape_center:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 56)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tape_bottom:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 120)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OTAudioPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Danger:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-136, 72)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Danger:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_34ujj"]
+resource_name = "transition_hide"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tape_top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 40), Vector2(320, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tape_center:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 56), Vector2(320, 56)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tape_bottom:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 120), Vector2(320, 120)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OTAudioPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OTAudioPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Danger:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(94.5, 70), Vector2(416, 72)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Danger:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.85, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u4bjc"]
+resource_name = "transition_show"
+length = 2.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tape_top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(-320, 40), Vector2(0, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tape_center:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(-320, 56), Vector2(0, 56)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tape_bottom:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.6),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(-320, 120), Vector2(0, 120)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Danger:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-136, 72), Vector2(94.5, 70)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Danger:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.95, 1.4, 1.9, 2.35, 2.7, 3.15, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ne6l6"]
+_data = {
+"RESET": SubResource("Animation_j3ip2"),
+"transition_hide": SubResource("Animation_34ujj"),
+"transition_show": SubResource("Animation_u4bjc")
+}
+
+[sub_resource type="Animation" id="Animation_otw1n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pbjwf"]
+resource_name = "transition_show"
+length = 3.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-3.5, 0, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmpom"]
+_data = {
+"RESET": SubResource("Animation_otw1n"),
+"transition_show": SubResource("Animation_pbjwf")
+}
+
+[node name="Danger" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_u6ln6")
+
+[node name="tape_top" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_qm33e")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 40.0
+offset_right = 320.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t502p")
+stretch_mode = 1
+
+[node name="tape_center" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gsdqa")
+
+[node name="tape_bottom" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_sdbej")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 120.0
+offset_right = 320.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_3rq5o")
+stretch_mode = 1
+
+[node name="Danger" type="TextureRect" parent="."]
+modulate = Color(1, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 72.0
+offset_right = -4.99899
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nfp77")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "transition_show"
+libraries = {
+"": SubResource("AnimationLibrary_ne6l6")
+}
+
+[node name="OTAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_acjjm")
+script = ExtResource("7_q4hdm")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../OTAudioPlayer")
+autoplay = "transition_show"
+libraries = {
+"": SubResource("AnimationLibrary_gmpom")
+}

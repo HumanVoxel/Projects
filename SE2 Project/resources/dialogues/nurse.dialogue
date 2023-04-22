@@ -8,11 +8,13 @@ Nurse: How can I help you today?
 		Nurse: Hmmm. It seems you haven't been vaccinated before.
 		Nurse: I'll give you the first dose then.
 		do collectibles_append("dose1")
+		set just_got_vaccinated = true
 		=> END
 	elif total_doses == 1:
 		Nurse: Looks like you already got the first dose.
 		Nurse: I'll give you the second dose this time then.
 		do collectibles_append("dose2")
+		set just_got_vaccinated = true
 		=> END
 	elif total_doses == 2:
 		Nurse: It looks like you already got vaccinated with the first and second dose.
@@ -20,6 +22,7 @@ Nurse: How can I help you today?
 		- Yes, give it to me
 			Nurse: Alrighty then.
 			do collectibles_append("booster")
+			set just_got_vaccinated = true
 		- Nah, maybe some other time
 			Nurse: That's fine, you can take it when you are ready.
 			=> END

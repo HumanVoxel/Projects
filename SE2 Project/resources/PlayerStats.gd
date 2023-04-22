@@ -8,6 +8,9 @@ var collectibles : Array = []
 var total_playtime : int
 var max_health : float = 10
 var total_doses : float = 0
+var chapters_unlocked : Array[String] = ["Chapter1","Chapter2"]
+var just_got_vaccinated : bool = false
+var intro_done : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

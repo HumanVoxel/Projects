@@ -42,10 +42,11 @@ _data = {
 }
 
 [node name="Objective" type="CanvasLayer"]
-process_mode = 2
+process_mode = 3
 script = ExtResource("1_411vr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

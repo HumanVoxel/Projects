@@ -3,6 +3,7 @@ extends Node
 
 @export var starting_state : NodePath
 @export var super_dash_state : State
+@export var jump_state : State
 var current_state: State
 var previous_state: State
 

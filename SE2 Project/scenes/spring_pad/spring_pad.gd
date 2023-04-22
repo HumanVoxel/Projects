@@ -14,5 +14,7 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		$AnimatedSprite2D.play("default")
+		body.states.change_state(body.states.jump_state)
+		body.is_dash_ready = true
 		body.velocity = global_position.direction_to($Marker2D.global_position) * spring_force
 	pass # Replace with function body.

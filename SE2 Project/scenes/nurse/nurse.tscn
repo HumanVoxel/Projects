@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://de7cmguomdpu7"]
+[gd_scene load_steps=23 format=3 uid="uid://de7cmguomdpu7"]
 
 [ext_resource type="Script" path="res://Nurse.gd" id="1_03upi"]
 [ext_resource type="Resource" uid="uid://ba16t882ca520" path="res://resources/dialogues/nurse.dialogue" id="2_880ur"]
 [ext_resource type="Texture2D" uid="uid://di0l8h0g2seug" path="res://Assets/environment/CityTileSetTransparent.png" id="3_u6ff0"]
 [ext_resource type="Texture2D" uid="uid://cphuqpv1vsogd" path="res://Assets/UI/ImanorBalloon.png" id="4_ojm0t"]
+[ext_resource type="Texture2D" uid="uid://ciy6w72jxj3yo" path="res://Assets/UI/buttons/Buttons Pack/KEYBOARD/KEYS/U.png" id="5_uipj7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85eys"]
 atlas = ExtResource("3_u6ff0")
@@ -73,6 +74,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_qkkua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_anj6b"]
+resource_name = "float"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j282y"]
+_data = {
+"RESET": SubResource("Animation_qkkua"),
+"float": SubResource("Animation_anj6b")
+}
+
 [sub_resource type="Animation" id="Animation_jmp2c"]
 length = 0.001
 tracks/0/type = "value"
@@ -129,8 +168,19 @@ sprite_frames = SubResource("SpriteFrames_bqe4y")
 autoplay = "default"
 frame_progress = 0.0274714
 
+[node name="U" type="Sprite2D" parent="."]
+position = Vector2(8, -24)
+texture = ExtResource("5_uipj7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="U"]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_j282y")
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../nurse_sprite")
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_cnbr3")
 }
