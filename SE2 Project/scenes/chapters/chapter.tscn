@@ -37,6 +37,7 @@
 [sub_resource type="GDScript" id="GDScript_l8wlm"]
 script/source = "extends Area2D
 
+@export var camera_node : Camera2D
 @export var collision_shape : CollisionShape2D
 @onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
 @export var zoom : Vector2 = Vector2.ZERO
@@ -63,25 +64,13 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == \"Player\":
-#		var camera_node = Camera2D.new()
-#		camera_node.enabled = true
-		var camera_node = body.camera_2d
+#		var camera_node = body.camera_2d
 		if zoom:
 			camera_node.zoom = zoom
 		camera_node.set_limit(SIDE_LEFT, limit_left)
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-#		if camera_node.is_current() == false:
-#			camera_node.make_current()
-#		camera_node.reparent(body)
-#		body.add_child(camera_node)
-
-#		print($CollisionShape2D.shape.get_rect().size)
-#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
-#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
-#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
-#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
 		
 		print(\"cameraswitched\")
 	pass # Replace with function body.
@@ -99,6 +88,7 @@ size = Vector2(3840, 204)
 [sub_resource type="GDScript" id="GDScript_1y0yx"]
 script/source = "extends Area2D
 
+@export var camera_node : Camera2D
 @export var collision_shape : CollisionShape2D
 @onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
 @export var zoom : Vector2 = Vector2.ZERO
@@ -125,25 +115,13 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == \"Player\":
-#		var camera_node = Camera2D.new()
-#		camera_node.enabled = true
-		var camera_node = body.camera_2d
+#		var camera_node = body.camera_2d
 		if zoom:
 			camera_node.zoom = zoom
 		camera_node.set_limit(SIDE_LEFT, limit_left)
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-#		if camera_node.is_current() == false:
-#			camera_node.make_current()
-#		camera_node.reparent(body)
-#		body.add_child(camera_node)
-
-#		print($CollisionShape2D.shape.get_rect().size)
-#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
-#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
-#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
-#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
 		
 		print(\"cameraswitched\")
 	pass # Replace with function body.
@@ -161,6 +139,7 @@ size = Vector2(408, 194)
 [sub_resource type="GDScript" id="GDScript_wt5nw"]
 script/source = "extends Area2D
 
+@export var camera_node : Camera2D
 @export var collision_shape : CollisionShape2D
 @onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
 @export var zoom : Vector2 = Vector2.ZERO
@@ -187,25 +166,13 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == \"Player\":
-#		var camera_node = Camera2D.new()
-#		camera_node.enabled = true
-		var camera_node = body.camera_2d
+#		var camera_node = body.camera_2d
 		if zoom:
 			camera_node.zoom = zoom
 		camera_node.set_limit(SIDE_LEFT, limit_left)
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-#		if camera_node.is_current() == false:
-#			camera_node.make_current()
-#		camera_node.reparent(body)
-#		body.add_child(camera_node)
-
-#		print($CollisionShape2D.shape.get_rect().size)
-#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
-#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
-#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
-#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
 		
 		print(\"cameraswitched\")
 	pass # Replace with function body.
@@ -223,6 +190,7 @@ size = Vector2(320, 179.5)
 [sub_resource type="GDScript" id="GDScript_l1bo5"]
 script/source = "extends Area2D
 
+@export var camera_node : Camera2D
 @export var collision_shape : CollisionShape2D
 @onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
 @export var zoom : Vector2 = Vector2.ZERO
@@ -249,25 +217,13 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == \"Player\":
-#		var camera_node = Camera2D.new()
-#		camera_node.enabled = true
-		var camera_node = body.camera_2d
+#		var camera_node = body.camera_2d
 		if zoom:
 			camera_node.zoom = zoom
 		camera_node.set_limit(SIDE_LEFT, limit_left)
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-#		if camera_node.is_current() == false:
-#			camera_node.make_current()
-#		camera_node.reparent(body)
-#		body.add_child(camera_node)
-
-#		print($CollisionShape2D.shape.get_rect().size)
-#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
-#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
-#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
-#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
 		
 		print(\"cameraswitched\")
 	pass # Replace with function body.
@@ -8632,7 +8588,7 @@ texture_region_size = Vector2i(8, 8)
 1:0/0/terrain = 1
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -3, 4, -3, 4, 4, -4, 4)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -1, 4, -1, 4, 4, -4, 4)
 1:0/0/terrains_peering_bit/right_side = 1
 1:0/0/terrains_peering_bit/bottom_right_corner = 1
 1:0/0/terrains_peering_bit/bottom_side = 1
@@ -8644,7 +8600,7 @@ texture_region_size = Vector2i(8, 8)
 2:0/0/terrain = 1
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -3, 3, -3, 3, 4, -4, 4)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -1, 1, -1, 1, 4, -4, 4)
 2:0/0/terrains_peering_bit/bottom_side = 1
 2:0/0/terrains_peering_bit/bottom_left_corner = 1
 2:0/0/terrains_peering_bit/left_side = 1
@@ -8654,29 +8610,15 @@ texture_region_size = Vector2i(8, 8)
 4:0/0/terrain = 1
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -2.5, 2.5, -2.5, 2.5, 4, -2.5, 4)
 4:0/0/terrains_peering_bit/bottom_side = 1
 4:0/0/custom_data_0 = 5.0
-6:0/0 = 0
-6:0/0/terrain_set = 0
-6:0/0/terrain = 1
-6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-6:0/0/physics_layer_0/angular_velocity = 0.0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-6:0/0/terrains_peering_bit/right_side = 1
-6:0/0/terrains_peering_bit/bottom_side = 1
-6:0/0/terrains_peering_bit/bottom_left_corner = 1
-6:0/0/terrains_peering_bit/left_side = 1
-6:0/0/terrains_peering_bit/top_left_corner = 1
-6:0/0/terrains_peering_bit/top_side = 1
-6:0/0/terrains_peering_bit/top_right_corner = 1
-6:0/0/custom_data_0 = 5.0
 7:0/0 = 0
 7:0/0/terrain_set = 0
 7:0/0/terrain = 1
 7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:0/0/physics_layer_0/angular_velocity = 0.0
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 3, -4, 3)
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 1, 4, 1, 4, -4, -4, -4)
 7:0/0/terrains_peering_bit/right_side = 1
 7:0/0/terrains_peering_bit/left_side = 1
 7:0/0/terrains_peering_bit/top_left_corner = 1
@@ -8688,7 +8630,7 @@ texture_region_size = Vector2i(8, 8)
 8:0/0/terrain = 1
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 1, -1, 1, -1, 4, 4, 4, 4, -4, -4, -4)
 8:0/0/terrains_peering_bit/right_side = 1
 8:0/0/terrains_peering_bit/bottom_right_corner = 1
 8:0/0/terrains_peering_bit/bottom_side = 1
@@ -8729,7 +8671,7 @@ texture_region_size = Vector2i(8, 8)
 2:1/0/terrain = 1
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 3, -4, 3, 4, -4, 4)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 1, -4, 1, 4, -4, 4)
 2:1/0/terrains_peering_bit/bottom_side = 1
 2:1/0/terrains_peering_bit/bottom_left_corner = 1
 2:1/0/terrains_peering_bit/left_side = 1
@@ -8741,7 +8683,7 @@ texture_region_size = Vector2i(8, 8)
 4:1/0/terrain = 1
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -4, 2.5, -4, 2.5, 4, -2.5, 4)
 4:1/0/terrains_peering_bit/bottom_side = 1
 4:1/0/terrains_peering_bit/top_side = 1
 4:1/0/custom_data_0 = 5.0
@@ -8750,7 +8692,7 @@ texture_region_size = Vector2i(8, 8)
 6:1/0/terrain = 1
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 3, -4, 3, 4, -4, 4)
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1, -4, 1, 4, -4, 4, -4, -4)
 6:1/0/terrains_peering_bit/bottom_side = 1
 6:1/0/terrains_peering_bit/bottom_left_corner = 1
 6:1/0/terrains_peering_bit/left_side = 1
@@ -8762,7 +8704,7 @@ texture_region_size = Vector2i(8, 8)
 8:1/0/terrain = 1
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:1/0/physics_layer_0/angular_velocity = 0.0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -4, 4, -4, 4, 4, -3, 4)
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -4, -1, 4, 4, 4, 4, -4)
 8:1/0/terrains_peering_bit/right_side = 1
 8:1/0/terrains_peering_bit/bottom_right_corner = 1
 8:1/0/terrains_peering_bit/bottom_side = 1
@@ -8774,7 +8716,7 @@ texture_region_size = Vector2i(8, 8)
 0:2/0/terrain = 1
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -4, 4, -4, 4, 3, -3, 3)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -4, 4, -4, 4, 1, -1, 1)
 0:2/0/terrains_peering_bit/right_side = 1
 0:2/0/terrains_peering_bit/top_side = 1
 0:2/0/terrains_peering_bit/top_right_corner = 1
@@ -8784,7 +8726,7 @@ texture_region_size = Vector2i(8, 8)
 1:2/0/terrain = 1
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 3, -4, 3)
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 1, -4, 1)
 1:2/0/terrains_peering_bit/right_side = 1
 1:2/0/terrains_peering_bit/left_side = 1
 1:2/0/terrains_peering_bit/top_left_corner = 1
@@ -8796,7 +8738,7 @@ texture_region_size = Vector2i(8, 8)
 2:2/0/terrain = 1
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 3, -4, 3, 3, -4, 3)
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 1, -4, 1, 1, -4, 1)
 2:2/0/terrains_peering_bit/left_side = 1
 2:2/0/terrains_peering_bit/top_left_corner = 1
 2:2/0/terrains_peering_bit/top_side = 1
@@ -8806,7 +8748,7 @@ texture_region_size = Vector2i(8, 8)
 4:2/0/terrain = 1
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -4, 2.5, -4, 2.5, 2.5, -2.5, 2.5)
 4:2/0/terrains_peering_bit/top_side = 1
 4:2/0/custom_data_0 = 5.0
 6:2/0 = 0
@@ -8814,7 +8756,7 @@ texture_region_size = Vector2i(8, 8)
 6:2/0/terrain = 1
 6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:2/0/physics_layer_0/angular_velocity = 0.0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(1, -4, 1, -1, 4, -1, 4, 4, -4, 4, -4, -4)
 6:2/0/terrains_peering_bit/right_side = 1
 6:2/0/terrains_peering_bit/bottom_right_corner = 1
 6:2/0/terrains_peering_bit/bottom_side = 1
@@ -8828,7 +8770,7 @@ texture_region_size = Vector2i(8, 8)
 7:2/0/terrain = 1
 7:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:2/0/physics_layer_0/angular_velocity = 0.0
-7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -3, 4, -3, 4, 4, -4, 4)
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -1, 4, -1, 4, 4, -4, 4)
 7:2/0/terrains_peering_bit/right_side = 1
 7:2/0/terrains_peering_bit/bottom_right_corner = 1
 7:2/0/terrains_peering_bit/bottom_side = 1
@@ -8840,7 +8782,7 @@ texture_region_size = Vector2i(8, 8)
 8:2/0/terrain = 1
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -4, 4, -4, 4, 4, -4, 4, -4, -1, -1, -1)
 8:2/0/terrains_peering_bit/right_side = 1
 8:2/0/terrains_peering_bit/bottom_right_corner = 1
 8:2/0/terrains_peering_bit/bottom_side = 1
@@ -8854,7 +8796,7 @@ texture_region_size = Vector2i(8, 8)
 0:4/0/terrain = 1
 0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:4/0/physics_layer_0/angular_velocity = 0.0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -2.5, 4, -2.5, 4, 2.5, -2.5, 2.5)
 0:4/0/terrains_peering_bit/right_side = 1
 0:4/0/custom_data_0 = 5.0
 1:4/0 = 0
@@ -8862,7 +8804,7 @@ texture_region_size = Vector2i(8, 8)
 1:4/0/terrain = 1
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2.5, 4, -2.5, 4, 2.5, -4, 2.5)
 1:4/0/terrains_peering_bit/right_side = 1
 1:4/0/terrains_peering_bit/left_side = 1
 1:4/0/custom_data_0 = 5.0
@@ -8871,7 +8813,7 @@ texture_region_size = Vector2i(8, 8)
 2:4/0/terrain = 1
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2.5, 2.5, -2.5, 2.5, 2.5, -4, 2.5)
 2:4/0/terrains_peering_bit/left_side = 1
 2:4/0/custom_data_0 = 5.0
 4:4/0 = 0
@@ -8879,18 +8821,44 @@ texture_region_size = Vector2i(8, 8)
 4:4/0/terrain = 1
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, 2.5)
 4:4/0/custom_data_0 = 5.0
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -3, 4, -3, 4, 4, -3, 4)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -1, 4, -1, 4, 4, -1, 4)
 0:0/0/terrains_peering_bit/right_side = 1
 0:0/0/terrains_peering_bit/bottom_right_corner = 1
 0:0/0/terrains_peering_bit/bottom_side = 1
 0:0/0/custom_data_0 = 5.0
+7:1/0 = 0
+7:1/0/terrain_set = 0
+7:1/0/terrain = 1
+7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0/terrains_peering_bit/right_side = 1
+7:1/0/terrains_peering_bit/bottom_side = 1
+7:1/0/terrains_peering_bit/bottom_left_corner = 1
+7:1/0/terrains_peering_bit/left_side = 1
+7:1/0/terrains_peering_bit/top_left_corner = 1
+7:1/0/terrains_peering_bit/top_side = 1
+7:1/0/terrains_peering_bit/top_right_corner = 1
+7:1/0/custom_data_0 = 5.0
+6:0/0 = 0
+6:0/0/terrain_set = 0
+6:0/0/terrain = 1
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, -4, 4, 1, 4, 1, 1, 4, 1, 4, -4)
+6:0/0/terrains_peering_bit/right_side = 1
+6:0/0/terrains_peering_bit/bottom_side = 1
+6:0/0/terrains_peering_bit/bottom_left_corner = 1
+6:0/0/terrains_peering_bit/left_side = 1
+6:0/0/terrains_peering_bit/top_left_corner = 1
+6:0/0/terrains_peering_bit/top_side = 1
+6:0/0/terrains_peering_bit/top_right_corner = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrdf3"]
 texture = ExtResource("19_rdy8y")
@@ -9100,9 +9068,10 @@ metadata/_edit_horizontal_guides_ = [180.0]
 
 [node name="Cameras" type="Node2D" parent="."]
 
-[node name="CameraSegment" type="Area2D" parent="Cameras"]
+[node name="CameraSegment" type="Area2D" parent="Cameras" node_paths=PackedStringArray("camera_node")]
 position = Vector2(160, 88)
 script = SubResource("GDScript_l8wlm")
+camera_node = NodePath("../../Camera2D")
 zoom = Vector2(1, 1)
 limit_left = 0
 limit_top = 0
@@ -9112,9 +9081,10 @@ limit_bottom = 180
 position = Vector2(1760, 0)
 shape = SubResource("RectangleShape2D_qscpl")
 
-[node name="CameraSegment2" type="Area2D" parent="Cameras"]
+[node name="CameraSegment2" type="Area2D" parent="Cameras" node_paths=PackedStringArray("camera_node")]
 position = Vector2(192, 598)
 script = SubResource("GDScript_1y0yx")
+camera_node = NodePath("../../Camera2D")
 zoom = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment2"]
@@ -9122,18 +9092,20 @@ visible = false
 position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_5g2st")
 
-[node name="CameraSegment3" type="Area2D" parent="Cameras"]
+[node name="CameraSegment3" type="Area2D" parent="Cameras" node_paths=PackedStringArray("camera_node")]
 position = Vector2(1016, 648)
 script = SubResource("GDScript_wt5nw")
+camera_node = NodePath("../../Camera2D")
 zoom = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment3"]
 position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_x5mj5")
 
-[node name="CameraSegment4" type="Area2D" parent="Cameras"]
+[node name="CameraSegment4" type="Area2D" parent="Cameras" node_paths=PackedStringArray("camera_node")]
 position = Vector2(2304, 704)
 script = SubResource("GDScript_l1bo5")
+camera_node = NodePath("../../Camera2D")
 zoom = Vector2(1, 1)
 limit_left = 2144
 limit_right = 2496
@@ -9160,6 +9132,7 @@ offset_right = 1136.0
 offset_bottom = 176.0
 texture = ExtResource("2_bjyp8")
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="world_tiles" type="TileMap" parent="GameLevel"]
 tile_set = SubResource("TileSet_syhta")
@@ -9322,7 +9295,15 @@ position = Vector2(24, -64)
 [node name="Player" parent="." instance=ExtResource("7_sqq1r")]
 position = Vector2(152, 168)
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
 [node name="HUD" parent="." instance=ExtResource("11_4y61k")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(152, 168)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [connection signal="body_entered" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_entered" flags=18]
 [connection signal="body_exited" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_exited" flags=18]

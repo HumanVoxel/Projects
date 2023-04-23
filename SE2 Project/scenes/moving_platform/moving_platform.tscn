@@ -1,7 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfo6g3u2vgd6k"]
+[gd_scene load_steps=8 format=3 uid="uid://cwjtlld8jvgxk"]
 
-[ext_resource type="Script" path="res://scenes/moving_platform/moving_platform.gd" id="1_vqovd"]
+[ext_resource type="Script" path="res://scenes/moving_platform/platform.gd" id="1_2j2dh"]
 [ext_resource type="Texture2D" uid="uid://c7egn7ignpk71" path="res://Assets/tilesets/beam.png" id="2_uohbp"]
+[ext_resource type="AnimationLibrary" uid="uid://cwr3pi16t3rmh" path="res://resources/animations/moving_platform.res" id="2_xo7qw"]
+
+[sub_resource type="Curve2D" id="Curve2D_68x7r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -32)
+}
+point_count = 2
+
+[sub_resource type="GDScript" id="GDScript_1bnlk"]
+script/source = "extends Path2D
+
+@export var timelapse : float = 1
+@export var animation : String = \"back_and_forth\"
+@export var collision_polygon_2d : CollisionPolygon2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if timelapse:
+		$AnimationPlayer.speed_scale = $AnimationPlayer.speed_scale/timelapse
+	$AnimationPlayer.play(animation)
+	pass # Replace with function body.
+
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fce5n"]
 texture = ExtResource("2_uohbp")
@@ -9,95 +32,205 @@ texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0 = 0
 1:0/0/terrain_set = 0
 1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
 2:0/0 = 0
 2:0/0/terrain_set = 0
 2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
 4:0/0 = 0
 4:0/0/terrain_set = 0
 4:0/0/terrain = 0
+4:0/0/terrains_peering_bit/bottom_side = 0
 6:0/0 = 0
 6:0/0/terrain_set = 0
 6:0/0/terrain = 0
+6:0/0/terrains_peering_bit/right_side = 0
+6:0/0/terrains_peering_bit/bottom_side = 0
+6:0/0/terrains_peering_bit/bottom_left_corner = 0
+6:0/0/terrains_peering_bit/left_side = 0
+6:0/0/terrains_peering_bit/top_left_corner = 0
+6:0/0/terrains_peering_bit/top_side = 0
+6:0/0/terrains_peering_bit/top_right_corner = 0
 7:0/0 = 0
 7:0/0/terrain_set = 0
 7:0/0/terrain = 0
+7:0/0/terrains_peering_bit/right_side = 0
+7:0/0/terrains_peering_bit/left_side = 0
+7:0/0/terrains_peering_bit/top_left_corner = 0
+7:0/0/terrains_peering_bit/top_side = 0
+7:0/0/terrains_peering_bit/top_right_corner = 0
 8:0/0 = 0
 8:0/0/terrain_set = 0
 8:0/0/terrain = 0
+8:0/0/terrains_peering_bit/right_side = 0
+8:0/0/terrains_peering_bit/bottom_right_corner = 0
+8:0/0/terrains_peering_bit/bottom_side = 0
+8:0/0/terrains_peering_bit/left_side = 0
+8:0/0/terrains_peering_bit/top_left_corner = 0
+8:0/0/terrains_peering_bit/top_side = 0
+8:0/0/terrains_peering_bit/top_right_corner = 0
 0:1/0 = 0
 0:1/0/terrain_set = 0
 0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
 1:1/0 = 0
 1:1/0/terrain_set = 0
 1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
 2:1/0 = 0
 2:1/0/terrain_set = 0
 2:1/0/terrain = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_side = 0
 4:1/0 = 0
 4:1/0/terrain_set = 0
 4:1/0/terrain = 0
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/top_side = 0
 6:1/0 = 0
 6:1/0/terrain_set = 0
 6:1/0/terrain = 0
+6:1/0/terrains_peering_bit/bottom_side = 0
+6:1/0/terrains_peering_bit/bottom_left_corner = 0
+6:1/0/terrains_peering_bit/left_side = 0
+6:1/0/terrains_peering_bit/top_left_corner = 0
+6:1/0/terrains_peering_bit/top_side = 0
 8:1/0 = 0
 8:1/0/terrain_set = 0
 8:1/0/terrain = 0
+8:1/0/terrains_peering_bit/right_side = 0
+8:1/0/terrains_peering_bit/bottom_right_corner = 0
+8:1/0/terrains_peering_bit/bottom_side = 0
+8:1/0/terrains_peering_bit/top_side = 0
+8:1/0/terrains_peering_bit/top_right_corner = 0
 0:2/0 = 0
 0:2/0/terrain_set = 0
 0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
 1:2/0 = 0
 1:2/0/terrain_set = 0
 1:2/0/terrain = 0
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
 2:2/0 = 0
 2:2/0/terrain_set = 0
 2:2/0/terrain = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_side = 0
 4:2/0 = 0
 4:2/0/terrain_set = 0
 4:2/0/terrain = 0
+4:2/0/terrains_peering_bit/top_side = 0
 6:2/0 = 0
 6:2/0/terrain_set = 0
 6:2/0/terrain = 0
+6:2/0/terrains_peering_bit/right_side = 0
+6:2/0/terrains_peering_bit/bottom_right_corner = 0
+6:2/0/terrains_peering_bit/bottom_side = 0
+6:2/0/terrains_peering_bit/bottom_left_corner = 0
+6:2/0/terrains_peering_bit/left_side = 0
+6:2/0/terrains_peering_bit/top_left_corner = 0
+6:2/0/terrains_peering_bit/top_side = 0
 7:2/0 = 0
 7:2/0/terrain_set = 0
 7:2/0/terrain = 0
+7:2/0/terrains_peering_bit/right_side = 0
+7:2/0/terrains_peering_bit/bottom_right_corner = 0
+7:2/0/terrains_peering_bit/bottom_side = 0
+7:2/0/terrains_peering_bit/bottom_left_corner = 0
+7:2/0/terrains_peering_bit/left_side = 0
 8:2/0 = 0
 8:2/0/terrain_set = 0
 8:2/0/terrain = 0
+8:2/0/terrains_peering_bit/right_side = 0
+8:2/0/terrains_peering_bit/bottom_right_corner = 0
+8:2/0/terrains_peering_bit/bottom_side = 0
+8:2/0/terrains_peering_bit/bottom_left_corner = 0
+8:2/0/terrains_peering_bit/left_side = 0
+8:2/0/terrains_peering_bit/top_side = 0
+8:2/0/terrains_peering_bit/top_right_corner = 0
 0:4/0 = 0
 0:4/0/terrain_set = 0
 0:4/0/terrain = 0
+0:4/0/terrains_peering_bit/right_side = 0
 1:4/0 = 0
 1:4/0/terrain_set = 0
 1:4/0/terrain = 0
+1:4/0/terrains_peering_bit/right_side = 0
+1:4/0/terrains_peering_bit/left_side = 0
 2:4/0 = 0
 2:4/0/terrain_set = 0
 2:4/0/terrain = 0
+2:4/0/terrains_peering_bit/left_side = 0
 4:4/0 = 0
 4:4/0/terrain_set = 0
 4:4/0/terrain = 0
 
-[sub_resource type="TileSet" id="TileSet_n5lo0"]
+[sub_resource type="TileSet" id="TileSet_12ieu"]
 tile_size = Vector2i(8, 8)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "beam 0"
 terrain_set_0/terrain_0/color = Color(0.588235, 0.266667, 0.301961, 1)
 sources/1 = SubResource("TileSetAtlasSource_fce5n")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxjb7"]
-size = Vector2(32, 8)
+[node name="moving_platform" type="Path2D"]
+curve = SubResource("Curve2D_68x7r")
+script = SubResource("GDScript_1bnlk")
+timelapse = 3.0
 
-[node name="moving_platform" type="AnimatableBody2D"]
-position = Vector2(48, 88)
-script = ExtResource("1_vqovd")
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_n5lo0")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../platform")
+
+[node name="platform" type="AnimatableBody2D" parent="." node_paths=PackedStringArray("collision_polygon_2d")]
+script = ExtResource("1_2j2dh")
+collision_polygon_2d = NodePath("CollisionPolygon2D")
+
+[node name="TileMap" type="TileMap" parent="platform"]
+tile_set = SubResource("TileSet_12ieu")
 format = 2
 layer_0/tile_data = PackedInt32Array(65534, 1, 4, 65535, 65537, 4, 0, 65537, 4, 1, 131073, 4)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_bxjb7")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform"]
+polygon = PackedVector2Array(-16, 0, -16, 8, 16, 8, 16, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "back_and_forth"
+playback_process_mode = 0
+libraries = {
+"": ExtResource("2_xo7qw")
+}

@@ -35,8 +35,9 @@ func _on_dialogue_area_body_entered(body):
 		player = body
 		print("player entered")
 		player_in_area = true
-		$U.show()
-		$AnimatedSprite2D.hide()
+		if not just_got_vaccinated:
+			$U.show()
+			$AnimatedSprite2D.hide()
 	pass # Replace with function body.
 
 func _on_dialogue_area_body_exited(body):
@@ -44,6 +45,7 @@ func _on_dialogue_area_body_exited(body):
 		player = null
 		print("player exited")
 		player_in_area = false
-		$U.hide()
-		$AnimatedSprite2D.show()
+		if not just_got_vaccinated:
+			$U.hide()
+			$AnimatedSprite2D.show()
 	pass # Replace with function body.

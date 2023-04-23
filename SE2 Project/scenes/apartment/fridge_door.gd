@@ -26,7 +26,9 @@ func _unhandled_input(event):
 		is_talking = false
 		print("dialogue ended")
 		$"../DoorBlock/CollisionShape2D".disabled = true
+		$"../PointArrow".show()
 		finished_dialogue = true
+		PlayerStats.intro_done = true
 #		player.set_physics_process(true)
 		
 func _on_fridge_door_area_body_entered(body):

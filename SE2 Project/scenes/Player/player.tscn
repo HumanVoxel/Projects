@@ -869,7 +869,7 @@ graph_offset = Vector2(-504.33, 339.252)
 size = Vector2(14, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j23c"]
-size = Vector2(12, 14)
+size = Vector2(10, 14)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -984,10 +984,9 @@ position = Vector2(217.143, 22.8571)
 texture = ExtResource("10_16gik")
 
 [node name="wall_detector" type="ShapeCast2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_y4lfc")
-target_position = Vector2(0.0692291, 1.4229)
-collision_mask = 513
+target_position = Vector2(0.5, 0)
+collision_mask = 9
 
 [node name="hostile_detector" type="Area2D" parent="."]
 position = Vector2(0, -3)
@@ -995,10 +994,11 @@ collision_layer = 0
 script = ExtResource("10_tagcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hostile_detector"]
-position = Vector2(0, 3)
+position = Vector2(2.38419e-07, 4)
 shape = SubResource("RectangleShape2D_0j23c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 

@@ -35,14 +35,14 @@ func physics_process(delta: float) -> State:
 	owner.move_and_slide()
 	if owner.is_on_floor():
 		owner.is_dash_ready = true
-	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+	if owner.is_on_wall() and Input.is_action_pressed("climb"):# and wall_detector.is_colliding():
+		return climb_state
+	elif Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		return run_state
 	elif Input.is_action_just_pressed("jump"):
 		return jump_state
 	elif Input.is_action_pressed("dash") and owner.is_dash_ready == true:
 		return dash_state
-	elif owner.is_on_wall() and Input.is_action_pressed("climb") and wall_detector.is_colliding():
-		return climb_state
 	if not owner.is_on_floor():
 		return fall_state
 	return null

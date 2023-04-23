@@ -1,10 +1,8 @@
-extends Path2D
+extends AnimatableBody2D
 
-@export var timelapse : float
+@export var collision_polygon_2d : CollisionPolygon2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if timelapse:
-		$AnimationPlayer.speed_scale = $AnimationPlayer.speed_scale/timelapse
 	pass # Replace with function body.
 
 

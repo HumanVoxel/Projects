@@ -6,7 +6,7 @@ extends State
 @export var climb_speed : float = 10
 var was_on_wall : bool
 @onready var wall_detector : ShapeCast2D = $"../../wall_detector"
-var wall_direction 
+var wall_direction
 
 
 @export var idle_node : NodePath
@@ -25,11 +25,12 @@ var wall_direction
 func enter():
 	wall_direction = -owner.get_wall_normal()
 	if wall_detector.is_colliding() and Input.is_action_pressed("climb"):
-		print("wall_detected")
 		var wall = wall_detector.get_collider(0)
-		if wall.name == "moving_platform":
-			print("changed parent to ", wall.name)
-			owner.reparent(wall.collision_shape_2d)
+		print("wall_detected ", wall.name)
+		if wall.name == "platform":
+			print("changed parent to wall named ", wall.name)
+#			owner.reparent(wall.collision_polygon_2d)
+			owner.reparent(wall)
 	print("is-climbing")
 
 func exit():
@@ -53,7 +54,7 @@ func physics_process(delta: float) -> State:
 		owner.face_direction = move_direction.x
 
 	if Input.is_action_just_pressed("dash") and owner.is_dash_ready == true:
-			return dash_state
+		return dash_state
 			
 	if Input.is_action_just_pressed("jump"):
 		print("switched to jump")
