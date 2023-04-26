@@ -9,3 +9,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_child_entered_tree(node):
+	if node.name == "Player" and not get_parent().auto_move:
+		print("playermovingplatform")
+		$"../AnimationPlayer".play(get_parent().animation)
+		pass
+	pass # Replace with function body.

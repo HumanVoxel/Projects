@@ -14,15 +14,17 @@ var wall_direction : Vector2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var is_indoors : bool = false
 
+@export var camera :Camera2D
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 @onready var animation_player = $AnimationPlayer
 @onready var states = $state_manager
 @onready var face_direction : int = 1
 @onready var original_parent = get_parent()
-@onready var camera_2d : Camera2D = $Camera2D
+
 
 func _ready() -> void:
+	$camera_remote_transform.remote_path = camera.get_path()
 	collected.connect(PlayerStats.collectibles_append)
 	PlayerStats.health_increased.connect(player_health_increased)
 	if "facemask" in PlayerStats.collectibles:

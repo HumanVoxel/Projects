@@ -62,20 +62,10 @@ curve = SubResource("Curve2D_klxly")
 script = SubResource("GDScript_il1m2")
 timelapse = 4.0
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="3" node_paths=PackedStringArray("camera")]
 position = Vector2(3501, 136)
 is_indoors = true
+camera = NodePath("../Camera2D")
 
 [node name="Camera2D" parent="." index="5"]
 position = Vector2(3501, 136)
-
-[connection signal="body_entered" from="GameLevel/platforms8x8/apple" to="GameLevel/platforms8x8/apple" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/bubble_booster" to="GameLevel/platforms8x8/bubble_booster" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@380743" to="GameLevel/platforms8x8/@apple@380743" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@380771" to="GameLevel/platforms8x8/@bubble_booster@380771" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@380772" to="GameLevel/platforms8x8/@bubble_booster@380772" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@380773" to="GameLevel/platforms8x8/@bubble_booster@380773" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@380774" to="GameLevel/platforms8x8/@bubble_booster@380774" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@380775" to="GameLevel/platforms8x8/@bubble_booster@380775" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@380802" to="GameLevel/platforms8x8/@bubble_booster@380802" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@380803" to="GameLevel/platforms8x8/@apple@380803" method="_on_body_entered" flags=18]

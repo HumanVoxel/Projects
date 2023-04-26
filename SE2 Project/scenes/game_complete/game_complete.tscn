@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://clg85liff0ecn"]
+[gd_scene load_steps=3 format=3 uid="uid://7dqv7cyy6hel"]
 
-[ext_resource type="Script" path="res://scenes/chapter_complete/chapter_complete.gd" id="1_axg8v"]
+[ext_resource type="Script" path="res://scenes/game_complete/game_complete.gd" id="1_r0tix"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_lx2jb"]
+[sub_resource type="LabelSettings" id="LabelSettings_t4t20"]
 font_size = 32
 
-[node name="chapter_complete" type="CanvasLayer"]
+[node name="game_complete" type="CanvasLayer"]
 process_mode = 2
-script = ExtResource("1_axg8v")
+script = ExtResource("1_r0tix")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -32,17 +32,14 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Chapter Complete"
-label_settings = SubResource("LabelSettings_lx2jb")
+label_settings = SubResource("LabelSettings_t4t20")
 
-[node name="Next Chapter" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Stats" type="Label" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../Main Menu")
-text = "Next Chapter"
+horizontal_alignment = 1
 
 [node name="Main Menu" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Next Chapter")
 text = "Main Menu"
 
-[connection signal="pressed" from="ColorRect/VBoxContainer/Next Chapter" to="." method="_on_next_chapter_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

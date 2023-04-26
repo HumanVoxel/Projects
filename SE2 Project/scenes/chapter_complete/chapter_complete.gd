@@ -14,10 +14,7 @@ func _on_next_chapter_pressed():
 	get_tree().change_scene_to_file(next_chapter_resource)
 	pass # Replace with function body.
 
-func _on_exit_pressed():
+func _on_main_menu_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main menu/main_menu.tscn")
 	pass # Replace with function body.
-
-
-

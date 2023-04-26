@@ -19,6 +19,7 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "Player":
 		if scene:
+			PlayerStats.chapters_unlocked.append("Chapter3")
 			var new_scene = scene.instantiate()
 			add_child(new_scene)
 			new_scene.next_chapter_resource = chapter_resource

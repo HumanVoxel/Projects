@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var camera_node : Camera2D
 @export var collision_shape : CollisionShape2D
 @onready var collision_shape_internal : CollisionShape2D = $CollisionShape2D
 @export var zoom : Vector2 = Vector2.ZERO
@@ -26,25 +27,13 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Player":
-#		var camera_node = Camera2D.new()
-#		camera_node.enabled = true
-		var camera_node = body.camera_2d
+		var camera_node = body.camera
 		if zoom:
 			camera_node.zoom = zoom
 		camera_node.set_limit(SIDE_LEFT, limit_left)
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-#		if camera_node.is_current() == false:
-#			camera_node.make_current()
-#		camera_node.reparent(body)
-#		body.add_child(camera_node)
-
-#		print($CollisionShape2D.shape.get_rect().size)
-#		camera_2d.limit_top = $CollisionShape2D.shape.get_rect().position.y
-#		camera_2d.limit_bottom = camera_2d.limit_top + $CollisionShape2D.shape.get_rect().size.y
-#		camera_2d.limit_left = -$CollisionShape2D.shape.get_rect().aposition.x
-#		camera_2d.limit_right = camera_2d.limit_left + $CollisionShape2D.shape.get_rect().size.x
 		
 		print("cameraswitched")
 	pass # Replace with function body.

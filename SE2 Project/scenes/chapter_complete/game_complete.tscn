@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://kni4xrrdba82"]
+
+[ext_resource type="PackedScene" uid="uid://clg85liff0ecn" path="res://scenes/chapter_complete/chapter_complete.tscn" id="1_8segw"]
+
+[node name="game_complete" instance=ExtResource("1_8segw")]
+
+[node name="Chapter Complete" parent="ColorRect/VBoxContainer" index="0"]
+text = "Game Complete"
+
+[node name="Stats" type="Label" parent="ColorRect/VBoxContainer" index="1"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Next Chapter" parent="ColorRect/VBoxContainer" index="2"]
+visible = false

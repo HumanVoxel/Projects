@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp21udq314we4"]
+[gd_scene load_steps=3 format=3 uid="uid://cp21udq314we4"]
 
 [ext_resource type="Script" path="res://scenes/chapter_select/chapter_select.gd" id="1_qvhbi"]
+[ext_resource type="Theme" uid="uid://b1agldm4pc558" path="res://resources/simple_theme.tres" id="2_b4j50"]
 
 [node name="chapter_select" type="CanvasLayer"]
 layer = 0
 script = ExtResource("1_qvhbi")
+chapter_1 = NodePath("HBoxContainer/Chapter 1")
+chapter_2 = NodePath("HBoxContainer/Chapter 2")
+chapter_3 = NodePath("HBoxContainer/Chapter 3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
@@ -16,7 +20,7 @@ grow_vertical = 2
 [node name="Chapter 1" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-focus_neighbor_right = NodePath("../Chapter 2")
+theme = ExtResource("2_b4j50")
 disabled = true
 text = "Chapter 1
 
@@ -25,8 +29,7 @@ text = "Chapter 1
 [node name="Chapter 2" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-focus_neighbor_left = NodePath("../Chapter 1")
-focus_neighbor_right = NodePath("../Chapter 3")
+theme = ExtResource("2_b4j50")
 disabled = true
 text = "Chapter 2
 
@@ -35,7 +38,7 @@ text = "Chapter 2
 [node name="Chapter 3" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-focus_neighbor_left = NodePath("../Chapter 2")
+theme = ExtResource("2_b4j50")
 disabled = true
 text = "Chapter 3
 

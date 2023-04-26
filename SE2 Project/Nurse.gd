@@ -8,7 +8,7 @@ var player_in_area : bool = false
 var player : CharacterBody2D
 var is_talking : bool = false
 var player_got_vaccine : bool
-@onready var just_got_vaccinated : bool = PlayerStats.just_got_vaccinated
+@onready var just_got_vaccinated : bool = false
 
 func _ready():
 	dialogue_area_shape.reparent($dialogue_area)
@@ -18,6 +18,7 @@ func _ready():
 	
 
 func _input(event):
+	just_got_vaccinated = PlayerStats.just_got_vaccinated
 	if not just_got_vaccinated and event.is_action_pressed("dialogic_default_action") and player_in_area and not is_talking:
 		player.set_physics_process(false)
 		is_talking = true
