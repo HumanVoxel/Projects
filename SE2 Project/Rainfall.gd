@@ -3,6 +3,9 @@ extends Node2D
 func _ready():
 	pass
 	
+#func _input(event):
+#	if event.is_action_pressed("climb"):
+#		get_tree().paused = not get_tree().paused
 func _process(_delta):
 	var canvas = get_canvas_transform()
 	var top_left = -canvas.origin / canvas.get_scale()

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://wtw6j1n7yu2o"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_3uvux"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ri0r"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="rubella_paper" instance=ExtResource("1_3uvux")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Rubella"
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Rubella, also known as German measles, is a viral disease that is caused by the rubella virus, which is transmitted from person to person through respiratory droplets. Rubella was often considered a mild childhood illness, with symptoms that include a rash, low-grade fever, and swollen lymph nodes. However, the real impact of rubella became evident in the mid-20th century when a connection was established between rubella infection during pregnancy and birth defects in newborns.
+ 
+Historical records suggest that rubella has been present in human populations for centuries, but the first clinical descriptions of the disease did not appear until the late 18th century. In the 1940s and 1950s, large rubella outbreaks were reported in various parts of the world, resulting in thousands of cases and many deaths. It was during this time that researchers discovered the link between rubella infection during pregnancy and congenital rubella syndrome (CRS), a condition that can cause serious birth defects such as deafness, blindness, heart defects, and developmental delays in newborns.
+
+Rubella vaccine was developed in the 1960s and proved to be a significant milestone in the prevention of the disease. The first rubella vaccine was licensed in 1969, and it was later combined with measles and mumps vaccines to form the MMR (measles, mumps, and rubella) vaccine, which is now widely used for routine childhood vaccination.
+
+The introduction of the MMR vaccine and other rubella vaccination efforts led to a decline in rubella cases and CRS in many parts of the world. Vaccination campaigns, routine immunization programs, and increased awareness about the importance of vaccination contributed to a reduction in rubella outbreaks and related birth defects.
+
+However, rubella outbreaks can still occur in certain populations or communities with low vaccination coverage. Outbreaks have been reported in schools, colleges, and other settings, particularly among unvaccinated or under-vaccinated individuals. Efforts to maintain high vaccination coverage and promote vaccine advocacy remain important in preventing rubella outbreaks and protecting vulnerable populations, such as pregnant women and their unborn babies.
+
+Rubella is continuesly being studied through ongoing research and surveillance efforts to monitor the epidemiology of the virus, study its genetic variations, and develop new strategies for prevention and control. Public health measures such as isolation and quarantine may be implemented during outbreaks to prevent the spread of rubella in communities.
+
+The rubella spans across history and highlights the importance of vaccination in preventing the disease and its associated birth defects. Vaccination has played a critical role in reducing the burden of rubella, but continued efforts to maintain high vaccination coverage, promote vaccine advocacy, and conduct research are essential in preventing and controlling rubella outbreaks and protecting vulnerable populations."
+label_settings = SubResource("LabelSettings_7ri0r")
+horizontal_alignment = 1
+autowrap_mode = 3

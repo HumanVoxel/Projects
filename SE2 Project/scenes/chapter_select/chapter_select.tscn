@@ -1,16 +1,76 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp21udq314we4"]
+[gd_scene load_steps=22 format=3 uid="uid://cp21udq314we4"]
 
 [ext_resource type="Script" path="res://scenes/chapter_select/chapter_select.gd" id="1_qvhbi"]
 [ext_resource type="Theme" uid="uid://b1agldm4pc558" path="res://resources/simple_theme.tres" id="2_b4j50"]
+[ext_resource type="Texture2D" uid="uid://34tkoogihpsp" path="res://Assets/UI/chapter thumbnails/chapter2full.png" id="4_2d22f"]
+[ext_resource type="Texture2D" uid="uid://ckq8o7bbqp8yf" path="res://Assets/UI/chapter thumbnails/chapter2fullDisabled.png" id="4_s0ual"]
+[ext_resource type="Texture2D" uid="uid://cfk6hhavdnb83" path="res://Assets/UI/chapter thumbnails/chapter3full.png" id="5_765wq"]
+[ext_resource type="Texture2D" uid="uid://dqrq5nioxgy7y" path="res://Assets/UI/chapter thumbnails/chapter3fullDisabled.png" id="6_gd88j"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gtyk1"]
+load_path = "res://.godot/imported/chapter1full.png-fbf40f30b4df64fe08038901d81a41e2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gup10"]
+atlas = SubResource("CompressedTexture2D_gtyk1")
+region = Rect2(764, 112, 757, 954)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e7ych"]
+load_path = "res://.godot/imported/chapter1full.png-fbf40f30b4df64fe08038901d81a41e2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8sei"]
+atlas = SubResource("CompressedTexture2D_e7ych")
+region = Rect2(843, 358, 424, 632)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2kxur"]
+load_path = "res://.godot/imported/chapter1fullDisabled.png-b37fb3660ec68e7e330d778f85949bbc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7g3x"]
+atlas = SubResource("CompressedTexture2D_2kxur")
+region = Rect2(863, 401, 367, 536)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ric0f"]
+load_path = "res://.godot/imported/chapter1full.png-fbf40f30b4df64fe08038901d81a41e2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlpug"]
+atlas = SubResource("CompressedTexture2D_ric0f")
+region = Rect2(843, 358, 424, 632)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwi6b"]
+atlas = ExtResource("4_2d22f")
+region = Rect2(929, 13, 959, 1063)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6p82a"]
+load_path = "res://.godot/imported/chapter2full.png-704f721b9693979e78918f4ef8407287.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujdm2"]
+atlas = SubResource("CompressedTexture2D_6p82a")
+region = Rect2(1244, 198, 665, 878)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tvyi"]
+atlas = ExtResource("4_s0ual")
+region = Rect2(929, 13, 959, 1063)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc5qh"]
+atlas = ExtResource("5_765wq")
+region = Rect2(735, 37, 513, 978)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21sat"]
+atlas = ExtResource("5_765wq")
+region = Rect2(735, 66, 440, 776)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w05px"]
+atlas = ExtResource("6_gd88j")
+region = Rect2(735, 37, 513, 978)
 
 [node name="chapter_select" type="CanvasLayer"]
 layer = 0
 script = ExtResource("1_qvhbi")
-chapter_1 = NodePath("HBoxContainer/Chapter 1")
-chapter_2 = NodePath("HBoxContainer/Chapter 2")
-chapter_3 = NodePath("HBoxContainer/Chapter 3")
+chapter_1 = NodePath("MarginContainer1/Chapter1Select")
+chapter_2 = NodePath("MarginContainer2/Chapter2Select")
+chapter_3 = NodePath("MarginContainer3/Chapter3Select")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,6 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Chapter 1" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_b4j50")
@@ -44,6 +105,83 @@ text = "Chapter 3
 
 \"Homecoming\""
 
+[node name="MarginContainer1" type="MarginContainer" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 95.0
+offset_bottom = 170.0
+
+[node name="Chapter1Select" type="TextureButton" parent="MarginContainer1"]
+modulate = Color(0.470588, 0.470588, 0.470588, 1)
+clip_contents = true
+layout_mode = 2
+disabled = true
+texture_normal = SubResource("AtlasTexture_gup10")
+texture_hover = SubResource("AtlasTexture_u8sei")
+texture_disabled = SubResource("AtlasTexture_j7g3x")
+texture_focused = SubResource("AtlasTexture_qlpug")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="MarginContainer1"]
+layout_mode = 2
+text = "Chapter 1
+
+\"Outbreak\""
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = 113.0
+offset_top = 10.0
+offset_right = 198.0
+offset_bottom = 170.0
+
+[node name="Chapter2Select" type="TextureButton" parent="MarginContainer2"]
+modulate = Color(0.470588, 0.470588, 0.470588, 1)
+clip_contents = true
+layout_mode = 2
+disabled = true
+texture_normal = SubResource("AtlasTexture_dwi6b")
+texture_hover = SubResource("AtlasTexture_ujdm2")
+texture_disabled = SubResource("AtlasTexture_7tvyi")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+text = "Chapter 2
+
+\"Convenience Store\""
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+offset_left = 215.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 170.0
+
+[node name="Chapter3Select" type="TextureButton" parent="MarginContainer3"]
+modulate = Color(0.470588, 0.470588, 0.470588, 1)
+clip_contents = true
+layout_mode = 2
+disabled = true
+texture_normal = SubResource("AtlasTexture_vc5qh")
+texture_hover = SubResource("AtlasTexture_21sat")
+texture_disabled = SubResource("AtlasTexture_w05px")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="MarginContainer3"]
+layout_mode = 2
+text = "Chapter 3
+
+\"Homecoming\""
+horizontal_alignment = 1
+
 [connection signal="pressed" from="HBoxContainer/Chapter 1" to="." method="_on_chapter_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/Chapter 2" to="." method="_on_chapter_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/Chapter 3" to="." method="_on_chapter_3_pressed"]
+[connection signal="pressed" from="MarginContainer1/Chapter1Select" to="." method="_on_chapter_1_select_pressed"]
+[connection signal="pressed" from="MarginContainer2/Chapter2Select" to="." method="_on_chapter_2_select_pressed"]
+[connection signal="pressed" from="MarginContainer3/Chapter3Select" to="." method="_on_chapter_3_select_pressed"]

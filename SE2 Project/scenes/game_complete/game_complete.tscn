@@ -31,7 +31,7 @@ grow_vertical = 2
 [node name="Chapter Complete" type="Label" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Chapter Complete"
+text = "Game Complete"
 label_settings = SubResource("LabelSettings_t4t20")
 
 [node name="Stats" type="Label" parent="ColorRect/VBoxContainer"]

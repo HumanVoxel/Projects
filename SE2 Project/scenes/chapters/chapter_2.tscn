@@ -63,7 +63,7 @@ script = SubResource("GDScript_il1m2")
 timelapse = 4.0
 
 [node name="Player" parent="." index="3" node_paths=PackedStringArray("camera")]
-position = Vector2(3501, 136)
+position = Vector2(88, 150)
 is_indoors = true
 camera = NodePath("../Camera2D")
 

@@ -13,12 +13,6 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="smallpox_paper" instance=ExtResource("1_v3u77")]
 
-[node name="paper" parent="." index="1"]
-offset_left = 35.0
-offset_top = -180.0
-offset_right = 285.0
-offset_bottom = -9.99991
-
 [node name="ScrollContainer" parent="paper/MarginContainer" index="0"]
 clip_contents = false
 

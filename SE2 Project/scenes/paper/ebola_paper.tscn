@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://glxjim6q63x3"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_h6mo2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2t1w"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="ebola_paper" instance=ExtResource("1_h6mo2")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Ebola"
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Ebola is a deadly viral disease that has caused severe outbreaks and garnered global attention since its discovery in the 1970s. Ebola virus disease (EVD) is caused by the Ebola virus, which belongs to the family Filoviridae.
+
+The first recorded outbreak of Ebola occurred in 1976 in the Democratic Republic of Congo (DRC) and Sudan, with simultaneous outbreaks in both countries. The disease was named after the Ebola River in DRC, near the area where the first cases were identified. The initial outbreaks were characterized by high mortality rates, with reported case fatality rates ranging from 53% to 88%.
+
+Since then, there have been several outbreaks of Ebola in different parts of Africa, including countries such as Guinea, Liberia, Sierra Leone, Nigeria, and most recently, the Democratic Republic of Congo. These outbreaks have had significant social, economic, and health impacts on affected communities and have posed challenges for local and international health authorities in containing the spread of the virus.
+
+Ebola is a severe and often fatal disease that can cause symptoms such as high fever, headache, muscle and joint pain, weakness, fatigue, diarrhea, vomiting, abdominal pain, and hemorrhaging (bleeding). It can be transmitted from person to person through contact with bodily fluids of infected individuals or through contact with contaminated surfaces or objects. The virus has a high case fatality rate, ranging from 25% to 90%, depending on the strain and the quality of supportive care available.
+
+The response to Ebola outbreaks has involved various strategies, including isolation and quarantine of infected individuals, contact tracing, safe burial practices, community engagement and education, and provision of supportive care for those infected. Additionally, research efforts have focused on understanding the virus, developing diagnostics, therapeutics, and vaccines, and improving outbreak response capabilities.
+
+One of the most notable Ebola outbreaks in recent history occurred in West Africa between 2014 and 2016, with Guinea, Liberia, and Sierra Leone being the hardest hit countries. The outbreak resulted in thousands of deaths, overwhelmed local health systems, and had significant social and economic consequences. It also highlighted the need for increased preparedness and response capacity for outbreaks of highly infectious diseases.
+
+Since then, there have been ongoing efforts to improve global preparedness and response to Ebola and other infectious diseases. International organizations, governments, and local communities have worked together to strengthen health systems, improve surveillance and early detection of outbreaks, enhance laboratory capacity, and promote public health measures such as infection prevention and control, vaccination campaigns, and community engagement.
+
+Ebola continues to evolve as efforts to prevent, detect, and respond to outbreaks persist. While progress has been made in recent years, challenges remain in controlling and preventing Ebola outbreaks, particularly in resource-constrained settings. Continued research, capacity-building, and collaboration among global health stakeholders are essential in addressing the complex challenges posed by Ebola and other infectious diseases."
+label_settings = SubResource("LabelSettings_f2t1w")
+horizontal_alignment = 1
+autowrap_mode = 3

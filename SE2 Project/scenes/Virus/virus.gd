@@ -15,17 +15,18 @@ var seek_player : bool = false
 var active : bool = false
 
 func _ready() -> void:
-	player_initial_pos = player.global_position
-
-#	navigation_points.append(player.global_position)
-#	global_position = navigation_points.front()
+##	player_initial_pos = player.global_position
+#
+##	navigation_points.append(player.global_position)
+##	global_position = navigation_points.front()
+	pass
 	
 func _physics_process(delta):
 	if player.global_position != player_initial_pos and not active and not player.is_indoors:
 		active = true
 		await get_tree().create_timer(grace_period).timeout
 		seek_player = true
-		
+
 	if active and not player.is_indoors:
 		var new_position = player.global_position
 		navigation_points.append(new_position)

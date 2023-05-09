@@ -6,7 +6,10 @@ func _ready():
 	get_tree().paused = true
 	$VBoxContainer/Resume.grab_focus()
 	pass # Replace with function body.
-
+func _unhandled_input(event):
+	if event.is_action_pressed("pause"):
+		_on_resume_pressed()
+		
 func _on_resume_pressed():
 	get_tree().paused = false
 	queue_free()

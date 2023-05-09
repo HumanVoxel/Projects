@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bom4kktxd502k"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_7dql0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0mq61"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="mumps_paper" instance=ExtResource("1_7dql0")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Mumps"
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Mumps is a viral disease that has affected humans for centuries, causing characteristic symptoms such as swelling of the salivary glands, fever, and muscle aches. Mumps is caused by the mumps virus, which is transmitted from person to person through respiratory droplets.
+
+Historical records suggest that mumps has been present in human populations for thousands of years, with descriptions of mumps-like symptoms dating back to ancient times. However, the first clinical descriptions of mumps as a distinct disease appeared in the 18th century, with outbreaks reported in various parts of the world.
+
+Mumps outbreaks continued to occur in the 19th and early 20th centuries, with periodic epidemics affecting communities. Mumps was considered a common childhood illness, and most people experienced mumps at some point during childhood. However, in some cases, mumps could lead to complications such as orchitis (inflammation of the testicles), meningitis (inflammation of the brain and spinal cord), and deafness.
+
+The development of a mumps vaccine in the mid-20th century marked a significant milestone in the prevention of the disease. The first mumps vaccine was licensed in the 1960s, and it was later combined with measles and rubella vaccines to form the MMR (measles, mumps, and rubella) vaccine, which is now widely used for routine childhood vaccination.
+
+The introduction of the MMR vaccine and other vaccination efforts led to a decline in mumps cases in many parts of the world. Vaccination campaigns, routine immunization programs, and increased awareness about the importance of vaccination contributed to a reduction in mumps outbreaks and related complications.
+
+The prevention of the mumps disease proved to be effective, however, mumps outbreaks still do occur in certain populations or communities with low vaccination coverage. Outbreaks have been reported in schools, colleges, and other settings, particularly among unvaccinated or under-vaccinated individuals. Mumps can still cause significant morbidity, especially in older age groups, and efforts to maintain high vaccination coverage and promote vaccine advocacy remain important.
+
+Today, there are ongoing research and surveillance efforts to better understand the mumps virus, monitor its epidemiology, and develop new strategies for prevention and control. Additionally, public health measures such as isolation and quarantine may be implemented during outbreaks to prevent the spread of mumps in communities.
+
+In conclusion, the story of mumps is one that spans across history and continues to evolve with vaccination efforts, public health measures, and ongoing research. Vaccination has played a critical role in reducing the burden of mumps, but vigilance and efforts to maintain high vaccination coverage and promote vaccine advocacy remain essential in preventing and controlling mumps outbreaks."
+label_settings = SubResource("LabelSettings_0mq61")
+horizontal_alignment = 1
+autowrap_mode = 3

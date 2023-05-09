@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr8o751j6gmas"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_05y8k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrerc"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="covid19_paper" instance=ExtResource("1_05y8k")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Covid-19"
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "COVID-19 is the emergence of a novel coronavirus, named SARS-CoV-2, in late 2019 in Wuhan, Hubei province, China. The first cases were linked to a seafood market in Wuhan, suggesting that the virus originated from animals and then spread to humans, possibly through zoonotic transmission.
+
+COVID-19, short for \"coronavirus disease 2019,\" is a highly contagious respiratory illness caused by the SARS-CoV-2 virus. It has since become a global pandemic, spreading rapidly across borders and affecting millions of people worldwide. The World Health Organization (WHO) declared COVID-19 as a pandemic on March 11, 2020.
+
+The virus primarily spreads through respiratory droplets when an infected person coughs, sneezes, or talks, and can also spread by touching contaminated surfaces and then touching the face. COVID-19 can cause a range of symptoms, from mild to severe, including fever, cough, shortness of breath, fatigue, loss of taste or smell, and in severe cases, pneumonia, organ failure, and death. Certain populations, such as older adults and individuals with underlying health conditions, are at higher risk of severe illness or complications from COVID-19.
+
+The pandemic has had profound global impacts on health, economies, and daily life. Many countries have implemented various measures to slow the spread of the virus, including widespread testing, contact tracing, quarantine and isolation measures, social distancing, mask mandates, travel restrictions, and lockdowns. These measures have had significant social, economic, and mental health consequences, affecting individuals, families, communities, and economies worldwide.
+
+The response to the COVID-19 pandemic has involved unprecedented efforts by governments, healthcare systems, scientists, researchers, and communities around the world. There have been rapid developments in diagnostics, treatments, and vaccines, with vaccines becoming available in record time through accelerated research and regulatory processes. Vaccination campaigns have been launched globally to reduce the spread of the virus and protect vulnerable populations.
+
+The pandemic has also highlighted the importance of public health measures, such as hand hygiene, wearing masks, practicing physical distancing, and following guidelines and recommendations from health authorities to prevent the spread of the virus. Health workers and essential workers have played a critical role in responding to the pandemic, risking their own health and safety to care for patients and keep essential services running.
+
+COVID-19 has brought to the forefront issues such as health equity, social determinants of health, and global health governance. It has exposed weaknesses in healthcare systems, supply chains, and preparedness for pandemics, and has prompted discussions and actions on improving pandemic preparedness and response for the future.
+
+The COVID-19 pandemic heavily impacted our society and efforts of prevention and mitigation of the spread of the disease is still ongoing, with the pandemic continuing to evolve and impact individuals and communities around the world. It serves as a reminder of the importance of public health measures, scientific research, global collaboration, and preparedness in responding to emerging infectious diseases."
+label_settings = SubResource("LabelSettings_yrerc")
+horizontal_alignment = 1
+autowrap_mode = 3

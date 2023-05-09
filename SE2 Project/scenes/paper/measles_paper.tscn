@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://crk236x1y5pst"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_ggy3p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_54ls6"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="measles_paper" instance=ExtResource("1_ggy3p")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Measles"
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Measles is one that spans across history and continents, involving a highly contagious viral disease that has affected millions of people, especially children, over the years. Measles is caused by the measles virus and is known for its characteristic symptoms of fever, rash, cough, and runny nose, often accompanied by complications that can be severe, including pneumonia, encephalitis, and even death.
+
+Measles has likely been present in human populations for thousands of years, with historical records and descriptions of measles-like symptoms dating back centuries. However, the first documented accounts of measles outbreaks in the modern era appeared in the 17th and 18th centuries, with large-scale epidemics occurring in Europe, North America, and other parts of the world.
+
+Measles continued to be a major health concern throughout the 19th and early 20th centuries, with periodic outbreaks causing significant morbidity and mortality, especially among children. In the pre-vaccine era, measles was a leading cause of death among young children worldwide, with estimates of millions of deaths annually.
+
+The development of a measles vaccine in the mid-20th century marked a turning point in the story of measles. The first measles vaccine, a killed virus vaccine, was licensed in the 1960s, followed by the introduction of a live attenuated virus vaccine in the 1960s and 1970s. These vaccines were highly effective at preventing measles and contributed to a dramatic decline in measles cases in many parts of the world.
+
+Global efforts to eliminate measles gained momentum in the late 20th and early 21st centuries, with the establishment of vaccination campaigns, routine immunization programs, and other strategies aimed at achieving high levels of measles vaccination coverage. Measles vaccination efforts have been coordinated by organizations such as the World Health Organization (WHO), UNICEF, and the Centers for Disease Control and Prevention (CDC), among others.
+
+Despite progress, measles remains a significant public health challenge in many parts of the world. Outbreaks continue to occur, particularly in areas with low vaccination coverage or limited access to healthcare, leading to increased morbidity and mortality, especially among vulnerable populations such as infants, young children, and immunocompromised individuals.
+
+Measles throughout history was marked by efforts to address vaccine hesitancy and misinformation, as well as the promotion of vaccine advocacy and education to ensure that communities understand the importance of measles vaccination for individual and public health. Measles vaccination campaigns have been instrumental in reducing the global burden of measles and saving millions of lives.
+
+The fight against measles continues, with ongoing efforts to increase measles vaccination coverage, strengthen surveillance, and ensure access to healthcare for vulnerable populations. The story of measles is one of progress, challenges, and the importance of vaccination in preventing and controlling infectious diseases, with the ultimate goal of eliminating measles as a public health threat worldwide.
+"
+label_settings = SubResource("LabelSettings_54ls6")
+horizontal_alignment = 1
+autowrap_mode = 3
