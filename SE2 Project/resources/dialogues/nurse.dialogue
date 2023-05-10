@@ -1,24 +1,93 @@
 ~ start
 
-Nurse: [[Hi there!|Hello there!|Howdy!]]
-Nurse: Rough weather outside huh?
-Nurse: How can I help you today?
+if current_chapter == "Chapter1":
+	if not dose1collected:
+		Nurse: [[Hi there!|Hello there!|Howdy!]]
+		Nurse: Rough weather outside huh?
+		Nurse: THE VIRUS IS EVERYWHERE!!
+		Nurse: Thankfully, researchers have finally identified the virus.
+		Nurse: The virus is called the SARS-COV2 and it causes the coronavirus disease 19 also known as COVID-19.
+		Nurse: I'm suprised that it got here so fast since it supposedly came from Wuhan China.
+		Nurse: It spreads through droplets expelled by sneezing and coughing and other bodily fluids.
+		Nurse: I don't wanna spook you or anything but it apparently causes some nasty symptoms.
+		Nurse: But if you do get a fever, fatigue, cough, headache, sore throat, or GOD FORBID LOSS OF TASTE!!.
+		Nurse: Ahem... Do let us know right away and quarantine yourself so that we can monitor you.
+		Nurse: Fortunately earlier, researchers just developed a vaccine that boosts your immune response to the virus.
+		Nurse: There are two initial doses of the vaccine and a booster shot.
+		Nurse: Would you take your first dose now?
+		=> choice 
+	
+	
+if current_chapter == "Chapter2":
+	if dose1collected:
+		Nurse: It's you again
+		Nurse: Haven't seen you in a while
+		Nurse: How may I help you today?
+	else:
+		Nurse: [[Hi there!|Hello there!|Howdy!]]
+		Nurse: Rough weather outside huh?
+		Nurse: THE VIRUS IS EVERYWHERE!!
+		Nurse: Thankfully, researchers have finally identified the virus.
+		Nurse: The virus is called the SARS-COV2 and it causes the coronavirus disease 19 also known as COVID-19.
+		Nurse: I'm suprised that it got here so fast since it supposedly came from Wuhan China.
+		Nurse: It spreads through droplets expelled by sneezing and coughing and other bodily fluids.
+		Nurse: I don't wanna spook you or anything but it apparently causes some nasty symptoms.
+		Nurse: But if you do get a fever, fatigue, cough, headache, sore throat, or GOD FORBID LOSS OF TASTE!!.
+		Nurse: Ahem... Do let us know right away and quarantine yourself so that we can monitor you.
+		Nurse: Fortunately earlier, researchers just developed a vaccine that boosts your immune response to the virus.
+		Nurse: There are two initial doses of the vaccine and a booster shot.
+		Nurse: Would you take your first dose now?
+	=> choice
+
+
+
+if current_chapter == "Chapter3":
+	if dose1collected and dose2collected:
+		Nurse: Is it just me or are you comming here more often? Are you ....
+		Nurse: LMAO, I'm just with ya
+		Nurse: How may I help you today?
+	else:
+		Nurse: [[Hi there!|Hello there!|Howdy!]]
+		Nurse: Rough weather outside huh?
+		Nurse: THE VIRUS IS EVERYWHERE!!
+		Nurse: Thankfully, researchers have finally identified the virus.
+		Nurse: The virus is called the SARS-COV2 and it causes the coronavirus disease 19 also known as COVID-19.
+		#Nurse: I'm suprised that it got here so fast since it supposedly came from Wuhan China.
+		#Nurse: It spreads through droplets expelled by sneezing and coughing and other bodily fluids.
+		Nurse: I don't wanna spook you or anything but it apparently causes some nasty symptoms.
+		Nurse: But if you do get a fever, fatigue, cough, headache, sore throat, or GOD FORBID LOSS OF TASTE!!.
+		Nurse: Ahem... Do let us know right away and quarantine yourself so that we can monitor you.
+		Nurse: Fortunately earlier, researchers just developed a vaccine that boosts your immune response to the virus.
+		Nurse: There are two initial doses of the vaccine and a booster shot.
+		Nurse: I must remind you it is perfectly normal to get some mild fever after getting the vaccine. It means the vaccine is working its magic.
+		Nurse: Would you take your first dose now?
+	=> choice
+
+
+~ choice
 - I want to get vaccinated
 	if total_doses == 0:
-		Nurse: Hmmm. It seems you haven't been vaccinated before.
-		Nurse: I'll give you the first dose then.
+		Nurse: Wise choice.
+		Nurse: Then I'll administer the first dose. Don't worry it won't hurt much.
+		Nurse: And.... done.
+		Nurse: See? I told you it wouldn't hurt.
+		Nurse: Now be sure to get plenty of rest.
 		do collectibles_append("dose1")
 		set just_got_vaccinated = true
 		=> END
 	elif total_doses == 1:
+		Nurse: Back for more huh?
+		Nurse: Lets see...
 		Nurse: Looks like you already got the first dose.
 		Nurse: I'll give you the second dose this time then.
+		Nurse: And.... done.
 		do collectibles_append("dose2")
 		set just_got_vaccinated = true
 		=> END
 	elif total_doses == 2:
+		Nurse: Seems like you already know how valuable the vaccines are against the virus.
 		Nurse: It looks like you already got vaccinated with the first and second dose.
-		Nurse: The booster dose is the only one left. Do you want it?
+		Nurse: The booster shot is the only one left. Do you want it?
 		- Yes, give it to me
 			Nurse: Alrighty then.
 			do collectibles_append("booster")
@@ -29,10 +98,14 @@ Nurse: How can I help you today?
 	elif total_doses == 3:
 		Nurse: Hmmm...
 		Nurse: You already got vaccinated with the first and second dose, including the booster.
-		Nurse: We cannot offer you anymore vaccine at this time.
+		Nurse: I'm sorry but we cannot offer you anymore vaccine at this time.
 		=> END
-- Nevermind
+		
+- Maybe some other time
 	Nurse: [[Alrighty then.|No prob.|Aight.]]
+	Nurse: Are you sure?
+	Nurse: No pressure but this is your best chance of protection against the virus.
+	Nurse: Well I'm sure you'll be back soon.
 	=> END
 
 => END

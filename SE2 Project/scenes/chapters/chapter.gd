@@ -14,7 +14,7 @@ func _ready():
 	if not PlayerStats.intro_done:
 		pass
 
-		
+	PlayerStats.current_chapter = "Chapter2"
 	pass # Replace with function body.s
 
 func _unhandled_input(event):

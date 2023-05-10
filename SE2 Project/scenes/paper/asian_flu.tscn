@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://do2e5x76tok2y"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_cglmm"]
+
+[node name="Asian Flu" instance=ExtResource("1_cglmm")]
+
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Asian Flu"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Initiating from China in the first quarter of 1957, the H2N2 influenza virus, which originated from an avian influenza strain, spread to the United States, England, and Scotland within months. The antigenic drift which caused the generation of influenza A subtype H2N2 would later cause periodic epidemics. As usual infections with the flu, the patients presented with fever, chills, or myalgia. By the time it was resolved in April 1958, it had claimed more than 1 million lives globally."

@@ -11,8 +11,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Ebola"
 
-[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-layout_mode = 2
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Ebola is a deadly viral disease that has caused severe outbreaks and garnered global attention since its discovery in the 1970s. Ebola virus disease (EVD) is caused by the Ebola virus, which belongs to the family Filoviridae.
 
 The first recorded outbreak of Ebola occurred in 1976 in the Democratic Republic of Congo (DRC) and Sudan, with simultaneous outbreaks in both countries. The disease was named after the Ebola River in DRC, near the area where the first cases were identified. The initial outbreaks were characterized by high mortality rates, with reported case fatality rates ranging from 53% to 88%.
@@ -29,5 +28,3 @@ Since then, there have been ongoing efforts to improve global preparedness and r
 
 Ebola continues to evolve as efforts to prevent, detect, and respond to outbreaks persist. While progress has been made in recent years, challenges remain in controlling and preventing Ebola outbreaks, particularly in resource-constrained settings. Continued research, capacity-building, and collaboration among global health stakeholders are essential in addressing the complex challenges posed by Ebola and other infectious diseases."
 label_settings = SubResource("LabelSettings_f2t1w")
-horizontal_alignment = 1
-autowrap_mode = 3

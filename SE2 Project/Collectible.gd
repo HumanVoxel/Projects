@@ -9,6 +9,9 @@ var new_scene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$collectible_sprite.texture = collectible_sprite
+	if name in PlayerStats.collectibles:
+		queue_free()
+		
 	if resource:
 		scene = load(resource)
 	pass # Replace with function body.

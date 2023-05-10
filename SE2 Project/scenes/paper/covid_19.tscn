@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb2rj72piv4n7"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_unhhl"]
+
+[node name="Covid_19" instance=ExtResource("1_unhhl")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "COVID 19"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Caused by the severe acute respiratory syndrome coronavirus 2 (SARS-COV2), symptoms of coronavirus disease 19 (COVID-19) include fever, fatigue, productive cough, breathlessness, headache, anosmia, dysgeusia, and sore throat. Severe cases presented with complications such as ARDS, respiratory failure, cardiac failure, and septic shock. The first case was reported to WHO from Wuhan on December 31, 2019, and it was declared as a global pandemic on March 11, 2020 The virus is thought to have originated from Wuhan province, China. Initially reported cases are considered to be from zoonotic source Huanan seafood market selling snakes, bats, and other wild animals. Although the impact of different types of medications or conditions on the disease process is unknown, there is still not any effective treatment that is recommended by authorities. Virus transmission is widely accepted to be through droplets expelled by sneezing, coughing, and talking. It can also be found in body fluids such as blood, semen, and ocular secretions. Findings suggest transmission through the air. Globally, as of July 2021, there have been >190 million confirmed cases of COVID-19, including >4 million deaths, reported to WHO. As of July 2021, a total of >860 million people are administered with COVID-19 vaccine."

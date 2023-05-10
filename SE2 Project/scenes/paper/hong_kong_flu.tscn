@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy3ekqbn870cw"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_glruj"]
+
+[node name="Hong Kong Flu" instance=ExtResource("1_glruj")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Hong Kong Flu"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Due to another antigenic drift, the H3N2 influenza virus emerged, containing two genes from an avian influenza virus and N2 from the agent of the 1957 pandemic. Although it caused a milder disease compared to the Asian Flu, the virus was highly contagious. In July 1968, it originated from Hong Kong and quickly disseminated to other parts of the globe, starting from the United States. The major factor that affected the swiftness of the spread was the veterans returning from the Vietnam War. The mortality rate, despite being lower overall, was higher among the younger population. Overall, it caused approximately one to four million deaths worldwide."

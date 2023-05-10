@@ -1,11 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://cp21udq314we4"]
+[gd_scene load_steps=26 format=3 uid="uid://cp21udq314we4"]
 
 [ext_resource type="Script" path="res://scenes/chapter_select/chapter_select.gd" id="1_qvhbi"]
 [ext_resource type="Theme" uid="uid://b1agldm4pc558" path="res://resources/simple_theme.tres" id="2_b4j50"]
+[ext_resource type="Shader" path="res://resources/shaders/scroll.gdshader" id="2_bcitc"]
+[ext_resource type="Texture2D" uid="uid://crmvge16kn2qd" path="res://Assets/environment/City/Background.png" id="3_5kjl2"]
 [ext_resource type="Texture2D" uid="uid://34tkoogihpsp" path="res://Assets/UI/chapter thumbnails/chapter2full.png" id="4_2d22f"]
 [ext_resource type="Texture2D" uid="uid://ckq8o7bbqp8yf" path="res://Assets/UI/chapter thumbnails/chapter2fullDisabled.png" id="4_s0ual"]
 [ext_resource type="Texture2D" uid="uid://cfk6hhavdnb83" path="res://Assets/UI/chapter thumbnails/chapter3full.png" id="5_765wq"]
 [ext_resource type="Texture2D" uid="uid://dqrq5nioxgy7y" path="res://Assets/UI/chapter thumbnails/chapter3fullDisabled.png" id="6_gd88j"]
+[ext_resource type="Texture2D" uid="uid://c8ydwbnafxbo3" path="res://Assets/UI/padlock.png" id="7_msp2l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlvm7"]
+shader = ExtResource("2_bcitc")
+shader_parameter/speed = 0.02
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gtyk1"]
 load_path = "res://.godot/imported/chapter1full.png-fbf40f30b4df64fe08038901d81a41e2.ctex"
@@ -69,11 +76,48 @@ chapter_1 = NodePath("MarginContainer1/Chapter1Select")
 chapter_2 = NodePath("MarginContainer2/Chapter2Select")
 chapter_3 = NodePath("MarginContainer3/Chapter3Select")
 
+[node name="scrollingbackground" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_vlvm7")
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -320.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_5kjl2")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 105.0
+offset_bottom = 173.0
+color = Color(0.737255, 0.635294, 0.258824, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 117.0
+offset_top = 7.0
+offset_right = 208.0
+offset_bottom = 173.0
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 219.0
+offset_top = 7.0
+offset_right = 310.0
+offset_bottom = 173.0
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 193.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -106,15 +150,16 @@ text = "Chapter 3
 \"Homecoming\""
 
 [node name="MarginContainer1" type="MarginContainer" parent="."]
-offset_left = 10.0
+offset_left = 17.0
 offset_top = 10.0
-offset_right = 95.0
+offset_right = 102.0
 offset_bottom = 170.0
 
 [node name="Chapter1Select" type="TextureButton" parent="MarginContainer1"]
 modulate = Color(0.470588, 0.470588, 0.470588, 1)
 clip_contents = true
 layout_mode = 2
+focus_neighbor_right = NodePath("../../MarginContainer2/Chapter2Select")
 disabled = true
 texture_normal = SubResource("AtlasTexture_gup10")
 texture_hover = SubResource("AtlasTexture_u8sei")
@@ -125,21 +170,24 @@ stretch_mode = 6
 
 [node name="Label" type="Label" parent="MarginContainer1"]
 layout_mode = 2
+size_flags_vertical = 0
 text = "Chapter 1
 
 \"Outbreak\""
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-offset_left = 113.0
+offset_left = 120.0
 offset_top = 10.0
-offset_right = 198.0
+offset_right = 205.0
 offset_bottom = 170.0
 
 [node name="Chapter2Select" type="TextureButton" parent="MarginContainer2"]
 modulate = Color(0.470588, 0.470588, 0.470588, 1)
 clip_contents = true
 layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer1/Chapter1Select")
+focus_neighbor_right = NodePath("../../MarginContainer3/Chapter3Select")
 disabled = true
 texture_normal = SubResource("AtlasTexture_dwi6b")
 texture_hover = SubResource("AtlasTexture_ujdm2")
@@ -149,6 +197,7 @@ stretch_mode = 6
 
 [node name="Label" type="Label" parent="MarginContainer2"]
 layout_mode = 2
+size_flags_vertical = 0
 text = "Chapter 2
 
 \"Convenience Store\""
@@ -156,15 +205,16 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
-offset_left = 215.0
+offset_left = 222.0
 offset_top = 10.0
-offset_right = 300.0
+offset_right = 307.0
 offset_bottom = 170.0
 
 [node name="Chapter3Select" type="TextureButton" parent="MarginContainer3"]
 modulate = Color(0.470588, 0.470588, 0.470588, 1)
 clip_contents = true
 layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer2/Chapter2Select")
 disabled = true
 texture_normal = SubResource("AtlasTexture_vc5qh")
 texture_hover = SubResource("AtlasTexture_21sat")
@@ -174,14 +224,45 @@ stretch_mode = 6
 
 [node name="Label" type="Label" parent="MarginContainer3"]
 layout_mode = 2
+size_flags_vertical = 0
 text = "Chapter 3
 
 \"Homecoming\""
 horizontal_alignment = 1
 
+[node name="Padlock" type="TextureRect" parent="."]
+offset_left = 42.0
+offset_top = 83.0
+offset_right = 73.0
+offset_bottom = 119.0
+texture = ExtResource("7_msp2l")
+stretch_mode = 2
+
+[node name="Padlock2" type="TextureRect" parent="."]
+offset_left = 147.0
+offset_top = 83.0
+offset_right = 178.0
+offset_bottom = 119.0
+texture = ExtResource("7_msp2l")
+stretch_mode = 2
+
+[node name="Padlock3" type="TextureRect" parent="."]
+offset_left = 249.0
+offset_top = 83.0
+offset_right = 280.0
+offset_bottom = 119.0
+texture = ExtResource("7_msp2l")
+stretch_mode = 2
+
 [connection signal="pressed" from="HBoxContainer/Chapter 1" to="." method="_on_chapter_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/Chapter 2" to="." method="_on_chapter_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/Chapter 3" to="." method="_on_chapter_3_pressed"]
+[connection signal="mouse_entered" from="MarginContainer1/Chapter1Select" to="." method="_on_chapter_1_select_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer1/Chapter1Select" to="." method="_on_chapter_1_select_mouse_exited"]
 [connection signal="pressed" from="MarginContainer1/Chapter1Select" to="." method="_on_chapter_1_select_pressed"]
+[connection signal="mouse_entered" from="MarginContainer2/Chapter2Select" to="." method="_on_chapter_2_select_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer2/Chapter2Select" to="." method="_on_chapter_2_select_mouse_exited"]
 [connection signal="pressed" from="MarginContainer2/Chapter2Select" to="." method="_on_chapter_2_select_pressed"]
+[connection signal="mouse_entered" from="MarginContainer3/Chapter3Select" to="." method="_on_chapter_3_select_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer3/Chapter3Select" to="." method="_on_chapter_3_select_mouse_exited"]
 [connection signal="pressed" from="MarginContainer3/Chapter3Select" to="." method="_on_chapter_3_select_pressed"]

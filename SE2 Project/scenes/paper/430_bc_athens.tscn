@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://nwt3xejvsrea"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_ym7kc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pws06"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="430 BC Athens" instance=ExtResource("1_ym7kc")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "430 B.C.: Athens
+"
+
+[node name="Label2" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "The earliest recorded pandemic happened during the Peloponnesian War. After the disease passed through Libya, Ethiopia and Egypt, it crossed the Athenian walls as the Spartans laid siege. As much as two-thirds of the population died.
+
+The symptoms included fever, thirst, bloody throat and tongue, red skin and lesions. The disease, suspected to have been typhoid fever, weakened the Athenians significantly and was a significant factor in their defeat by the Spartans."
+label_settings = SubResource("LabelSettings_pws06")
+horizontal_alignment = 1
+autowrap_mode = 3

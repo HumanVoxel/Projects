@@ -9,7 +9,6 @@ signal collected
 
 @onready var health = PlayerStats.max_health
 var is_dash_ready : bool
-var is_wearing_mask : bool
 var wall_direction : Vector2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var is_indoors : bool = false
@@ -64,16 +63,16 @@ func player_damaged(damage : float) -> void:
 	pass
 	
 func player_collected(collectible):
-	emit_signal("collected", collectible)
 	if collectible == "facemask":
-		is_wearing_mask = true
+		PlayerStats.is_wearing_mask = true
+	emit_signal("collected", collectible)
 
 
 func player_health_increased(health):
 	self.health = health
 
 func update_sprite():
-	if is_wearing_mask:
+	if PlayerStats.is_wearing_mask:
 		if is_dash_ready:
 			$Sprite2D.texture = load("res://Assets/character/character_masked_dash_ready.png")
 		else:

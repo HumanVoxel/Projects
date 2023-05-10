@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvr7p8r3rfew0"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_fvalg"]
+
+[node name="Justinian Plague" instance=ExtResource("1_fvalg")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Justinian Plague"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Called after the Byzantine emperor at that period, the plague of Justinian hit the Mediterranean in 541 AC. Symptoms were those of infection caused by Yersinia pestis: fever, cough, and dyspnea in pneumonic plague and groin or axillary buboes in bubonic plague. Some victims experienced hallucinations which were followed by fever, fatigue. Sometimes sore throat or diarrhea were the initial symptoms. It was transmitted from infected rats to humans through flea bites, and human-human transmission also propagated the disease. The plague of Justinian is estimated to have killed 60 percent of the Mediterranean world. DNA extracted from the dental pulp of remains from burial pits from that period confirmed that this pandemic was caused by Yersinia pestis."

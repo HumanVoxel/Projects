@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cksmrl7ctxjbw"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_853t2"]
+
+[node name="Black Death" instance=ExtResource("1_853t2")]
+
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Black Death"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "The Black Death, also known as the Plague, was a bubonic plague pandemic that occurred from 1346 to 1353 in Europe, Asia, and Africa. It is considered to be the most fatal pandemic recorded in human history with a death toll of around 200 million people. Some estimates suggest that it managed to kill as much as 60% of Europe’s population. Physicians at that time attributed the disease to miasma: corruption of air. After decades of research by various individuals and organizations, the Indian Plague Research Commission established in 1905 found an association between the plague and dead rats around the human habitat, and that rat flea was the vector. There are three clinical types of plague - Bubonic plague, where the patient suffers from sudden onset high fever; septicemic plague, where the patient has overwhelming septicemia and gangrene of nose, ears, and extremities due to disseminated intravascular coagulation; and then the pneumonic plague, which spreads through aerosols and causes hemoptysis and death. On average, the patients died in 7-10 days once the disease reached its peak."

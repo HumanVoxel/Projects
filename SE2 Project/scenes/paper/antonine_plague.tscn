@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp47f6ah1qo4t"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_qk6gv"]
+
+[node name="Antonine Plague" instance=ExtResource("1_qk6gv")]
+
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Antonine Plague"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "The Antonine Plague occurred between 165 to 180 AD. Troops brought the disease from their eastern campaigns in what is currently Iraq, which eventually spread into the entire Roman empire up till western Germany. Marcus Aurelius, emperor at that time, is one of the 5 million estimated deaths during the pandemic. The symptoms as described by Galen included rashes, hemorrhagic pustules, bloody diarrhea, fever, and sometimes hemoptysis. Littman and Cunha later concluded after research that it was probably smallpox. Decimating 33% of the Roman Empire, the Antonine plague did not restrict to a geographical area as the empire had an extensive political network connected to many different regions over a wide area."

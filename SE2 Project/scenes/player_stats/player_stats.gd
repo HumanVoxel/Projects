@@ -6,13 +6,13 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$paper/MarginContainer/RichTextLabel.grab_focus()
+#	$paper/RichTextLabel.grab_focus()
 	var paper_sound = AudioBus.play_sound_2d(AudioBus.PAPER_OPEN)
 	add_child(paper_sound)
 	paper_sound.play()
 	get_tree().paused = true
-	var text = "[center]Total Deaths = %d\nTotal Vaccine Doses = %d"
-	$paper/MarginContainer/RichTextLabel.text = text % [total_deaths, total_doses]
+	var text = "Total Deaths = %d\nTotal Collectibles = %d\nTotal Vaccine Doses = %d\nTotal Playtime = %s"
+	$paper/MarginContainer/Label.text = text % [total_deaths, PlayerStats.collectibles.size(), total_doses, PlayerStats.get_playtime()]
 	pass # Replace with function body.
 
 func _unhandled_input(event):

@@ -17,6 +17,7 @@ var danger_node = preload(\"res://scenes/danger/danger.tscn\")
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	PlayerStats.current_chapter = \"Chapter1\"
 	$GameLevel/apartment_inside/PointArrow.hide()
 	$Player.gameOver.connect(_on_Game_Over)
 	AudioBus.play_global_music(AudioBus.BIT_SAMPLE)
@@ -79,11 +80,12 @@ metadata/_edit_horizontal_guides_ = [176.0, 152.0, 128.0, 104.0, 80.0, 56.0, 32.
 
 [node name="CameraSegment" parent="Cameras" index="0" node_paths=PackedStringArray("collision_shape")]
 collision_shape = NodePath("")
+limit_left = 8
 limit_top = -1000
 limit_right = 3832
 
 [node name="CollisionShape2D" parent="Cameras/CameraSegment" index="0"]
-position = Vector2(1760, -10)
+position = Vector2(1760, -194)
 
 [node name="CameraSegment2" parent="Cameras" index="1" node_paths=PackedStringArray("collision_shape")]
 collision_shape = NodePath("")
@@ -152,7 +154,7 @@ attack_damage = 0.0
 grace_period = 2.0
 
 [node name="polio_paper" parent="." index="3" instance=ExtResource("4_x5f6f")]
-position = Vector2(904, 160)
+position = Vector2(88, 152)
 resource = "res://scenes/paper/polio_paper.tscn"
 collectible_sprite = ExtResource("9_5kt2k")
 
@@ -172,7 +174,7 @@ resource = "res://scenes/paper/influenza_paper.tscn"
 collectible_sprite = ExtResource("9_5kt2k")
 
 [node name="Player" parent="." index="7" node_paths=PackedStringArray("camera")]
-position = Vector2(184, 128)
+position = Vector2(3464, 152)
 camera = NodePath("../Camera2D")
 
 [node name="Camera2D" parent="." index="9"]
@@ -181,3 +183,6 @@ limit_left = 8
 limit_top = 0
 limit_right = 3831
 limit_bottom = 180
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="10"]
+color = Color(1, 0.784314, 1, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq1a5ngbp2j2x"]
+[gd_scene load_steps=10 format=3 uid="uid://dq1a5ngbp2j2x"]
 
 [ext_resource type="Script" path="res://scenes/paper/paper.gd" id="1_7wen6"]
 [ext_resource type="Texture2D" uid="uid://4161m3f6e4aw" path="res://Assets/UI/Free Pack/Free Pixel Paper/Spritesheet/0.png" id="2_wvhrp"]
@@ -60,6 +60,10 @@ atlas = ExtResource("2_wvhrp")
 region = Rect2(1312, 1440, 128, 128)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ovhlt"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cckdy"]
+font_size = 8
 font_color = Color(0, 0, 0, 1)
 
 [node name="Paper" type="CanvasLayer"]
@@ -126,3 +130,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 expand_mode = 5
 stretch_mode = 4
+
+[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_cckdy")
+horizontal_alignment = 1
+autowrap_mode = 3

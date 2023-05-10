@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0xerje8r0u3d"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_qdhm0"]
+
+[node name="SARS-CoV" instance=ExtResource("1_qdhm0")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "SARS-CoV"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "The severe acute respiratory syndrome coronavirus (SARS-CoV), which belongs to the Coronavirus genus in the Coronaviridae family, caused a worldwide epidemic that lasted from 2002 to 2003. SARS stands for severe acute respiratory syndrome which was the most common cause of death in this disease. This epidemic started in Guangdong province in China and extended to 29 countries in North America, South America, Europe, and Asia. Its intermediate hosts were bats, palm civets, and raccoon dogs. Its death toll was only 774 deaths. Seven months after its first appearance in November 2002, the SARS Pandemic was declared over in July 2003 due to remarkable global efforts to identify the virus, isolate cases, and contact tracing."

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b14hgn84s5lcq"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_350j1"]
+
+[node name="Athenian Plague" instance=ExtResource("1_350j1")]
+
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Athenian Plague"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "The symptoms of the Athenian Plague of 430 BC were rash, headache, and conjunctivitis, progressing to abdominal cramps and hemoptysis, eventually leading to death in 7-8 days in many cases. The exact count is not available, but it is estimated that the plague killed around 25% of Athenians and people in the surrounding areas. War overcrowding is believed to be one of the significant contributors. The range of reported symptoms is so wide that many infectious diseases could have caused this outbreak. The disease that caused this outbreak remains unknown."

@@ -5,6 +5,7 @@ extends CanvasLayer
 func _ready():
 	$"VBoxContainer/Start Game".grab_focus()
 	AudioBus.play_global_music(AudioBus.AIRLINES)
+	PlayerStats.current_chapter = ""
 	pass # Replace with function body.
 
 func _on_start_game_pressed():

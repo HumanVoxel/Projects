@@ -9,6 +9,12 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="polio_paper" instance=ExtResource("1_3rc2d")]
 
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Polio"
 
@@ -16,8 +22,7 @@ text = "Polio"
 custom_minimum_size = Vector2(150, 100)
 texture = ExtResource("2_iccd3")
 
-[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-layout_mode = 2
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Polio also known as poliomyelitis, a highly infectious viral disease that attacks the nervous system and can cause paralysis, has affected millions of people worldwide since the beginning of the 20th century. According to the World Health Organization (WHO), prior to the introduction of polio vaccines, the disease caused an estimated 16 million cases of paralysis annually.
 
 The United States experienced several major polio epidemics in the 20th century, with the worst outbreak occurring in 1952. During that year, over 58,000 cases of polio were reported, resulting in 3,000 deaths and 21,000 cases of paralysis.
@@ -40,5 +45,3 @@ Polio is most commonly spread through contact with infected fecal matter, usuall
 
 There is no cure for polio, but vaccines are available to prevent infection. The polio vaccine is typically administered as a series of shots during childhood and is highly effective at preventing polio."
 label_settings = SubResource("LabelSettings_77tpv")
-horizontal_alignment = 1
-autowrap_mode = 3

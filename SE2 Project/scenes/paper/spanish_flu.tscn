@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3471vlhrnx1a"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_fsgqj"]
+
+[node name="Spanish Flu" instance=ExtResource("1_fsgqj")]
+
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Spanish Flu"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "This deadly influenza pandemic originated in Kansas and spread due to the movement of the troops. It demonstrated nurses’ importance in healthcare while there were no antivirals or cure to be administered. An H1N1 influenza of avian origin caused the 1918 Spanish flu, and it had high mortality for young individuals, which was a unique feature for this pandemic owing to their strong cytokine storm response to the virus. Also, there is evidence that suggests that there was some protection provided to those above the age of 30 because of a similar variant that spread during the “Russian flu” pandemic in 1889. Interventions such as quarantine and personal hygiene were the mainstay of prevention as no vaccine was developed yet. The pandemic killed enough young people to drop the US average life expectancy by 12 years. The mild disease was associated with upper respiratory tract symptoms like sore throat, cough, pharyngitis, fever, myalgia, and prostration. Epistaxis was also seen in both mild and severe cases. Severe illness was characterized by respiratory distress, cyanosis, and pulmonary edema. Bronchopneumonia and ARDS were seen in fatal cases."
