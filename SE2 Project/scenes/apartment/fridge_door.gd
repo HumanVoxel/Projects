@@ -35,7 +35,8 @@ func _on_fridge_door_area_body_entered(body):
 	if body.name == "Player":
 		player_in_area = true
 		player = body
-		$"../U".show()
+		if not PlayerStats.intro_done:
+			$"../U".show()
 	pass # Replace with function body.
 
 

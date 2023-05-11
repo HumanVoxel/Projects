@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c22lgbpe8lfum"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_s1yqx"]
+
+[node name="facemask_paper" instance=ExtResource("1_s1yqx")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Facemask"
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Wearing masks during a pandemic is an important measure to help reduce the spread of respiratory droplets that can carry infectious diseases like COVID-19. Masks act as a physical barrier that helps to prevent droplets from entering the air and potentially infecting others.
+
+COVID-19 is primarily spread through respiratory droplets that are released when an infected person talks, coughs, or sneezes. These droplets can travel through the air and infect others who are in close proximity. Wearing a mask helps to trap these droplets, reducing the risk of transmission.
+
+Overall, wearing a mask is an important public health measure that can help to slow the spread of infectious diseases like COVID-19 and protect the health and safety of individuals and communities."

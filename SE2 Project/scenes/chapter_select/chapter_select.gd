@@ -30,18 +30,24 @@ func _ready():
 
 func _process(delta):
 	if $MarginContainer1/Chapter1Select.has_focus():
+		$MarginContainer1/Chapter1Select.modulate = Color(.9,.9,.9,1)
 		$ColorRect.color = Color("bca242")
 	else:
+		$MarginContainer1/Chapter1Select.modulate = Color(.5,.5,.5,1)
 		$ColorRect.color = Color("282828")
 		
-	if $MarginContainer1/Chapter1Select.has_focus():
+	if $MarginContainer2/Chapter2Select.has_focus():
+		$MarginContainer2/Chapter2Select.modulate = Color(.9,.9,.9,1)
 		$ColorRect2.color = Color("bca242")
 	else:
+		$MarginContainer2/Chapter2Select.modulate = Color(.5,.5,.5,1)
 		$ColorRect2.color = Color("282828")
 		
-	if $MarginContainer1/Chapter1Select.has_focus():
+	if $MarginContainer3/Chapter3Select.has_focus():
+		$MarginContainer3/Chapter3Select.modulate = Color(.9,.9,.9,1)
 		$ColorRect3.color = Color("bca242")
 	else:
+		$MarginContainer3/Chapter3Select.modulate = Color(.5,.5,.5,1)
 		$ColorRect3.color = Color("282828")
 	
 

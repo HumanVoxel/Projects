@@ -1,7 +1,40 @@
 [gd_scene load_steps=10 format=3 uid="uid://dq1a5ngbp2j2x"]
 
-[ext_resource type="Script" path="res://scenes/paper/paper.gd" id="1_7wen6"]
 [ext_resource type="Texture2D" uid="uid://4161m3f6e4aw" path="res://Assets/UI/Free Pack/Free Pixel Paper/Spritesheet/0.png" id="2_wvhrp"]
+
+[sub_resource type="GDScript" id="GDScript_0y72m"]
+script/source = "extends CanvasLayer
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+#	$paper/MarginContainer/ScrollContainer/VBoxContainer/RichTextLabel.grab_focus()
+	var paper_sound = AudioBus.play_sound_2d(AudioBus.PAPER_OPEN)
+	add_child(paper_sound)
+	paper_sound.play()
+	get_tree().paused = true
+	pass # Replace with function body.
+
+func _unhandled_input(event):
+	pass
+	
+		
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	if Input.is_action_pressed(\"ui_up\"):
+		$paper/MarginContainer/ScrollContainer.scroll_vertical -= 5
+	if Input.is_action_pressed(\"ui_down\"):
+		$paper/MarginContainer/ScrollContainer.scroll_vertical += 5
+	if Input.is_action_pressed(\"pause\") or Input.is_action_just_pressed(\"ui_accept\"):
+		$AnimationPlayer.play(\"close\")
+		var paper_sound = AudioBus.play_sound_2d(AudioBus.PAPER_OPEN)
+		add_child(paper_sound)
+		paper_sound.play()
+		await $AnimationPlayer.animation_finished
+		get_tree().paused = false
+		get_parent().queue_free()
+	pass
+
+"
 
 [sub_resource type="Animation" id="Animation_kao26"]
 length = 0.001
@@ -69,7 +102,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="Paper" type="CanvasLayer"]
 process_mode = 2
 layer = 10
-script = ExtResource("1_7wen6")
+script = SubResource("GDScript_0y72m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "open"

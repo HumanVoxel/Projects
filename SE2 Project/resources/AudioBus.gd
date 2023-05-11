@@ -26,6 +26,7 @@ const CONVENIENCE_STORE = preload("res://resources/sounds/ambiance/conveniencest
 const WHISTLE = preload("res://resources/sounds/sfx/metal-whistle-6121_rKZWiMUv.mp3")
 const GAME_OVER = preload("res://resources/sounds/sfx/videogame-death-sound-43894.mp3")
 const SPLAT = preload("res://resources/sounds/sfx/SPLAT Crush 01.wav")
+const SPRING_BOING = preload("res://resources/sounds/sfx/BOUNCE Twang Spring 13.wav")
 
 const BUBBLE_ENTER = preload("res://resources/sounds/sfx/bubble_booster/Bubble heavy 1.wav")
 const BUBBLE_POP = preload("res://resources/sounds/sfx/bubble_booster/Bubble 1.wav")

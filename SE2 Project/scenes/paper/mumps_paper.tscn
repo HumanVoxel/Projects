@@ -11,8 +11,7 @@ font_color = Color(0, 0, 0, 1)
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Mumps"
 
-[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-layout_mode = 2
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Mumps is a viral disease that has affected humans for centuries, causing characteristic symptoms such as swelling of the salivary glands, fever, and muscle aches. Mumps is caused by the mumps virus, which is transmitted from person to person through respiratory droplets.
 
 Historical records suggest that mumps has been present in human populations for thousands of years, with descriptions of mumps-like symptoms dating back to ancient times. However, the first clinical descriptions of mumps as a distinct disease appeared in the 18th century, with outbreaks reported in various parts of the world.
@@ -29,5 +28,3 @@ Today, there are ongoing research and surveillance efforts to better understand 
 
 In conclusion, the story of mumps is one that spans across history and continues to evolve with vaccination efforts, public health measures, and ongoing research. Vaccination has played a critical role in reducing the burden of mumps, but vigilance and efforts to maintain high vaccination coverage and promote vaccine advocacy remain essential in preventing and controlling mumps outbreaks."
 label_settings = SubResource("LabelSettings_0mq61")
-horizontal_alignment = 1
-autowrap_mode = 3

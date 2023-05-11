@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://ephk5ts0ua12"]
+
+[ext_resource type="Script" path="res://scenes/store_clerk/store_clerk.gd" id="1_ivrry"]
+[ext_resource type="Texture2D" uid="uid://di0l8h0g2seug" path="res://Assets/environment/CityTileSetTransparent.png" id="1_pae8p"]
+[ext_resource type="Texture2D" uid="uid://cphuqpv1vsogd" path="res://Assets/UI/ImanorBalloon.png" id="2_hyoqi"]
+[ext_resource type="Texture2D" uid="uid://ciy6w72jxj3yo" path="res://Assets/UI/buttons/Buttons Pack/KEYBOARD/KEYS/U.png" id="3_cw7nl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7rbj"]
+atlas = ExtResource("1_pae8p")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btl1j"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3jif"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t8mo"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhn1j"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doo4l"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5miv"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckjcb"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1cvh"]
+atlas = ExtResource("2_hyoqi")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nm5yu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btl1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3jif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t8mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhn1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doo4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5miv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckjcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1cvh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qkkua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_anj6b"]
+resource_name = "float"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j282y"]
+_data = {
+"RESET": SubResource("Animation_qkkua"),
+"float": SubResource("Animation_anj6b")
+}
+
+[node name="StoreClerk" type="CharacterBody2D"]
+script = ExtResource("1_ivrry")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_t7rbj")
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -16)
+sprite_frames = SubResource("SpriteFrames_nm5yu")
+autoplay = "default"
+
+[node name="U" type="Sprite2D" parent="."]
+position = Vector2(8, -16)
+texture = ExtResource("3_cw7nl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="U"]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_j282y")
+}
+
+[node name="dialogue_area" type="Area2D" parent="."]
+
+[connection signal="body_entered" from="dialogue_area" to="." method="_on_dialogue_area_body_entered"]
+[connection signal="body_exited" from="dialogue_area" to="." method="_on_dialogue_area_body_exited"]

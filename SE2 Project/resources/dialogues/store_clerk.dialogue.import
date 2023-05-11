@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://cy1w4nmkqlc4m"
+path="res://.godot/imported/store_clerk.dialogue-af49ad0d90973a8833f83cfa391e1233.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/store_clerk.dialogue"
+dest_files=["res://.godot/imported/store_clerk.dialogue-af49ad0d90973a8833f83cfa391e1233.tres"]
+
+[params]
+

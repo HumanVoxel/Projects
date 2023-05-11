@@ -23,4 +23,5 @@ func _on_body_entered(body):
 			var new_scene = scene.instantiate()
 			add_child(new_scene)
 			new_scene.next_chapter_resource = chapter_resource
+			PlayerStats.intro_done = false
 	pass # Replace with function body.

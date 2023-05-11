@@ -40,7 +40,7 @@ load_path = "res://.godot/imported/chapter1full.png-fbf40f30b4df64fe08038901d81a
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlpug"]
 atlas = SubResource("CompressedTexture2D_ric0f")
-region = Rect2(843, 358, 424, 632)
+region = Rect2(843, 191.636, 424, 798.364)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwi6b"]
 atlas = ExtResource("4_2d22f")
@@ -51,7 +51,7 @@ load_path = "res://.godot/imported/chapter2full.png-704f721b9693979e78918f4ef840
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujdm2"]
 atlas = SubResource("CompressedTexture2D_6p82a")
-region = Rect2(1244, 198, 665, 878)
+region = Rect2(1244, 13.4541, 597.637, 1062.55)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tvyi"]
 atlas = ExtResource("4_s0ual")
@@ -63,7 +63,7 @@ region = Rect2(735, 37, 513, 978)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21sat"]
 atlas = ExtResource("5_765wq")
-region = Rect2(735, 66, 440, 776)
+region = Rect2(716, 113, 459, 886)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w05px"]
 atlas = ExtResource("6_gd88j")
@@ -192,6 +192,7 @@ disabled = true
 texture_normal = SubResource("AtlasTexture_dwi6b")
 texture_hover = SubResource("AtlasTexture_ujdm2")
 texture_disabled = SubResource("AtlasTexture_7tvyi")
+texture_focused = SubResource("AtlasTexture_ujdm2")
 ignore_texture_size = true
 stretch_mode = 6
 
@@ -219,6 +220,7 @@ disabled = true
 texture_normal = SubResource("AtlasTexture_vc5qh")
 texture_hover = SubResource("AtlasTexture_21sat")
 texture_disabled = SubResource("AtlasTexture_w05px")
+texture_focused = SubResource("AtlasTexture_21sat")
 ignore_texture_size = true
 stretch_mode = 6
 

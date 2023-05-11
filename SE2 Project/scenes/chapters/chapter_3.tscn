@@ -37,8 +37,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if not get_node(\"Pause\") and event.is_action_pressed(\"pause\"):
-#		add_child(pause_node.instantiate())
-		get_tree().paused = true
+		add_child(pause_node.instantiate())
 
 func _on_Game_Over():
 	add_child(game_over_node.instantiate())
@@ -62,6 +61,7 @@ func _on_body_entered(body):
 		if scene:
 			var new_scene = scene.instantiate()
 			add_child(new_scene)
+			PlayerStats.intro_done = false
 	pass # Replace with function body.
 "
 
@@ -1527,6 +1527,8 @@ size = Vector2(32, 16)
 
 [node name="chapter_3" instance=ExtResource("1_ggy5c")]
 script = SubResource("GDScript_76t03")
+metadata/_edit_vertical_guides_ = [422.0, 640.0, 2144.0, 2496.0, 56.0]
+metadata/_edit_horizontal_guides_ = [180.0, 530.0]
 
 [node name="CameraSegment" parent="Cameras" index="0"]
 visible = false
@@ -1553,6 +1555,12 @@ layer_3/tile_data = PackedInt32Array(786467, 4, 2, 720931, 524292, 1, 655395, 4,
 
 [node name="health_centre" parent="GameLevel" index="5"]
 position = Vector2(3595, 97)
+
+[node name="convenience_store" parent="GameLevel" index="7"]
+position = Vector2(64, 129)
+
+[node name="Marker2D" parent="GameLevel/convenience_store" index="3"]
+position = Vector2(24, 37)
 
 [node name="apartment" parent="GameLevel" index="9"]
 position = Vector2(3738, 115)
@@ -2012,7 +2020,8 @@ attack_damage = 3.0
 grace_period = 2.0
 
 [node name="Player" parent="." index="3" node_paths=PackedStringArray("camera")]
-position = Vector2(3561, 163)
+position = Vector2(113, 622)
+is_indoors = true
 camera = NodePath("../Camera2D")
 
 [node name="Camera2D" parent="." index="5"]

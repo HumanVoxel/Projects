@@ -26773,8 +26773,8 @@ sources/7 = SubResource("TileSetAtlasSource_f8asg")
 
 [node name="Chapter" type="Node2D"]
 script = ExtResource("1_68osk")
-metadata/_edit_vertical_guides_ = [320.0, 640.0, 2144.0, 2496.0]
-metadata/_edit_horizontal_guides_ = [180.0]
+metadata/_edit_vertical_guides_ = [320.0, 640.0, 2144.0, 2496.0, 832.0, 1200.0]
+metadata/_edit_horizontal_guides_ = [180.0, 632.0]
 
 [node name="Cameras" type="Node2D" parent="."]
 
@@ -26796,9 +26796,11 @@ position = Vector2(192, 598)
 script = SubResource("GDScript_1y0yx")
 camera_node = NodePath("../../Camera2D")
 zoom = Vector2(1, 1)
+limit_left = 56
+limit_top = 530
+limit_right = 422
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment2"]
-visible = false
 position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_5g2st")
 
@@ -26807,6 +26809,9 @@ position = Vector2(1016, 648)
 script = SubResource("GDScript_wt5nw")
 camera_node = NodePath("../../Camera2D")
 zoom = Vector2(1, 1)
+limit_left = 856
+limit_top = 565
+limit_right = 1200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment3"]
 position = Vector2(0, 2.25)
@@ -26818,6 +26823,7 @@ script = SubResource("GDScript_l1bo5")
 camera_node = NodePath("../../Camera2D")
 zoom = Vector2(1, 1)
 limit_left = 2144
+limit_top = 590
 limit_right = 2496
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cameras/CameraSegment4"]

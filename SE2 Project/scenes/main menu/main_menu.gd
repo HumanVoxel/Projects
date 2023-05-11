@@ -8,6 +8,13 @@ func _ready():
 	PlayerStats.current_chapter = ""
 	pass # Replace with function body.
 
+func _process(delta):
+	if $"Fullscreen Button".has_focus():
+		$ColorRect.show()
+	else:
+		$ColorRect.hide()
+	
+	
 func _on_start_game_pressed():
 	get_tree().change_scene_to_file("res://scenes/chapter_select/chapter_select.tscn")
 	pass # Replace with function body.
@@ -29,3 +36,14 @@ func _on_quit_pressed():
 
 
 
+
+
+func _on_fullscreen_button_toggled(button_pressed):
+	if button_pressed:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		print("windowed")
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+#		DisplayServer.window_set_max_size(Vector2i(1920,1080))
+	pass # Replace with function body.

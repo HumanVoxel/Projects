@@ -67,7 +67,7 @@ general/states=["PlayerStats"]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
-window/size/always_on_top=true
+window/size/borderless=true
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
@@ -233,7 +233,7 @@ pause={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://testdialogue.dialogue", "res://resources/dialogues/nurse.dialogue", "res://resources/dialogues/chapter2.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue_for_visual_novel.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue_with_input.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue_for_point_n_click.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue.dialogue", "res://scenes/examples/dialogue_for_visual_novel.dialogue", "res://scenes/examples/dialogue_with_input.dialogue", "res://scenes/examples/dialogue_for_point_n_click.dialogue", "res://scenes/examples/dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://testdialogue.dialogue", "res://resources/dialogues/nurse.dialogue", "res://resources/dialogues/chapter2.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue_for_visual_novel.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue_with_input.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue_for_point_n_click.dialogue", "res://scenes/dialogue/godot_dialogue_manager/examples/dialogue.dialogue", "res://scenes/examples/dialogue_for_visual_novel.dialogue", "res://scenes/examples/dialogue_with_input.dialogue", "res://scenes/examples/dialogue_for_point_n_click.dialogue", "res://scenes/examples/dialogue.dialogue", "res://resources/dialogues/store_clerk.dialogue")
 
 [layer_names]
 

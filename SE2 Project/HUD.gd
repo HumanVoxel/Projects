@@ -6,8 +6,8 @@ var health : float
 var collectibles : Array
 
 
-@onready var healthbar = $Control/HBoxContainer/healthbar
-@onready var healthtext = $Control/HBoxContainer/healthtext
+@onready var healthbar = $Control/healthbar
+@onready var healthtext = $Control/healthtext
 @onready var facemask = $Control/HBoxContainer2/facemask
 @onready var dose1 = $Control/HBoxContainer2/dose1
 @onready var dose2 = $Control/HBoxContainer2/dose2

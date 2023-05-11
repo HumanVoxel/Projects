@@ -17,4 +17,5 @@ func _on_area_2d_body_entered(body):
 		body.states.change_state(body.states.jump_state)
 		body.is_dash_ready = true
 		body.velocity = global_position.direction_to($Marker2D.global_position) * spring_force
+		AudioBus.play_sound_fx(AudioBus.SPRING_BOING)
 	pass # Replace with function body.

@@ -13,7 +13,7 @@ var pause_node = preload(\"res://scenes/pause/pause.tscn\")
 var game_over_node = preload(\"res://scenes/game_over/game_over.tscn\")
 var objective_node = preload(\"res://scenes/objective/objective.tscn\")
 var danger_node = preload(\"res://scenes/danger/danger.tscn\")
-
+var phone_ui_node = preload(\"res://scenes/phone_ui/phone_ui.tscn\")
 		
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,9 +26,9 @@ func _ready():
 		var inst_danger = danger_node.instantiate()
 		add_child(inst_danger)
 		await inst_danger.tree_exited
-		var inst_objective = objective_node.instantiate()
-		add_child(inst_objective)
-		await inst_danger.tree_exited
+		var inst_phone = phone_ui_node.instantiate()
+		add_child(inst_phone)
+		await inst_phone.tree_exited
 		get_tree().paused = false
 		PlayerStats.intro_done = true
 	pass # Replace with function body.s
@@ -67,6 +67,7 @@ func _on_body_entered(body):
 			var new_scene = scene.instantiate()
 			add_child(new_scene)
 			new_scene.next_chapter_resource = chapter_resource
+			PlayerStats.intro_done = false
 	pass # Replace with function body.
 "
 
@@ -75,7 +76,7 @@ size = Vector2(34, 80)
 
 [node name="Chapter1" instance=ExtResource("1_6j24a")]
 script = SubResource("GDScript_f121h")
-metadata/_edit_vertical_guides_ = [320.0, 640.0, 848.0, 1184.0, 1600.0, 1920.0, 2144.0, 2496.0, 2880.0, 3200.0, 3520.0, 0.0, 3832.0]
+metadata/_edit_vertical_guides_ = [320.0, 640.0, 816.0, 1208.0, 1600.0, 1920.0, 2144.0, 2496.0, 2880.0, 3200.0, 3520.0, 0.0, 3832.0]
 metadata/_edit_horizontal_guides_ = [176.0, 152.0, 128.0, 104.0, 80.0, 56.0, 32.0, 8.0, 176.0, 520.0]
 
 [node name="CameraSegment" parent="Cameras" index="0" node_paths=PackedStringArray("collision_shape")]
@@ -96,6 +97,8 @@ position = Vector2(44, -5)
 [node name="CameraSegment3" parent="Cameras" index="2" node_paths=PackedStringArray("collision_shape")]
 collision_shape = NodePath("")
 zoom = Vector2(0.8, 0.8)
+limit_left = 816
+limit_right = 1208
 
 [node name="CameraSegment4" parent="Cameras" index="3" node_paths=PackedStringArray("collision_shape")]
 collision_shape = NodePath("")
@@ -154,7 +157,7 @@ attack_damage = 0.0
 grace_period = 2.0
 
 [node name="polio_paper" parent="." index="3" instance=ExtResource("4_x5f6f")]
-position = Vector2(88, 152)
+position = Vector2(64, 160)
 resource = "res://scenes/paper/polio_paper.tscn"
 collectible_sprite = ExtResource("9_5kt2k")
 
@@ -174,7 +177,7 @@ resource = "res://scenes/paper/influenza_paper.tscn"
 collectible_sprite = ExtResource("9_5kt2k")
 
 [node name="Player" parent="." index="7" node_paths=PackedStringArray("camera")]
-position = Vector2(3464, 152)
+position = Vector2(104, 168)
 camera = NodePath("../Camera2D")
 
 [node name="Camera2D" parent="." index="9"]
@@ -186,3 +189,14 @@ limit_bottom = 180
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="10"]
 color = Color(1, 0.784314, 1, 1)
+
+[connection signal="body_entered" from="GameLevel/platforms8x8/apple" to="GameLevel/platforms8x8/apple" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@147300" to="GameLevel/platforms8x8/@apple@147300" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@147301" to="GameLevel/platforms8x8/@apple@147301" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@147302" to="GameLevel/platforms8x8/@apple@147302" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@147308" to="GameLevel/platforms8x8/@apple@147308" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@147332" to="GameLevel/platforms8x8/@apple@147332" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/bubble_booster" to="GameLevel/platforms8x8/bubble_booster" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@147338" to="GameLevel/platforms8x8/@apple@147338" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@147339" to="GameLevel/platforms8x8/@bubble_booster@147339" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="GameLevel/platforms8x8/@apple@147340" to="GameLevel/platforms8x8/@apple@147340" method="_on_body_entered" flags=18]

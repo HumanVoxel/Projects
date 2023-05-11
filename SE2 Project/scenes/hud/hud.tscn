@@ -1,11 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bve4n1efhw0y1"]
+[gd_scene load_steps=10 format=3 uid="uid://bve4n1efhw0y1"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_eeev5"]
-[ext_resource type="Texture2D" uid="uid://v2cg2grwhbyx" path="res://Assets/UI/healthbar/healthbar.png" id="2_82com"]
+[ext_resource type="Texture2D" uid="uid://cpd803m6iui0o" path="res://Assets/UI/helathbar.png" id="2_3e0wp"]
 [ext_resource type="Texture2D" uid="uid://cn7jmd6e0u0em" path="res://Assets/collectibles/facemask.png" id="3_2wu1j"]
 [ext_resource type="Texture2D" uid="uid://b0dgvx473b2ah" path="res://Assets/collectibles/dose1.png" id="4_2m7pi"]
 [ext_resource type="Texture2D" uid="uid://dptp3fsvfux08" path="res://Assets/collectibles/dose2.png" id="5_ohyk4"]
 [ext_resource type="Texture2D" uid="uid://73516narueuq" path="res://Assets/collectibles/booster.png" id="6_dtpam"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i44ab"]
+atlas = ExtResource("2_3e0wp")
+region = Rect2(20, 0, 112, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76aar"]
+atlas = ExtResource("2_3e0wp")
+region = Rect2(20, 16, 112, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uagyb"]
+atlas = ExtResource("2_3e0wp")
+region = Rect2(0, 33, 25, 21)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_eeev5")
@@ -18,22 +30,41 @@ offset_bottom = 16.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 
+[node name="healthbar" type="TextureProgressBar" parent="Control"]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 9.0
+offset_right = 136.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+value = 100.0
+texture_under = SubResource("AtlasTexture_i44ab")
+texture_progress = SubResource("AtlasTexture_76aar")
+
+[node name="Hearth" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 30.0
+offset_bottom = 29.0
+texture = SubResource("AtlasTexture_uagyb")
+stretch_mode = 2
+
+[node name="healthtext" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 94.0
+offset_bottom = 24.0
+size_flags_horizontal = 0
+horizontal_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
 offset_left = 8.0
 offset_right = 148.0
 offset_bottom = 32.0
-
-[node name="healthtext" type="Label" parent="Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="healthbar" type="TextureProgressBar" parent="Control/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-value = 100.0
-texture_progress = ExtResource("2_82com")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control"]
 layout_mode = 1

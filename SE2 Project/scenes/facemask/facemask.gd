@@ -3,6 +3,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+#	var facemask_paper_node = preload("res://scenes/paper/facemask_paper.tscn")
+#	add_child(facemask_paper_node.instantiate())
 	pass # Replace with function body.
 
 
