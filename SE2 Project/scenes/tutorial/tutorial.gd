@@ -6,6 +6,7 @@ var game_over_node = preload("res://scenes/game_over/game_over.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Player.gameOver.connect(_on_Game_Over)
+	AudioBus.play_global_music(AudioBus.PRESENTATION)
 	pass # Replace with function body.
 
 func _unhandled_input(event):

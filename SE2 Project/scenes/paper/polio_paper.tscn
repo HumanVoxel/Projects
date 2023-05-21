@@ -10,10 +10,10 @@ font_color = Color(0, 0, 0, 1)
 [node name="polio_paper" instance=ExtResource("1_3rc2d")]
 
 [node name="paper" parent="." index="1"]
-offset_left = 35.0
-offset_top = -180.0
-offset_right = 285.0
-offset_bottom = -9.99991
+offset_left = -125.0
+offset_top = -270.0
+offset_right = 125.0
+offset_bottom = -99.9999
 
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Polio"

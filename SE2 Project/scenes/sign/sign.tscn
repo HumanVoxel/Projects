@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=3 uid="uid://c0lub1rn1x26f"]
+
+[ext_resource type="Texture2D" uid="uid://ds2msc6rrns0s" path="res://Assets/objects/Sign/sign_ui.png" id="1_moric"]
+[ext_resource type="Script" path="res://scenes/sign/sign.gd" id="1_opdhq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vwhj"]
+bg_color = Color(0.713726, 0.576471, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50pm5"]
+border_color = Color(0.882353, 0.631373, 0.403922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gd3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55ekl"]
+border_width_right = 4
+border_color = Color(0.815686, 0.717647, 0.556863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bti00"]
+
+[sub_resource type="Theme" id="Theme_ddjsj"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_0vwhj")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_50pm5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_3gd3f")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_55ekl")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_bti00")
+
+[sub_resource type="LabelSettings" id="LabelSettings_45obn"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_80p42"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_3oo84"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sign:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0tb8x"]
+resource_name = "hide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sign:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 170)]
+}
+
+[sub_resource type="Animation" id="Animation_f2f4s"]
+resource_name = "show"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sign:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0, 170), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejs8t"]
+_data = {
+"RESET": SubResource("Animation_3oo84"),
+"hide": SubResource("Animation_0tb8x"),
+"show": SubResource("Animation_f2f4s")
+}
+
+[node name="Sign" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_opdhq")
+
+[node name="sign" type="NinePatchRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_moric")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="sign"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 31.0
+offset_right = -35.0
+offset_bottom = -35.9999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="sign/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ddjsj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="sign/MarginContainer/ScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(230, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="title" type="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "\"Title\"
+"
+label_settings = SubResource("LabelSettings_45obn")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="sign/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_80p42")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "show"
+libraries = {
+"": SubResource("AnimationLibrary_ejs8t")
+}

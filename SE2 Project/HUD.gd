@@ -33,7 +33,7 @@ func update():
 	healthbar.value = health
 	max_health = PlayerStats.max_health
 	healthbar.max_value = max_health
-	healthtext.text = "%s/%s" % [health,max_health]
+	healthtext.text = "%s/%s" % [max(0,health),max_health]
 	
 	for col in collectibles:
 		if col == "facemask":
@@ -57,6 +57,6 @@ func player_collected(collectible):
 	update()
 	
 func player_health_increased(health):
-#	self.health = health
-#	update()
+	self.health = health
+	update()
 	pass

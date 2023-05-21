@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceaptwukpu7yu"]
+
+[ext_resource type="PackedScene" uid="uid://c0lub1rn1x26f" path="res://scenes/sign/sign.tscn" id="1_4pqj7"]
+[ext_resource type="Texture2D" uid="uid://glqt1w2jcvcd" path="res://Assets/objects/apple/Apple.png" id="2_05ntx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aulu8"]
+atlas = ExtResource("2_05ntx")
+region = Rect2(0, 0, 32, 32)
+
+[node name="apple sign" instance=ExtResource("1_4pqj7")]
+
+[node name="title" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Apple"
+
+[node name="TextureRect" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_aulu8")
+
+[node name="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Apples replenishes your dash move. Use this movement advantage to temporarily gain distance away from the virus and avoid contact with contaminated surfaces. An extra dash move also allows the player to leap over a greater distance and reach higher places.
+
+	An apple a day keeps the doctor away. It is a simple phrase that means a healthy diet provides the nutrients your body needs to maintain a strong immune system and get the energy the body needs to function properly. A strong immune system is better able to fight off viruses and infections."

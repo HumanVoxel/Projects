@@ -8,6 +8,7 @@ func _ready():
 #	game_over_sound.play()
 	AudioBus.play_sound_ambient(AudioBus.GAME_OVER)
 	AudioBus.play_sound_ambient(AudioBus.SPLAT)
+	AudioBus.play_global_music(AudioBus.GAME_OVER_MUSIC)
 	get_tree().paused = true
 	$VBoxContainer/Restart.grab_focus()
 	pass # Replace with function body.

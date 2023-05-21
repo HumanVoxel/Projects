@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://b11fw7a2htk28"
+path="res://.godot/imported/player_confused.sfxr-8df2c148051298d5ebf63d52cecabdc8.sample"
+
+[deps]
+
+source_file="res://resources/sounds/sfx/player_confused.sfxr"
+dest_files=["res://.godot/imported/player_confused.sfxr-8df2c148051298d5ebf63d52cecabdc8.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

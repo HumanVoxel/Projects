@@ -15,7 +15,8 @@ var seek_player : bool = false
 var active : bool = false
 
 func _ready() -> void:
-##	player_initial_pos = player.global_position
+	$player_collision_detector/CollisionShape2D.set_deferred("disabled", true)
+#	player_initial_pos = player.global_position
 #
 ##	navigation_points.append(player.global_position)
 ##	global_position = navigation_points.front()
@@ -24,7 +25,13 @@ func _ready() -> void:
 func _physics_process(delta):
 	if player.global_position != player_initial_pos and not active and not player.is_indoors:
 		active = true
+		global_position = player.global_position
+		$AnimationPlayer.play("blink")
 		await get_tree().create_timer(grace_period).timeout
+		$player_collision_detector/CollisionShape2D.set_deferred("disabled", false)
+		$caution.queue_free()
+		$AnimationPlayer.queue_free()
+		$AnimatedSprite2D.show()
 		seek_player = true
 
 	if active and not player.is_indoors:
@@ -36,7 +43,7 @@ func _physics_process(delta):
 
 
 func _on_player_collision_detector_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and active:
 		body.player_damaged(attack_damage)
 		$player_collision_detector/CollisionShape2D.set_deferred("disabled", true)
 #		var tween = create_tween()
@@ -50,6 +57,8 @@ func _on_player_collision_detector_body_entered(body):
 func update_position():
 	global_position = navigation_points.pop_front()
 	
+func play_ping_sound():
+	AudioBus.play_sound_fx(AudioBus.PING)
 #	var direction = global_position.direction_to(agent.get_next_path_position())
 #	var desired_velocity = direction * SPEED
 #	var steering = (desired_velocity - velocity) * delta * 4.0 

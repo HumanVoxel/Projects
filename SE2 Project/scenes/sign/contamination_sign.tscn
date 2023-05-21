@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://csnuh8v4uarhh"]
+
+[ext_resource type="PackedScene" uid="uid://c0lub1rn1x26f" path="res://scenes/sign/sign.tscn" id="1_5gqne"]
+[ext_resource type="Texture2D" uid="uid://1kiw1mv8o8d6" path="res://Assets/virus/virus_tileset.png" id="2_k75nu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv6bi"]
+atlas = ExtResource("2_k75nu")
+region = Rect2(0, 0, 24, 24)
+
+[node name="contamination_sign" instance=ExtResource("1_5gqne")]
+
+[node name="title" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Contamination"
+
+[node name="TextureRect" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_uv6bi")
+
+[node name="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Touching the contaminated surfaces will decrease the player's health. Avoid contact with it at all cost. When the player's health reaches zero, it would be game over and the level will be reset from the beginning.
+
+Virus-contaminated surfaces can potentially transmit the virus to individuals who touch or come into contact with those surfaces. Many viruses, including respiratory viruses like the flu virus and the common cold, as well as more serious viruses like SARS-CoV-2 (the virus that causes COVID-19), can be transmitted through these surfaces.
+
+Touching virus-contaminated surfaces is one of the potential modes of virus transmission, particularly if the person then touches their face, eyes, nose, or mouth. When a person touches a contaminated surface and then touches their face, they provide a potential route for the virus to enter their body."

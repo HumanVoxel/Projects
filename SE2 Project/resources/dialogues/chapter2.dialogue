@@ -1,7 +1,9 @@
 ~ start
-TV: Weeks since the region was placed under Enhanced Community Quarantine(ECQ), it has finally been brought down to a General Community Quarantine(GCQ).
-TV: Residents can only step out to access essential goods and services and work in permitted offices or establishments....
-Nathan: It has been two weeks since I've left the apartment.
+News Anchor: Good morning, viewers. We have breaking news regarding the ongoing pandemic situation. After several weeks of strict lockdown measures, we have just received information that the lockdown has been lifted.
+News Anchor: However, we want to emphasize that while restrictions have eased, there is still a significant risk of viral transmission in the community.
+News Anchor: While you are now able to go outside, it is crucial that we exercise caution and follow the recommended guidelines to prevent the spread of the virus. Wear a mask and maintain physical distance.
+News Anchor: We understand that these are challenging times, but by working together and following these guidelines, we can help prevent the further spread of the virus. Let us all play our part in keeping our communities safe and healthy.
+News Anchor: This concludes our special report. Thank you for tuning in. Stay safe, and have a good evening.
 Nathan: Man, I'm so hungry.
 Nathan: I should grab something to eat from the fridge.
 => END
@@ -10,12 +12,13 @@ Nathan: I should grab something to eat from the fridge.
 ~ empty_fridge
 Nathan: Empty?!!
 Nathan: I have to get some food or i'll starve to death.
+Nathan: There is a convenience store not too far from here. I should get going.
 => END
 
 ~ mask_interact
 Nathan: I should wear this.
 - Wear the mask
-	Nathan: This will protect me and others.
+	Nathan: This will protect me and other people.
 	Nathan: It's the responsible thing to do.
 	=> END
 - Don't wear the mask

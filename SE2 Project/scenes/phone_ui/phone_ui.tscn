@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnjmc6g4kysx4"]
+[gd_scene load_steps=15 format=3 uid="uid://dnjmc6g4kysx4"]
 
 [ext_resource type="Script" path="res://scenes/phone_ui/phone_ui.gd" id="1_lbve3"]
 [ext_resource type="Texture2D" uid="uid://bsitnugobfp3t" path="res://Assets/UI/PhoneUI.png" id="2_3m18x"]
@@ -24,6 +24,11 @@ VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_2egon")
 [sub_resource type="LabelSettings" id="LabelSettings_rrn7u"]
 font_size = 8
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_la1ny"]
+font_size = 10
+font_color = Color(0.796078, 0.858824, 0.988235, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_m1og5"]
 length = 0.001
@@ -124,10 +129,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 233.0
-offset_top = 8.0
-offset_right = 320.0
-offset_bottom = 172.0
+offset_left = -87.0
+offset_top = -82.0
+offset_bottom = 82.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
@@ -149,16 +153,36 @@ layout_mode = 2
 clip_contents = true
 custom_minimum_size = Vector2(60, 100)
 layout_mode = 2
-text = "Warning this is not a drill. We repeat this is not a drill. A virus of unknown origin has spread throughout the city. The city is now under strict lockdown. It is highly important that everyone should stay inside their homes and not come out untill further notice. Whatever you do, avoid touching or coming into contact with the virus!! Stay safe, and God bless us all."
+text = "Warning this is not a drill. We repeat this is not a drill. An unknown virus has spread throughout the city. The city is now under strict lockdown.
+
+As a health measure, all residents are advised to stay inside their homes until further notice. Your safety and well-being are of the utmost importance.
+
+Remain inside your residence and avoid any unnecessary travel or outings. By staying indoors, you can minimize your risk of exposure and help prevent the potential spread of this virus. This is crucial to reduce the risk of transmission and to protect yourself and others.
+
+The details of the outbreak are still being investigated, and health authorities are working diligently to identify the virus and develop a vaccine.
+
+Whatever you do, avoid touching or coming into contact with the virus.
+
+Stay indoors, stay vigilant, and stay safe. Thank you for your cooperation and God bless us all."
 label_settings = SubResource("LabelSettings_rrn7u")
-autowrap_mode = 3
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = 59.0
+offset_bottom = 35.8
+text = "Amber ALert"
+label_settings = SubResource("LabelSettings_la1ny")
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 2240.0
+offset_bottom = 1260.0
 grow_horizontal = 2
 grow_vertical = 2
 

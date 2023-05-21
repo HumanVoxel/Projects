@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2nu3alqlxyoa"]
+
+[ext_resource type="PackedScene" uid="uid://c0lub1rn1x26f" path="res://scenes/sign/sign.tscn" id="1_g5hch"]
+[ext_resource type="Texture2D" uid="uid://dptb7jb6x5u0i" path="res://Assets/objects/breakblock/breakblock.png" id="2_0kfg1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvxcy"]
+atlas = ExtResource("2_0kfg1")
+region = Rect2(0, 0, 8, 8)
+
+[node name="crumbling blocks sign" instance=ExtResource("1_g5hch")]
+
+[node name="title" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Crumbling Blocks"
+
+[node name="TextureRect" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_xvxcy")
+
+[node name="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "These mossy blocks may appear as regular blocks until the player character lands or come into contact with them, at which point they start to crumble and eventually disappear. Move swiftly across these blocks to not lose your footing."

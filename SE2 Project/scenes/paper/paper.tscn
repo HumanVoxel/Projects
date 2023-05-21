@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq1a5ngbp2j2x"]
+[gd_scene load_steps=16 format=3 uid="uid://dq1a5ngbp2j2x"]
 
 [ext_resource type="Texture2D" uid="uid://4161m3f6e4aw" path="res://Assets/UI/Free Pack/Free Pixel Paper/Spritesheet/0.png" id="2_wvhrp"]
 
@@ -92,6 +92,27 @@ _data = {
 atlas = ExtResource("2_wvhrp")
 region = Rect2(1312, 1440, 128, 128)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7wj8"]
+bg_color = Color(0.713726, 0.576471, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc6ei"]
+border_color = Color(0.882353, 0.631373, 0.403922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccprb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1w4r4"]
+border_width_right = 4
+border_color = Color(0.815686, 0.717647, 0.556863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06avi"]
+
+[sub_resource type="Theme" id="Theme_366jc"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_k7wj8")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_dc6ei")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_ccprb")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_1w4r4")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_06avi")
+
 [sub_resource type="LabelSettings" id="LabelSettings_ovhlt"]
 font_color = Color(0, 0, 0, 1)
 
@@ -119,7 +140,7 @@ anchor_bottom = 0.5
 offset_left = 35.0
 offset_top = -180.0
 offset_right = 285.0
-offset_bottom = -9.99991
+offset_bottom = -9.99988
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_wwc0e")
@@ -143,6 +164,7 @@ grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="paper/MarginContainer"]
 layout_mode = 2
+theme = SubResource("Theme_366jc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="paper/MarginContainer/ScrollContainer"]
 clip_contents = true

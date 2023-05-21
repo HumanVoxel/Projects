@@ -19,6 +19,11 @@ const PAPER_CLOSE = preload("res://resources/sounds/sfx/zapsplat_foley_newspaper
 const BIT_SAMPLE = preload("res://resources/sounds/music/8bit-sample-69080.mp3")
 const AIRLINES = preload("res://resources/sounds/music/happy-airlines-ym-2413-28411.mp3")
 const VERYLUSH = preload("res://resources/sounds/music/very-lush-and-swag-loop-74140.mp3")
+const BOSSTIME = preload("res://resources/sounds/music/1min-2021-08-30_-_Boss_Time_-_www.FesliyanStudios.com.mp3")
+const BOSSTIME_FASTER = preload("res://resources/sounds/music/fast-2021-08-30_-_Boss_Time_-_www.FesliyanStudios.com.mp3")
+const GAME_OVER_MUSIC = preload("res://resources/sounds/music/wishing.mp3")
+const PRESENTATION = preload("res://resources/sounds/music/2019-08-25_-_8bit-Smooth_Presentation_-_David_Fesliyan.mp3")
+const FUNNY = preload("res://resources/sounds/music/Funny Music 8 Bit Game No Copyright Background Music [PjTX5EqQm9g].mp3")
 
 const HEALTH_CENTRE = preload("res://resources/sounds/ambiance/conveniencestorering-96090.mp3")
 const CONVENIENCE_STORE = preload("res://resources/sounds/ambiance/conveniencestorering-96090.mp3")
@@ -27,9 +32,18 @@ const WHISTLE = preload("res://resources/sounds/sfx/metal-whistle-6121_rKZWiMUv.
 const GAME_OVER = preload("res://resources/sounds/sfx/videogame-death-sound-43894.mp3")
 const SPLAT = preload("res://resources/sounds/sfx/SPLAT Crush 01.wav")
 const SPRING_BOING = preload("res://resources/sounds/sfx/BOUNCE Twang Spring 13.wav")
+const HEALTH_UP = preload("res://resources/sounds/sfx/1up3.wav")
+const PHONE_NOTIFICATION = preload("res://resources/sounds/sfx/audioblocks-pop-ding-notification-effect-2_HFKbWVGUCDI_NWM.mp3")
+const PLAYER_CONFUSED = preload("res://resources/sounds/sfx/player_confused.sfxr")
+const PING = preload("res://resources/sounds/sfx/FUI Ping Triplet Echo.wav")
 
 const BUBBLE_ENTER = preload("res://resources/sounds/sfx/bubble_booster/Bubble heavy 1.wav")
 const BUBBLE_POP = preload("res://resources/sounds/sfx/bubble_booster/Bubble 1.wav")
+
+const CHAPTER1_CLEAR = preload("res://resources/sounds/music/levelclear1.mp3")
+const CHAPTER2_CLEAR = preload("res://resources/sounds/music/levelclear2.mp3")
+const CHAPTER3_CLEAR = preload("res://resources/sounds/music/levelclear3.mp3")
+
 
 @onready var global_music : AudioStreamPlayer = AudioStreamPlayer.new()
 
@@ -72,5 +86,6 @@ func play_global_music(sound):
 	global_music.stream = sound as AudioStream
 	global_music.play()
 	
-	
+func stop_global_music():
+	global_music.stop()
 

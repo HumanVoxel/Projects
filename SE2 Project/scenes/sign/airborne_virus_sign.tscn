@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwgqk3i400fem"]
+
+[ext_resource type="PackedScene" uid="uid://c0lub1rn1x26f" path="res://scenes/sign/sign.tscn" id="1_iobyd"]
+[ext_resource type="Texture2D" uid="uid://5oxib4s816iq" path="res://Assets/virus/virus.png" id="2_v6ufh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgal8"]
+atlas = ExtResource("2_v6ufh")
+region = Rect2(0, 0, 16, 16)
+
+[node name="airborne_virus_sign" instance=ExtResource("1_iobyd")]
+
+[node name="title" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Airborne Virus"
+
+[node name="TextureRect" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = SubResource("AtlasTexture_dgal8")
+
+[node name="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "During actual gameplay, these airborne viruses will continuously move towards the player character. Never stop moving so that it won't catch up to you.
+
+Just like contaminated surfaces, direct contact with the airborne virus will also decrease the player's health, and when the player's health gets depleted it would be game over and the level would reset from the beginning.
+
+Airborne viruses are a type of virus that can spread through the air and infect individuals who inhale the contaminated air. Unlike viruses that primarily spread through direct contact with infected surfaces or bodily fluids, airborne viruses can travel through respiratory droplets or tiny particles called aerosols. These aerosols can remain suspended in the air for extended periods and be carried by air currents, potentially infecting people even at a distance from the infected source.
+
+"

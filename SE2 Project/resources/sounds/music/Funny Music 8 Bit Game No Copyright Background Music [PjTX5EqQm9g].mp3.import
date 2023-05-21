@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://53kwrfqbo4q2"
+path="res://.godot/imported/Funny Music 8 Bit Game No Copyright Background Music [PjTX5EqQm9g].mp3-c0c8e426f16a09924e18f49325a0acaf.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/music/Funny Music 8 Bit Game No Copyright Background Music [PjTX5EqQm9g].mp3"
+dest_files=["res://.godot/imported/Funny Music 8 Bit Game No Copyright Background Music [PjTX5EqQm9g].mp3-c0c8e426f16a09924e18f49325a0acaf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

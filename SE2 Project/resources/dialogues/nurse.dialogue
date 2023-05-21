@@ -70,9 +70,9 @@ if current_chapter == "Chapter3":
 		Nurse: Wise choice.
 		Nurse: Then I'll administer the first dose. Don't worry it won't hurt much.
 		Nurse: And.... done.
+		do collectibles_append("dose1")
 		Nurse: See? I told you it wouldn't hurt.
 		Nurse: Now be sure to get plenty of rest.
-		do collectibles_append("dose1")
 		set just_got_vaccinated = true
 		=> END
 	elif total_doses == 1:

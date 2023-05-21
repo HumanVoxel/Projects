@@ -55,6 +55,7 @@ func collectibles_append(collectible : String) -> void:
 	emit_signal("player_collected", collectible)
 	if (collectible == "facemask") || (collectible == "dose1") || (collectible == "dose2") || (collectible == "booster"):
 		emit_signal("health_increased", compute_max_health())
+		AudioBus.play_sound_fx(AudioBus.HEALTH_UP)
 	if collectible == "dose1":
 		dose1collected = true
 	elif collectible == "dose2":

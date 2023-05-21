@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://kjkmlpnqxtfb"]
+
+[ext_resource type="Texture2D" uid="uid://d2j8mg5h1qxhd" path="res://Assets/objects/Sign/sign.png" id="1_u4ox8"]
+[ext_resource type="Texture2D" uid="uid://ciy6w72jxj3yo" path="res://Assets/UI/buttons/Buttons Pack/KEYBOARD/KEYS/U.png" id="2_nuwvd"]
+
+[sub_resource type="GDScript" id="GDScript_fdn5r"]
+script/source = "extends Node2D
+
+
+@export_file(\"*.tscn\") var resource : String
+var scene
+var new_scene
+var player_in_area : bool = false
+var player : CharacterBody2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if resource:
+		scene = load(resource)
+	pass # Replace with function body.
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"dialogic_default_action\") and player_in_area:
+		if scene:
+			new_scene = scene.instantiate()
+			add_child(new_scene)
+	
+func _on_player_detector_body_entered(body):
+	if body.name == \"Player\":
+		player_in_area = true
+		player = body
+		$U.show()
+	pass # Replace with function body.
+
+
+func _on_player_detector_body_exited(body):
+	if body.name == \"Player\":
+		player_in_area = false
+		player = null
+		$U.hide()
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g8mf"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_qkkua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_anj6b"]
+resource_name = "float"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j282y"]
+_data = {
+"RESET": SubResource("Animation_qkkua"),
+"float": SubResource("Animation_anj6b")
+}
+
+[node name="signage" type="Node2D"]
+script = SubResource("GDScript_fdn5r")
+
+[node name="signage_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_u4ox8")
+
+[node name="Player_Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Detector"]
+shape = SubResource("RectangleShape2D_2g8mf")
+
+[node name="U" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -29)
+texture = ExtResource("2_nuwvd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="U"]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_j282y")
+}
+
+[connection signal="body_entered" from="Player_Detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="Player_Detector" to="." method="_on_player_detector_body_exited"]

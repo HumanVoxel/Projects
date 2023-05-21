@@ -73,7 +73,8 @@ func _on_body_entered(body):
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-		
+		$\"../../CanvasModulate\".color = Color(\"ffc8ff\")
+		AudioBus.play_global_music(AudioBus.BOSSTIME)
 		print(\"cameraswitched\")
 	pass # Replace with function body.
 
@@ -100,7 +101,6 @@ script/source = "extends Area2D
 @export var limit_bottom : int = 10000000
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 #	collision_shape.reparent(self)
@@ -124,7 +124,8 @@ func _on_body_entered(body):
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-		
+		$\"../../CanvasModulate\".color = Color(1,1,1,1)
+		AudioBus.play_global_music(AudioBus.FUNNY)
 		print(\"cameraswitched\")
 	pass # Replace with function body.
 
@@ -175,7 +176,8 @@ func _on_body_entered(body):
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-		
+		$\"../../CanvasModulate\".color = Color(1,1,1,1)
+		AudioBus.play_global_music(AudioBus.FUNNY)
 		print(\"cameraswitched\")
 	pass # Replace with function body.
 
@@ -226,7 +228,7 @@ func _on_body_entered(body):
 		camera_node.set_limit(SIDE_TOP, limit_top)
 		camera_node.set_limit(SIDE_RIGHT, limit_right)
 		camera_node.set_limit(SIDE_BOTTOM, limit_bottom)
-		
+		$\"../../CanvasModulate\".color = Color(1,1,1,1)
 		print(\"cameraswitched\")
 	pass # Replace with function body.
 
@@ -27016,6 +27018,7 @@ chapter_resource = "res://scenes/chapters/chapter_2.tscn"
 position = Vector2(24, -64)
 
 [node name="Player" parent="." instance=ExtResource("7_sqq1r")]
+z_as_relative = false
 position = Vector2(152, 168)
 
 [node name="HUD" parent="." instance=ExtResource("11_4y61k")]
@@ -27024,6 +27027,8 @@ position = Vector2(152, 168)
 position = Vector2(152, 168)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [connection signal="body_entered" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_entered" flags=18]
 [connection signal="body_exited" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_exited" flags=18]

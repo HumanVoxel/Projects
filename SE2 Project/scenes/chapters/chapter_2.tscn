@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dhhoi347qsiq2" path="res://scenes/collectible/collectible.tscn" id="3_p1bcp"]
 [ext_resource type="Texture2D" uid="uid://bgvj2t0y34vo0" path="res://Assets/collectibles/paper.png" id="4_4f5b5"]
 
-[sub_resource type="GDScript" id="GDScript_6rhfs"]
+[sub_resource type="GDScript" id="GDScript_py2l5"]
 script/source = "extends Area2D
 
 @export_file(\"*.tscn\") var ui_resource : String
@@ -31,6 +31,7 @@ func _on_body_entered(body):
 			var new_scene = scene.instantiate()
 			add_child(new_scene)
 			new_scene.next_chapter_resource = chapter_resource
+			AudioBus.play_global_music(AudioBus.CHAPTER2_CLEAR)
 			PlayerStats.intro_done = false
 	pass # Replace with function body.
 "
@@ -84,9 +85,11 @@ position = Vector2(160, 115)
 
 [node name="chapter_complete_area" parent="GameLevel" index="12"]
 position = Vector2(88, 600)
-script = SubResource("GDScript_6rhfs")
-ui_resource = ""
-chapter_resource = ""
+script = SubResource("GDScript_py2l5")
+chapter_resource = "res://scenes/chapters/chapter_3.tscn"
+
+[node name="Virus" parent="." index="2"]
+grace_period = 2.0
 
 [node name="Player" parent="." index="3" node_paths=PackedStringArray("camera")]
 position = Vector2(2316, 720)
@@ -96,7 +99,7 @@ camera = NodePath("../Camera2D")
 [node name="Camera2D" parent="." index="5"]
 position = Vector2(3501, 136)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="6"]
+[node name="CanvasModulate" parent="." index="6"]
 color = Color(1, 0.784314, 1, 1)
 
 [node name="measeles_paper" parent="." index="7" instance=ExtResource("3_p1bcp")]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://chiqsmwr0ughu"]
+[gd_scene load_steps=12 format=3 uid="uid://chiqsmwr0ughu"]
 
 [ext_resource type="Script" path="res://scenes/Virus/virus.gd" id="1_kwa5h"]
 [ext_resource type="Texture2D" uid="uid://5oxib4s816iq" path="res://Assets/virus/virus.png" id="2_fmt1e"]
+[ext_resource type="Texture2D" uid="uid://bgprwdql8b6yx" path="res://Assets/UI/caution.png" id="3_rygmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ti7dc"]
 atlas = ExtResource("2_fmt1e")
@@ -35,13 +36,48 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fwjqw"]
 radius = 7.0
 
+[sub_resource type="Animation" id="Animation_troki"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_ping_sound"
+}, {
+"args": [],
+"method": &"play_ping_sound"
+}, {
+"args": [],
+"method": &"play_ping_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_x8pqy"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_buw3a"]
+_data = {
+"RESET": SubResource("Animation_x8pqy"),
+"blink": SubResource("Animation_troki")
+}
+
 [node name="Virus" type="CharacterBody2D"]
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_kwa5h")
 attack_damage = 5.0
+grace_period = 3.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_om646")
 autoplay = "default"
 frame_progress = 0.810762
@@ -54,5 +90,14 @@ disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_collision_detector"]
 shape = SubResource("CircleShape2D_fwjqw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_buw3a")
+}
+
+[node name="caution" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_rygmc")
 
 [connection signal="body_entered" from="player_collision_detector" to="." method="_on_player_collision_detector_body_entered"]
