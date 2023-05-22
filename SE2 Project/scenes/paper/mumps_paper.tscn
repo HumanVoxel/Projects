@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bom4kktxd502k"]
+[gd_scene load_steps=4 format=3 uid="uid://bom4kktxd502k"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_7dql0"]
+[ext_resource type="Texture2D" uid="uid://sv30yu5r1a6y" path="res://Assets/UI/virus images/mumps/Electron micrograph of the mumps virus.jpg" id="2_y41nu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0mq61"]
 font_size = 8
@@ -8,8 +9,18 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="mumps_paper" instance=ExtResource("1_7dql0")]
 
+[node name="paper" parent="." index="1"]
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99988
+
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Mumps"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(80, 100)
+texture = ExtResource("2_y41nu")
 
 [node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Mumps is a viral disease that has affected humans for centuries, causing characteristic symptoms such as swelling of the salivary glands, fever, and muscle aches. Mumps is caused by the mumps virus, which is transmitted from person to person through respiratory droplets.

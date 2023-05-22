@@ -9426,6 +9426,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fwjqw"]
 radius = 7.0
 
+[sub_resource type="Animation" id="Animation_x8pqy"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_troki"]
 resource_name = "blink"
 loop_mode = 1
@@ -9449,9 +9452,6 @@ tracks/0/keys = {
 "method": &"play_ping_sound"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_x8pqy"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_buw3a"]
 _data = {
@@ -9701,6 +9701,7 @@ offset_top = -33.0
 offset_right = 32.0
 offset_bottom = 31.0
 texture = ExtResource("27_t5bld")
+metadata/_edit_use_anchors_ = true
 
 [node name="bubble_booster2" parent="GameLevel" instance=ExtResource("27_81kh8")]
 position = Vector2(1108, 209.023)
@@ -10381,12 +10382,12 @@ resource = "res://scenes/sign/apple_sign.tscn"
 position = Vector2(1489.35, 160.378)
 resource = "res://scenes/sign/contamination_sign.tscn"
 
-[node name="contamination_sign2" parent="." instance=ExtResource("51_ycinb")]
+[node name="airborne_virus_sign" parent="." instance=ExtResource("51_ycinb")]
 position = Vector2(1646.15, 160.378)
 resource = "res://scenes/sign/airborne_virus_sign.tscn"
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("35_jwbqx")]
-position = Vector2(1060, 160.378)
+position = Vector2(107, 153)
 camera = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -10423,10 +10424,6 @@ libraries = {
 
 [connection signal="body_entered" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_entered" flags=18]
 [connection signal="body_exited" from="Cameras/CameraSegment" to="Cameras/CameraSegment" method="_on_body_exited" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/bubble_booster" to="GameLevel/platforms8x8/bubble_booster" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@306581" to="GameLevel/platforms8x8/@bubble_booster@306581" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@306582" to="GameLevel/platforms8x8/@bubble_booster@306582" method="_on_body_entered" flags=18]
-[connection signal="body_entered" from="GameLevel/platforms8x8/@bubble_booster@306583" to="GameLevel/platforms8x8/@bubble_booster@306583" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="GameLevel/tutorial_complete_area" to="GameLevel/tutorial_complete_area" method="_on_body_entered" flags=18]
 [connection signal="body_exited" from="GameLevel/tutorial_complete_area" to="GameLevel/tutorial_complete_area" method="_on_body_exited"]
 [connection signal="damaged" from="Player" to="HUD" method="_on_player_damaged"]

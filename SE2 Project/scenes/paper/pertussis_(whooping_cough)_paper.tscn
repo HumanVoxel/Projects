@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://blw2ptlbvcfxx"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_sq4hi"]
+[ext_resource type="Texture2D" uid="uid://dwwlj6fx8h64n" path="res://Assets/UI/virus images/pertussis(whooping cough)/1684762019.png" id="2_6u4e3"]
+
+[node name="Pertussis (Whooping cough) paper" instance=ExtResource("1_sq4hi")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Pertussis (Whooping cough)"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = ExtResource("2_6u4e3")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Pertussis, commonly known as whooping cough, is a highly contagious respiratory disease caused by the bacterium Bordetella pertussis. It is characterized by severe coughing fits and a distinctive \"whooping\" sound during inhalation after a coughing episode.
+
+Whooping cough has three stages of symptoms. The initial stage resembles a common cold with a runny nose, sneezing, mild cough, and low-grade fever. The second stage is characterized by severe and frequent coughing fits, often ending with a high-pitched \"whooping\" sound during inhalation, along with difficulty breathing, vomiting, and exhaustion. The final stage is the recovery phase, with a gradual reduction in coughing fits, though a lingering cough may persist for weeks or months.
+
+In the 1990s, acellular pertussis vaccines were developed. Acellular vaccines contain purified components of B. pertussis, including pertussis toxin, filamentous hemagglutinin, and pertactin. These vaccines were developed to reduce side effects while maintaining effectiveness. Mass vaccination campaigns using this vaccine were implemented in many countries, leading to a significant decline in pertussis cases and mortality rates.
+
+Today, pertussis vaccines are typically administered as part of combination vaccines, such as the DTaP (diphtheria, tetanus, and acellular pertussis) vaccine for children or the Tdap (tetanus, diphtheria, and acellular pertussis) vaccine for adolescents and adults. Vaccination schedules recommend multiple doses to ensure optimal protection.
+
+The introduction of pertussis vaccines has had a significant impact on reducing the burden of the disease. Vaccination has played a crucial role in preventing pertussis infections, particularly among young children who are most vulnerable to severe complications. By stimulating the immune system to produce protective antibodies, vaccines help build immunity against B. pertussis, reducing the severity and duration of the disease and preventing its spread within communities.
+
+However, it is important to note that despite vaccination efforts, pertussis cases still occur, especially in areas with suboptimal vaccine coverage. The waning immunity over time and the presence of new strains of B. pertussis contribute to the persistence of pertussis. Booster doses and maintaining high vaccination rates within communities are necessary to sustain protection and prevent outbreaks.
+
+In conclusion, pertussis vaccines have been crucial in preventing and controlling the spread of the disease. They have significantly reduced pertussis-related morbidity and mortality, protecting vulnerable populations and contributing to public health efforts worldwide. Continued vaccination efforts and surveillance are essential to maintain the control and prevention of pertussis."

@@ -3,14 +3,15 @@ News Anchor: Good morning, viewers. We have breaking news regarding the ongoing 
 News Anchor: However, we want to emphasize that while restrictions have eased, there is still a significant risk of viral transmission in the community.
 News Anchor: While you are now able to go outside, it is crucial that we exercise caution and follow the recommended guidelines to prevent the spread of the virus. Wear a mask and maintain physical distance.
 News Anchor: We understand that these are challenging times, but by working together and following these guidelines, we can help prevent the further spread of the virus. Let us all play our part in keeping our communities safe and healthy.
-News Anchor: This concludes our special report. Thank you for tuning in. Stay safe, and have a good evening.
+News Anchor: This concludes our special report. Thank you for tuning in and stay safe.
 Nathan: Man, I'm so hungry.
 Nathan: I should grab something to eat from the fridge.
 => END
 
 
 ~ empty_fridge
-Nathan: Empty?!!
+Nathan: Empty..
+Nathan: No wonder, its been weeks since I went out for groceries.
 Nathan: I have to get some food or i'll starve to death.
 Nathan: There is a convenience store not too far from here. I should get going.
 => END

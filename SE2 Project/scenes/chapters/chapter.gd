@@ -10,7 +10,6 @@ func _ready():
 	PlayerStats.just_got_vaccinated = false
 	$GameLevel/apartment_inside/PointArrow.hide()
 	$Player.gameOver.connect(_on_Game_Over)
-	AudioBus.play_global_music(AudioBus.BIT_SAMPLE)
 
 	if not PlayerStats.intro_done:
 		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

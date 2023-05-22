@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://glxjim6q63x3"]
+[gd_scene load_steps=4 format=3 uid="uid://glxjim6q63x3"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_h6mo2"]
+[ext_resource type="Texture2D" uid="uid://di6a486nda5ec" path="res://Assets/UI/virus images/ebola/1684768048.png" id="2_q0uwa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f2t1w"]
 font_size = 8
@@ -10,6 +11,10 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Ebola"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(70, 100)
+texture = ExtResource("2_q0uwa")
 
 [node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Ebola is a deadly viral disease that has caused severe outbreaks and garnered global attention since its discovery in the 1970s. Ebola virus disease (EVD) is caused by the Ebola virus, which belongs to the family Filoviridae.

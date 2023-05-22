@@ -17,4 +17,4 @@ texture = SubResource("AtlasTexture_4wj5b")
 
 [node name="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "When the player lands or come into contact with the spring pad, the spring pad activates and springs the player in the upward direction.
-	With the upward force combined with a dash move, reach even greater heights and move across large gaps."
+With the upward force combined with a dash move, reach even greater heights and move across large gaps."

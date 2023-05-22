@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://btxaqrepwenhq"]
+[gd_scene load_steps=34 format=3 uid="uid://btxaqrepwenhq"]
 
 [ext_resource type="PackedScene" uid="uid://c87c0gk1avrl5" path="res://scenes/chapters/chapter.tscn" id="1_6j24a"]
 [ext_resource type="PackedScene" uid="uid://dhhoi347qsiq2" path="res://scenes/collectible/collectible.tscn" id="4_x5f6f"]
 [ext_resource type="PackedScene" uid="uid://dqlj0uc3ojjoj" path="res://rainfall.tscn" id="5_cxb8m"]
 [ext_resource type="Texture2D" uid="uid://cphuqpv1vsogd" path="res://Assets/UI/ImanorBalloon.png" id="6_0wcly"]
+[ext_resource type="Texture2D" uid="uid://d273p0m16erqx" path="res://Assets/UI/arrows/point_arrow.png" id="7_cofwi"]
 [ext_resource type="Texture2D" uid="uid://bgvj2t0y34vo0" path="res://Assets/collectibles/paper.png" id="9_5kt2k"]
 [ext_resource type="Texture2D" uid="uid://cn7jmd6e0u0em" path="res://Assets/collectibles/facemask.png" id="10_ojcka"]
 
@@ -401,6 +402,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_ugto5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3688, 88)]
+}
+
+[sub_resource type="Animation" id="Animation_helmo"]
+resource_name = "point"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3688, 88), Vector2(3688, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_858dm"]
+_data = {
+"RESET": SubResource("Animation_ugto5"),
+"point": SubResource("Animation_helmo")
+}
+
 [node name="Chapter1" instance=ExtResource("1_6j24a")]
 script = SubResource("GDScript_f121h")
 metadata/_edit_vertical_guides_ = [320.0, 640.0, 816.0, 1208.0, 1600.0, 1920.0, 2144.0, 2496.0, 2880.0, 3200.0, 3520.0, 0.0, 3832.0]
@@ -427,6 +466,7 @@ limit_left = 816
 limit_right = 1208
 
 [node name="CameraSegment4" parent="Cameras" index="3" node_paths=PackedStringArray("collision_shape")]
+position = Vector2(2304, 703)
 collision_shape = NodePath("")
 
 [node name="CollisionShape2D" parent="Cameras/CameraSegment4" index="0"]
@@ -479,34 +519,44 @@ script = SubResource("GDScript_urkuf")
 shape = SubResource("RectangleShape2D_0saqv")
 
 [node name="Virus" parent="." index="2"]
-attack_damage = 0.0
+attack_damage = 3.0
 grace_period = 2.0
 
-[node name="polio_paper" parent="." index="3" instance=ExtResource("4_x5f6f")]
-position = Vector2(64, 160)
-resource = "res://scenes/paper/polio_paper.tscn"
-collectible_sprite = ExtResource("9_5kt2k")
-
-[node name="facemask" parent="." index="4" instance=ExtResource("4_x5f6f")]
-position = Vector2(232, 128)
+[node name="facemask" parent="." index="3" instance=ExtResource("4_x5f6f")]
+position = Vector2(336, 56)
 resource = "res://scenes/facemask/facemask.tscn"
 collectible_sprite = ExtResource("10_ojcka")
 
-[node name="smallpox_paper" parent="." index="5" instance=ExtResource("4_x5f6f")]
-position = Vector2(1632, 128)
+[node name="smallpox_paper" parent="." index="4" instance=ExtResource("4_x5f6f")]
+position = Vector2(800, 88)
 resource = "res://scenes/paper/smallpox_paper.tscn"
 collectible_sprite = ExtResource("9_5kt2k")
 
+[node name="polio_paper" parent="." index="5" instance=ExtResource("4_x5f6f")]
+position = Vector2(1624, 120)
+resource = "res://scenes/paper/polio_paper.tscn"
+collectible_sprite = ExtResource("9_5kt2k")
+
 [node name="influenza_paper" parent="." index="6" instance=ExtResource("4_x5f6f")]
-position = Vector2(2880, 80)
+position = Vector2(2000, 32)
 resource = "res://scenes/paper/influenza_paper.tscn"
 collectible_sprite = ExtResource("9_5kt2k")
 
-[node name="Player" parent="." index="7" node_paths=PackedStringArray("camera")]
+[node name="tuberculosis_paper" parent="." index="7" instance=ExtResource("4_x5f6f")]
+position = Vector2(2664, 144)
+resource = "res://scenes/paper/tuberculsis_paper.tscn"
+collectible_sprite = ExtResource("9_5kt2k")
+
+[node name="ebola_paper" parent="." index="8" instance=ExtResource("4_x5f6f")]
+position = Vector2(3408, 168)
+resource = "res://scenes/paper/ebola_paper.tscn"
+collectible_sprite = ExtResource("9_5kt2k")
+
+[node name="Player" parent="." index="9" node_paths=PackedStringArray("camera")]
 position = Vector2(88, 168)
 camera = NodePath("../Camera2D")
 
-[node name="Camera2D" parent="." index="9"]
+[node name="Camera2D" parent="." index="11"]
 position = Vector2(3672, 160)
 enabled = false
 limit_left = 8
@@ -514,16 +564,16 @@ limit_top = 0
 limit_right = 3831
 limit_bottom = 180
 
-[node name="CanvasModulate" parent="." index="10"]
+[node name="CanvasModulate" parent="." index="12"]
 color = Color(1, 0.784314, 1, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="13"]
 process_mode = 2
 libraries = {
 "": SubResource("AnimationLibrary_ibtwo")
 }
 
-[node name="intro_cam" type="Camera2D" parent="." index="12"]
+[node name="intro_cam" type="Camera2D" parent="." index="14"]
 process_mode = 2
 position = Vector2(3672, 160)
 limit_left = 8
@@ -531,9 +581,27 @@ limit_top = 0
 limit_right = 3832
 limit_bottom = 180
 
-[node name="speech_bubble" type="AnimatedSprite2D" parent="." index="13"]
+[node name="speech_bubble" type="AnimatedSprite2D" parent="." index="15"]
 process_mode = 2
 visible = false
 position = Vector2(96, 152)
 sprite_frames = SubResource("SpriteFrames_2am5a")
 animation = &"exclamation_mark"
+
+[node name="point_objective" type="TextureRect" parent="." index="16"]
+process_mode = 3
+offset_left = 3688.0
+offset_top = 88.0
+offset_right = 3712.0
+offset_bottom = 112.0
+rotation = -1.57079
+texture = ExtResource("7_cofwi")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="point_objective" index="0"]
+process_mode = 3
+autoplay = "point"
+libraries = {
+"": SubResource("AnimationLibrary_858dm")
+}

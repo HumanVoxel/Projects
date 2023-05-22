@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2cstvkypslc4"]
+[gd_scene load_steps=4 format=3 uid="uid://c2cstvkypslc4"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_op2w7"]
+[ext_resource type="Texture2D" uid="uid://ditxewlstu332" path="res://Assets/UI/virus images/rabies/A dog with rabies and a detail of its skull. Line engraving by L.P. Baltard..jpg" id="2_g1ukd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_byye1"]
 font_size = 8
@@ -8,24 +9,30 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="rabies_paper" instance=ExtResource("1_op2w7")]
 
+[node name="paper" parent="." index="1"]
+offset_left = -125.0
+offset_top = -270.0
+offset_right = 125.0
+offset_bottom = -99.9999
+
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Rabies"
 
-[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-layout_mode = 2
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(100, 60)
+texture = ExtResource("2_g1ukd")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Rabies is a viral disease that affects the nervous system of humans and animals. The virus is transmitted through the saliva of infected animals, typically through a bite, scratch or contact with broken skin or mucous membranes.
 
-The first written record of the disease dates back to around 2300 BC in the Eshnunna Code of ancient Mesopotamia. Rabies was also mentioned in ancient Indian texts, and there are references to the disease in the Bible.
+The first written record of the disease dates back to around 2300 BC in the Eshnunna Code of ancient Mesopotamia. Rabies was also mentioned in ancient Indian texts where there are references to a disease with symptoms resembling rabies. The term \"rabies\" itself derives from the Latin word \"rabere,\" meaning \"to rave or rage.\"
 
-For many centuries, rabies was a feared and deadly disease, with no effective treatment available. In the 19th century, Louis Pasteur and Emile Roux developed a vaccine for rabies, which was first successfully used on a human in 1885.
+Over the centuries, rabies was observed in different regions, and its characteristic symptoms, including aggressive behavior, hydrophobia (fear of water), and convulsions, were documented. Many historical texts describe the fearsome nature of the disease, associating it with madness and supernatural causes.
+Rabies was a feared and deadly disease, with no effective treatment available until in the 19th century. Louis Pasteur and Emile Roux developed a vaccine for rabies, which was first successfully used on a human in 1885.
 
-Rabies is prevalent in wild and domestic animals, including dogs, cats, bats, and raccoons, among others. In areas where the disease is endemic, vaccination of domestic animals is critical in preventing the spread of the virus.
+Rabies is prevalent in wild and domestic animals, including dogs, cats, bats, and raccoons, among others. In areas where the disease is endemic, vaccination of domestic animals is critical in preventing the spread of the virus. Rabies control efforts focused on minimizing the transmission of the virus by implementing measures such as pet vaccination, animal quarantine, and stray animal control. These strategies aimed to reduce the reservoir of the virus in animal populations, thereby lowering the risk of human exposure.
 
 Symptoms of rabies in humans can include fever, headache, muscle weakness, and fatigue, followed by more severe symptoms such as hallucinations, seizures, and paralysis. Once symptoms appear, the disease is almost always fatal, making prevention through vaccination and post-exposure prophylaxis critical.
 
-The global effort to control and eliminate rabies involves a combination of measures, including vaccination of domestic animals, surveillance of wild animals, public education, and access to post-exposure prophylaxis for those who have been bitten by an animal suspected of having rabies.
-
-Despite progress in controlling the disease, rabies continues to be a serious global health issue, particularly in areas where access to healthcare and veterinary services is limited. Continued efforts are needed to raise awareness, promote vaccination, and improve access to treatment for those at risk of exposure to the virus."
+The global effort to control and eliminate rabies involves a combination of measures, including vaccination of domestic animals, surveillance of wild animals, public education, and access to post-exposure prophylaxis for those who have been bitten by an animal suspected of having rabies. Several countries and regions have made significant progress in eliminating canine rabies through large-scale vaccination campaigns for dogs, enhanced surveillance, and community education. These efforts aim to create rabies-free zones and contribute to the global elimination of rabies as a public health threat by 2030. Despite progress in controlling the disease, rabies continues to be a serious global health issue, particularly in areas where access to healthcare and veterinary services is limited. Continued efforts are needed to raise awareness, promote vaccination, and improve access to treatment for those at risk of exposure to the virus."
 label_settings = SubResource("LabelSettings_byye1")
-horizontal_alignment = 1
-autowrap_mode = 3

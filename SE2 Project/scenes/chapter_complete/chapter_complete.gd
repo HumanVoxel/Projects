@@ -6,6 +6,7 @@ var next_chapter_resource : String
 func _ready():
 	get_tree().paused = true
 	$"ColorRect/VBoxContainer/Next Chapter".grab_focus()
+	AudioBus.play_global_music(AudioBus.CHAPTER1_CLEAR)
 	pass # Replace with function body.
 
 

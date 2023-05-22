@@ -12,6 +12,7 @@ text = "Bubble Booster"
 texture = ExtResource("2_nla87")
 
 [node name="Label" parent="sign/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-text = "Upon contact, the player gets sucked inside the bubble. Before the bubble pops, choose the direction of the propulsion by pressing the w,a,s,d keys.
-	The boost stops when the character hits a wall, floor, ceiling or gets interupted by a dash move.
-	If no direction was selected, the direction of the propulsion would be the last facing direction of the player."
+text = "Upon contact, the player gets sucked inside the bubble. Before the bubble pops, choose the direction of the propulsion by pressing the w,a,s,d keys. The boost stops when the character hits a wall, floor, ceiling or gets interupted by a dash move. If no direction was selected, the direction of the propulsion would be the last facing direction of the player.
+
+Proper sanitation greatly reduces the transmission of viruses and bacteria by preventing cross-contamination. Good hygiene practices like handwashing with soap and clean water, is essential in preventing the spread of many infectious diseases. Proper hand hygiene can interrupt the transmission of pathogens that may be present on hands, thereby reducing the risk of gastrointestinal infections, respiratory diseases, and other illnesses.
+"

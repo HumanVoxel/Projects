@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://drwa6hoyvx3k8"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_s478h"]
+[ext_resource type="Texture2D" uid="uid://be14tv55vearl" path="res://Assets/UI/virus images/rotavirus/Rotavirus, electron micrograph - coloured.jpg" id="2_3c8vs"]
+
+[node name="rotavirus_paper" instance=ExtResource("1_s478h")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Rotavirus"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = ExtResource("2_3c8vs")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Rotavirus is a highly contagious virus that primarily affects infants and young children, causing severe diarrhea.
+
+Rotavirus was first identified in the in the early 1970s as a major cause of severe diarrhea in children. The virus is named after its characteristic wheel-like appearance when viewed under an electron microscope. Prior to the development of vaccines, rotavirus infections were a leading cause of diarrheal illness worldwide, responsible for significant morbidity and mortality, particularly in developing countries.
+
+Rotavirus infections typically lead to acute gastroenteritis, characterized by diarrhea, vomiting, abdominal pain, and fever. The diarrhea caused by rotavirus can be severe, often leading to dehydration, electrolyte imbalances, and hospitalization, especially in young children. Rotavirus-related illness can also impact nutritional status and growth in affected children.
+
+Vaccines have played a crucial role in preventing rotavirus infections and reducing the associated morbidity and mortality. Two oral vaccines have been developed: Rotavirus Vaccine (RV1, also known as RotaTeq) and Rotavirus Vaccine (RV5, also known as Rotarix). The introduction of rotavirus vaccines has had a significant impact on the burden of rotavirus-related disease. Vaccination has led to a decrease in severe rotavirus gastroenteritis, hospitalizations, and deaths globally. Studies have shown that rotavirus vaccines are highly effective in preventing severe rotavirus diarrhea, particularly in high-income countries where vaccination coverage is high.
+
+Rotavirus vaccines have been included in national immunization programs in many countries. By vaccinating infants, these programs aim to protect them from severe rotavirus infections and reduce the overall transmission of the virus in the population. Additionally, vaccination can help prevent the spread of rotavirus to vulnerable populations, such as older children and adults who may experience milder symptoms but can still contribute to transmission."

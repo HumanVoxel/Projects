@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://wtw6j1n7yu2o"]
+[gd_scene load_steps=4 format=3 uid="uid://wtw6j1n7yu2o"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_3uvux"]
+[ext_resource type="Texture2D" uid="uid://d1ms8mj5wl8j6" path="res://Assets/UI/virus images/rubella/rubella.jpg" id="2_ilpjn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ri0r"]
 font_size = 8
@@ -11,8 +12,11 @@ font_color = Color(0, 0, 0, 1)
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Rubella"
 
-[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-layout_mode = 2
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(120, 50)
+texture = ExtResource("2_ilpjn")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Rubella, also known as German measles, is a viral disease that is caused by the rubella virus, which is transmitted from person to person through respiratory droplets. Rubella was often considered a mild childhood illness, with symptoms that include a rash, low-grade fever, and swollen lymph nodes. However, the real impact of rubella became evident in the mid-20th century when a connection was established between rubella infection during pregnancy and birth defects in newborns.
  
 Historical records suggest that rubella has been present in human populations for centuries, but the first clinical descriptions of the disease did not appear until the late 18th century. In the 1940s and 1950s, large rubella outbreaks were reported in various parts of the world, resulting in thousands of cases and many deaths. It was during this time that researchers discovered the link between rubella infection during pregnancy and congenital rubella syndrome (CRS), a condition that can cause serious birth defects such as deafness, blindness, heart defects, and developmental delays in newborns.
@@ -27,5 +31,3 @@ Rubella is continuesly being studied through ongoing research and surveillance e
 
 The rubella spans across history and highlights the importance of vaccination in preventing the disease and its associated birth defects. Vaccination has played a critical role in reducing the burden of rubella, but continued efforts to maintain high vaccination coverage, promote vaccine advocacy, and conduct research are essential in preventing and controlling rubella outbreaks and protecting vulnerable populations."
 label_settings = SubResource("LabelSettings_7ri0r")
-horizontal_alignment = 1
-autowrap_mode = 3

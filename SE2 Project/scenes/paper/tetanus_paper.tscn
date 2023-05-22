@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://qw0vdrixdu35"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_4735e"]
+[ext_resource type="Texture2D" uid="uid://cu4tot0wnh4no" path="res://Assets/UI/virus images/tetanus/1684762172.png" id="2_qfulb"]
+
+[node name="tetanus_paper" instance=ExtResource("1_4735e")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Tetanus"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(75, 100)
+texture = ExtResource("2_qfulb")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Tetanus, also known as lockjaw, is a bacterial infection caused by the bacterium Clostridium tetani. The bacteria produce a toxin that affects the nervous system, leading to muscle stiffness and spasms.
+
+The symptoms of tetanus include muscle stiffness, particularly in the jaw and neck (hence the name \"lockjaw\"), as well as muscle spasms and rigidity throughout the body. Other symptoms may include difficulty swallowing, muscle pain, fever, sweating, and a rapid heartbeat. In severe cases, tetanus can lead to respiratory failure and death.
+
+Vaccines have played a crucial role in preventing tetanus. The development of the tetanus toxoid vaccine in the 1920s was a significant breakthrough. The vaccine contains an inactivated form of the toxin produced by C. tetani. When the vaccine is administered, it stimulates the immune system to produce protective antibodies against the toxin.
+
+Tetanus is not typically associated with large-scale outbreaks like some other infectious diseases. Instead, it is more commonly encountered as sporadic cases or isolated incidents. The bacteria enter the body through open wounds or cuts and produce a toxin that affects the nervous system. The tetanus vaccine is often administered as part of combination vaccines, such as the DTaP or Tdap vaccine, which also provide protection against diphtheria and pertussis.
+
+While tetanus outbreaks may not receive widespread attention like other infectious diseases, they are still a significant concern in areas with limited healthcare infrastructure and resources. Prevention through vaccination, wound care, and proper medical management of tetanus cases remains crucial in controlling the disease and reducing the risk of outbreaks.
+
+Vaccination has been highly effective in preventing tetanus by providing long-lasting immunity against the toxin. It has significantly reduced the incidence of the disease, particularly in countries with high vaccination rates. Booster doses of the vaccine are recommended to maintain lifelong immunity."

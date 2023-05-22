@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ukhxsi7ci5j"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_l88k2"]
+[ext_resource type="Texture2D" uid="uid://4edbbdtxp6b7" path="res://Assets/UI/virus images/hepatitis/A diseased liver, showing symptoms of hepatitis interstitialis syphilitica. Chromolithograph by W. Gummelt, ca. 1897..jpg" id="2_efavp"]
+
+[node name="hepatitis_paper" instance=ExtResource("1_l88k2")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Hepatitis"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(70, 100)
+texture = ExtResource("2_efavp")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Hepatitis refers to inflammation of the liver, which can be caused by various factors, including viral infections, alcohol abuse, autoimmune diseases, and certain medications.
+
+The understanding of viral hepatitis has evolved over time. In the early 20th century, a form of infectious hepatitis, now known as hepatitis A, was identified through epidemiological studies. It wasn't until the 1940s that scientists discovered another type of hepatitis, which is now known as hepatitis B. The discovery of the hepatitis B virus and its association with liver disease led to the development of the first hepatitis B vaccine in the 1980s.
+
+The symptoms of viral hepatitis can vary depending on the specific type and stage of the infection. However, some common symptoms include fatigue, jaundice (yellowing of the skin and eyes), abdominal pain, loss of appetite, nausea, vomiting, dark urine, and pale stools. Chronic hepatitis infections can lead to liver cirrhosis, liver failure, and an increased risk of liver cancer.
+
+Vaccines have been instrumental in preventing viral hepatitis, particularly hepatitis A and B. The hepatitis A vaccine became available in the 1990s and is now part of routine childhood immunization programs in many countries. The vaccine is highly effective in preventing hepatitis A infections and has contributed to a significant reduction in the incidence of the disease.
+
+The hepatitis B vaccine, developed in the 1980s, has played a crucial role in preventing new infections and reducing the burden of chronic hepatitis B. The vaccine is administered as a series of doses and is recommended for infants, children, adolescents, and high-risk adults. By promoting widespread vaccination, the incidence of hepatitis B and its associated complications, such as liver cirrhosis and cancer, has been significantly reduced.
+
+In addition to vaccination, prevention and control of viral hepatitis also involve other measures such as blood and organ safety, safe injection practices, harm reduction strategies for high-risk populations, and public health education."

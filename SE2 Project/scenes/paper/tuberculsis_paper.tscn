@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://ui72u6264i0m"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_0orik"]
+[ext_resource type="Texture2D" uid="uid://6085yy6t6vga" path="res://Assets/UI/virus images/tuberculosis/West Midlands Tuberculosis sanatoria and public information.jpg" id="2_hjg21"]
+[ext_resource type="Texture2D" uid="uid://2ighdre1lda6" path="res://Assets/UI/virus images/tuberculosis/tb sanatorium.jpg" id="3_7keo4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wvvi5"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[node name="tuberculsis_paper" instance=ExtResource("1_0orik")]
+
+[node name="paper" parent="." index="1"]
+offset_left = -125.0
+offset_top = -270.0
+offset_right = 125.0
+offset_bottom = -99.9999
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Tuberculsis"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(140, 100)
+texture = ExtResource("2_hjg21")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Tuberculosis (TB) is a contagious infectious disease caused by bacteria belonging to the Mycobacterium tuberculosis complex. It primarily affects the lungs but can also involve other parts of the body, such as the kidneys, bones, and central nervous system. TB is an ancient disease, with evidence of its presence found in human remains dating back to ancient Egypt, India, and China. The writings of ancient civilizations, such as the Egyptian Ebers Papyrus (1550 BCE), describe symptoms consistent with TB.
+
+TB is primarily spread through the air when an infected person coughs, sneezes, or talks, releasing droplets containing the bacteria into the air. Inhalation of these infected droplets by others can lead to infection. TB is not easily transmitted through casual contact.
+
+In the 18th and 19th centuries, tuberculosis was often referred to as \"consumption\" due to the way it seemed to consume its victims. It was a leading cause of death during this time period, especially in Europe and North America. Many artists and writers romanticized the disease, associating it with beauty and tragic suffering. The most common symptoms of pulmonary TB (TB in the lungs) include persistent cough (often with sputum or blood), chest pain, fatigue, weight loss, night sweats, and fever. Symptoms of extrapulmonary TB, which affects other parts of the body, vary depending on the affected area but can include pain, swelling, and organ dysfunction.
+
+In the late 19th century, advancements in medical science shed light on the cause and transmission of tuberculosis. In 1882, the German physician Robert Koch discovered the bacterium responsible for TB, Mycobacterium tuberculosis, and established the link between the bacteria and the disease."
+
+[node name="TextureRect2" type="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_7keo4")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="4"]
+layout_mode = 2
+text = "To control the spread of TB, sanatoriums were established in the late 19th and early 20th centuries. These facilities provided a controlled environment for patients, with fresh air, rest, and a healthy diet. Although sanatoriums were not a cure, they offered some relief and improved the chances of recovery for patients.
+
+In 1921, Albert Calmette and Camille Guérin developed the Bacillus Calmette-Guérin (BCG) vaccine, which is still used today as a preventive measure against tuberculosis. The BCG vaccine is most effective in protecting against severe forms of TB in children.
+
+Tuberculosis remains a major global health concern, particularly in developing countries with limited healthcare resources. The emergence of drug-resistant strains, such as multidrug-resistant TB (MDR-TB) and extensively drug-resistant TB (XDR-TB), poses additional challenges to TB control efforts.
+
+International organizations, such as the World Health Organization (WHO), have been working to combat tuberculosis through initiatives like the \"End TB Strategy\" launched in 2015. The goal is to reduce TB deaths by 95% and new cases by 90% by 2035."
+label_settings = SubResource("LabelSettings_wvvi5")
+horizontal_alignment = 1
+autowrap_mode = 3

@@ -16,8 +16,7 @@ text = "Influenza"
 custom_minimum_size = Vector2(150, 100)
 texture = ExtResource("2_c83e2")
 
-[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-layout_mode = 2
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "The Spanish flu, also known as the 1918 influenza pandemic, was a deadly global pandemic that occurred during World War I. It is estimated to have infected about one-third of the world's population and caused the deaths of tens of millions of people.
 
 The spanish flue pandemic occurred before the development of modern vaccines as we know them today. During the time of the Spanish flu, vaccines were not available for the H1N1 strain of the influenza virus that caused the pandemic. In fact, the concept of viral vaccines was still in its early stages of development.
@@ -28,5 +27,3 @@ It wasn't until many years later, in the 1930s, that researchers and scientists 
 
 The experience of the Spanish flu pandemic, along with subsequent influenza pandemics and epidemics, has highlighted the importance of vaccines as a key tool in preventing and controlling infectious diseases. Today, influenza vaccines are widely available and recommended for individuals at risk of complications from influenza, such as the elderly, young children, pregnant women, and individuals with certain underlying health conditions. In the face of the ongoing threat of influenza and other infectious diseases, vaccines remain a critical component of public health efforts to prevent and control the spread of diseases."
 label_settings = SubResource("LabelSettings_ky01q")
-horizontal_alignment = 1
-autowrap_mode = 3

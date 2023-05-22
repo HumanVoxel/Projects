@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0alrceue3qnk"]
+
+[ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_0uj40"]
+[ext_resource type="Texture2D" uid="uid://c2252i4m75sjt" path="res://Assets/UI/virus images/diphtheria/1684761773.png" id="2_n72ax"]
+
+[node name="diphtheria_paper" instance=ExtResource("1_0uj40")]
+
+[node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Diphtheria"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(100, 80)
+texture = ExtResource("2_n72ax")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
+text = "Diphtheria is a bacterial infection caused by Corynebacterium diphtheriae. It primarily affects the respiratory system and can lead to severe complications and even death. The history of diphtheria dates back centuries, and the development of vaccines played a crucial role in preventing and controlling the disease.
+
+Before the availability of vaccines, diphtheria was a significant public health threat worldwide. Outbreaks of the disease were common, particularly among children. Diphtheria was highly contagious and spread through respiratory droplets, making it a concern in crowded living conditions.
+
+The first diphtheria vaccine was introduced by Albert Calmette and Camille Guérin in the early 20th century. They developed the diphtheria-tetanus-pertussis (DTP) vaccine, known as the Calmette-Guérin vaccine. This vaccine was a significant breakthrough in preventing diphtheria and other related diseases.
+
+Mass vaccination campaigns targeting children were implemented in many countries, resulting in a significant decline in diphtheria cases and deaths. The widespread use of diphtheria vaccines contributed to the control and near-elimination of the disease in many parts of the world.
+
+Today, diphtheria vaccination is a routine part of childhood immunization programs in many countries. The vaccine is typically administered as part of the combination vaccines, such as the DTaP or Tdap vaccine, which provide protection against diphtheria, tetanus, and pertussis.
+
+Vaccination has been instrumental in preventing diphtheria and reducing its impact on public health. By immunizing individuals, vaccines help build immunity to the bacterium, reducing the risk of infection and transmission. High vaccination rates within communities also contribute to herd immunity, further protecting those who are unable to receive vaccines dgue to medical reasons.g"

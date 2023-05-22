@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://crk236x1y5pst"]
+[gd_scene load_steps=4 format=3 uid="uid://crk236x1y5pst"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_ggy3p"]
+[ext_resource type="Texture2D" uid="uid://de6gb2gas58cr" path="res://Assets/UI/virus images/measles/1684773191.png" id="2_gbbe1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_54ls6"]
 font_size = 8
@@ -11,8 +12,11 @@ font_color = Color(0, 0, 0, 1)
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Measles"
 
-[node name="Label" type="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
-layout_mode = 2
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(150, 40)
+texture = ExtResource("2_gbbe1")
+
+[node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Measles is one that spans across history and continents, involving a highly contagious viral disease that has affected millions of people, especially children, over the years. Measles is caused by the measles virus and is known for its characteristic symptoms of fever, rash, cough, and runny nose, often accompanied by complications that can be severe, including pneumonia, encephalitis, and even death.
 
 Measles has likely been present in human populations for thousands of years, with historical records and descriptions of measles-like symptoms dating back centuries. However, the first documented accounts of measles outbreaks in the modern era appeared in the 17th and 18th centuries, with large-scale epidemics occurring in Europe, North America, and other parts of the world.
@@ -30,5 +34,3 @@ Measles throughout history was marked by efforts to address vaccine hesitancy an
 The fight against measles continues, with ongoing efforts to increase measles vaccination coverage, strengthen surveillance, and ensure access to healthcare for vulnerable populations. The story of measles is one of progress, challenges, and the importance of vaccination in preventing and controlling infectious diseases, with the ultimate goal of eliminating measles as a public health threat worldwide.
 "
 label_settings = SubResource("LabelSettings_54ls6")
-horizontal_alignment = 1
-autowrap_mode = 3

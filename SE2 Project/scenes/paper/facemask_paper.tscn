@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c22lgbpe8lfum"]
+[gd_scene load_steps=3 format=3 uid="uid://c22lgbpe8lfum"]
 
 [ext_resource type="PackedScene" uid="uid://dq1a5ngbp2j2x" path="res://scenes/paper/paper.tscn" id="1_s1yqx"]
+[ext_resource type="Texture2D" uid="uid://bsyi72dnyjtd3" path="res://Assets/UI/virus images/—Pngtree—3 ply medical mask face_5341084.png" id="2_6s3v3"]
 
 [node name="facemask_paper" instance=ExtResource("1_s1yqx")]
 
 [node name="title" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="0"]
 text = "Facemask"
+
+[node name="TextureRect" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="1"]
+texture = ExtResource("2_6s3v3")
 
 [node name="Label" parent="paper/MarginContainer/ScrollContainer/VBoxContainer" index="2"]
 text = "Wearing masks during a pandemic is an important measure to help reduce the spread of respiratory droplets that can carry infectious diseases like COVID-19. Masks act as a physical barrier that helps to prevent droplets from entering the air and potentially infecting others.

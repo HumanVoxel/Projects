@@ -8,7 +8,6 @@ if current_chapter == "Chapter1":
 		Nurse: Thankfully, researchers have finally identified the virus.
 		Nurse: The virus is called the SARS-COV2 and it causes the coronavirus disease 19 also known as COVID-19.
 		Nurse: I'm suprised that it got here so fast since it supposedly came from Wuhan China.
-		Nurse: It spreads through droplets expelled by sneezing and coughing and other bodily fluids.
 		Nurse: I don't wanna spook you or anything but it apparently causes some nasty symptoms.
 		Nurse: But if you do get a fever, fatigue, cough, headache, sore throat, or GOD FORBID LOSS OF TASTE!!.
 		Nurse: Ahem... Do let us know right away and quarantine yourself so that we can monitor you.
@@ -30,7 +29,6 @@ if current_chapter == "Chapter2":
 		Nurse: Thankfully, researchers have finally identified the virus.
 		Nurse: The virus is called the SARS-COV2 and it causes the coronavirus disease 19 also known as COVID-19.
 		Nurse: I'm suprised that it got here so fast since it supposedly came from Wuhan China.
-		Nurse: It spreads through droplets expelled by sneezing and coughing and other bodily fluids.
 		Nurse: I don't wanna spook you or anything but it apparently causes some nasty symptoms.
 		Nurse: But if you do get a fever, fatigue, cough, headache, sore throat, or GOD FORBID LOSS OF TASTE!!.
 		Nurse: Ahem... Do let us know right away and quarantine yourself so that we can monitor you.
@@ -52,7 +50,7 @@ if current_chapter == "Chapter3":
 		Nurse: THE VIRUS IS EVERYWHERE!!
 		Nurse: Thankfully, researchers have finally identified the virus.
 		Nurse: The virus is called the SARS-COV2 and it causes the coronavirus disease 19 also known as COVID-19.
-		#Nurse: I'm suprised that it got here so fast since it supposedly came from Wuhan China.
+		Nurse: I'm suprised that it got here so fast since it supposedly came from Wuhan China.
 		#Nurse: It spreads through droplets expelled by sneezing and coughing and other bodily fluids.
 		Nurse: I don't wanna spook you or anything but it apparently causes some nasty symptoms.
 		Nurse: But if you do get a fever, fatigue, cough, headache, sore throat, or GOD FORBID LOSS OF TASTE!!.
