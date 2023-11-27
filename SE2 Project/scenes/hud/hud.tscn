@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bve4n1efhw0y1"]
+[gd_scene load_steps=11 format=3 uid="uid://bve4n1efhw0y1"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_eeev5"]
 [ext_resource type="Texture2D" uid="uid://cpd803m6iui0o" path="res://Assets/UI/helathbar.png" id="2_3e0wp"]
@@ -18,6 +18,9 @@ region = Rect2(20, 16, 112, 14)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uagyb"]
 atlas = ExtResource("2_3e0wp")
 region = Rect2(0, 33, 25, 21)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6caf"]
+font_color = Color(0.333333, 0.929412, 0.356863, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_eeev5")
@@ -43,11 +46,11 @@ texture_under = SubResource("AtlasTexture_i44ab")
 texture_progress = SubResource("AtlasTexture_76aar")
 
 [node name="Hearth" type="TextureRect" parent="Control"]
-layout_mode = 0
+layout_mode = 2
 offset_left = 5.0
 offset_top = 8.0
 offset_right = 30.0
-offset_bottom = 29.0
+offset_bottom = 40.0
 texture = SubResource("AtlasTexture_uagyb")
 stretch_mode = 2
 
@@ -55,8 +58,8 @@ stretch_mode = 2
 layout_mode = 2
 offset_left = 64.0
 offset_top = 8.0
-offset_right = 94.0
-offset_bottom = 24.0
+offset_right = 65.0
+offset_bottom = 20.8
 size_flags_horizontal = 0
 horizontal_alignment = 1
 
@@ -65,6 +68,16 @@ layout_mode = 1
 offset_left = 8.0
 offset_right = 148.0
 offset_bottom = 32.0
+
+[node name="timer" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 170.0
+offset_bottom = 24.0
+size_flags_horizontal = 0
+label_settings = SubResource("LabelSettings_n6caf")
+horizontal_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control"]
 layout_mode = 1

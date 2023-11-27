@@ -88,4 +88,10 @@ func play_global_music(sound):
 	
 func stop_global_music():
 	global_music.stop()
+	
+func pause_global_music():
+	global_music.stream_paused = true
+	
+func resume_global_music():
+	global_music.stream_paused = false
 

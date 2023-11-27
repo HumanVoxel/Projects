@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6jfftm6plfg7"]
+[gd_scene load_steps=9 format=3 uid="uid://b6jfftm6plfg7"]
 
 [ext_resource type="Script" path="res://scenes/player_stats/player_stats.gd" id="1_7rpsj"]
 [ext_resource type="Texture2D" uid="uid://4161m3f6e4aw" path="res://Assets/UI/Free Pack/Free Pixel Paper/Spritesheet/0.png" id="2_lhr2c"]
@@ -59,6 +59,10 @@ _data = {
 atlas = ExtResource("2_lhr2c")
 region = Rect2(1312, 1440, 128, 128)
 
+[sub_resource type="LabelSettings" id="LabelSettings_pjbp4"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
 [node name="player_stats" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_7rpsj")
@@ -78,7 +82,7 @@ anchor_bottom = 0.5
 offset_left = 35.0
 offset_top = -180.0
 offset_right = 285.0
-offset_bottom = -9.99991
+offset_bottom = -9.99988
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_tc51y")
@@ -98,6 +102,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="paper/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+label_settings = SubResource("LabelSettings_pjbp4")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

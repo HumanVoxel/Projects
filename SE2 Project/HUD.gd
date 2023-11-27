@@ -28,6 +28,9 @@ func _ready():
 func _process(delta):
 	pass
 
+func _physics_process(delta):
+	$Control/timer.text = PlayerStats.get_run_playtime(PlayerStats.current_chapter)
+	
 func update():
 	collectibles = PlayerStats.collectibles
 	healthbar.value = health

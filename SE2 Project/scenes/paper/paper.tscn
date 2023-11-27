@@ -11,6 +11,7 @@ func _ready():
 	var paper_sound = AudioBus.play_sound_2d(AudioBus.PAPER_OPEN)
 	add_child(paper_sound)
 	paper_sound.play()
+	AudioBus.pause_global_music()
 	get_tree().paused = true
 	pass # Replace with function body.
 
@@ -25,6 +26,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed(\"ui_down\"):
 		$paper/MarginContainer/ScrollContainer.scroll_vertical += 5
 	if Input.is_action_just_pressed(\"pause\") or Input.is_action_just_pressed(\"ui_accept\"):
+		AudioBus.resume_global_music()
 		$AnimationPlayer.play(\"close\")
 		var paper_sound = AudioBus.play_sound_2d(AudioBus.PAPER_OPEN)
 		add_child(paper_sound)
@@ -137,10 +139,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -270.0
-offset_right = 125.0
-offset_bottom = -99.9999
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 285.0
+offset_bottom = -9.99991
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_wwc0e")

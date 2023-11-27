@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://clg85liff0ecn"]
+[gd_scene load_steps=4 format=3 uid="uid://clg85liff0ecn"]
 
 [ext_resource type="Script" path="res://scenes/chapter_complete/chapter_complete.gd" id="1_axg8v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lx2jb"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ucb0k"]
+font_size = 32
+font_color = Color(0.333333, 0.929412, 0.356863, 1)
 
 [node name="chapter_complete" type="CanvasLayer"]
 process_mode = 2
@@ -33,6 +37,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Chapter Complete"
 label_settings = SubResource("LabelSettings_lx2jb")
+
+[node name="Completion Time" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_ucb0k")
 
 [node name="Next Chapter" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2

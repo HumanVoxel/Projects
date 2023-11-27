@@ -86,9 +86,14 @@ func _ready() -> void:
 	response_template.hide()
 	balloon.hide()
 	balloon.custom_minimum_size.x = balloon.get_viewport_rect().size.x
-	
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
+
+func _enter_tree():
+	PlayerStats.is_dialogue_visible = true
+	
+func _exit_tree():
+	PlayerStats.is_dialogue_visible = false
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
