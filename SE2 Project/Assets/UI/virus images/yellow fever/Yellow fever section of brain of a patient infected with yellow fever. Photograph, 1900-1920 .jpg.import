@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdxbeaib7d3ed"
-path="res://.godot/imported/Vaccination: Dr Jenner performing his first vaccination, 1796. Oil painting by Ernest Board..jpg-6029ec7299fc13f01368dfea60f078f9.ctex"
+uid="uid://bomrg6dax7qqn"
+path="res://.godot/imported/Yellow fever section of brain of a patient infected with yellow fever. Photograph, 1900-1920 .jpg-20b203a6376135a778456781b54b617e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/virus images/smallpox/Vaccination: Dr Jenner performing his first vaccination, 1796. Oil painting by Ernest Board..jpg"
-dest_files=["res://.godot/imported/Vaccination: Dr Jenner performing his first vaccination, 1796. Oil painting by Ernest Board..jpg-6029ec7299fc13f01368dfea60f078f9.ctex"]
+source_file="res://Assets/UI/virus images/yellow fever/Yellow fever section of brain of a patient infected with yellow fever. Photograph, 1900-1920 .jpg"
+dest_files=["res://.godot/imported/Yellow fever section of brain of a patient infected with yellow fever. Photograph, 1900-1920 .jpg-20b203a6376135a778456781b54b617e.ctex"]
 
 [params]
 

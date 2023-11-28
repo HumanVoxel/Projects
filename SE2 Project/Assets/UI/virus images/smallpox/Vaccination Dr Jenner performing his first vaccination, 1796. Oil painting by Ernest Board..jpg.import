@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://botu6nd4r1kqi"
-path="res://.godot/imported/Liverfluke: early liver cirrhosis - red hepatic.jpg-7da58a7c24382838ad80a0f3c2a858d4.ctex"
+uid="uid://cdxbeaib7d3ed"
+path="res://.godot/imported/Vaccination Dr Jenner performing his first vaccination, 1796. Oil painting by Ernest Board..jpg-ea87dcc632e541a8283691043428a8b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/virus images/Viral hepatitis/Liverfluke: early liver cirrhosis - red hepatic.jpg"
-dest_files=["res://.godot/imported/Liverfluke: early liver cirrhosis - red hepatic.jpg-7da58a7c24382838ad80a0f3c2a858d4.ctex"]
+source_file="res://Assets/UI/virus images/smallpox/Vaccination Dr Jenner performing his first vaccination, 1796. Oil painting by Ernest Board..jpg"
+dest_files=["res://.godot/imported/Vaccination Dr Jenner performing his first vaccination, 1796. Oil painting by Ernest Board..jpg-ea87dcc632e541a8283691043428a8b3.ctex"]
 
 [params]
 

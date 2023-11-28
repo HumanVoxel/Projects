@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpbargsdkv788"
-path="res://.godot/imported/Yellow fever: section of brain of a patient infected with yellow fever. Photograph, 1900-1920 .jpg-0bdcc4efa56c970c717b6c832216ce35.ctex"
+uid="uid://bb6kgrxiiiduw"
+path="res://.godot/imported/Drawing of the 1918 Influenza Showing congestion of vessels.jpg-054c5ac6382ecee35b82ffd0ab74ea1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/virus images/yellow fever/Yellow fever: section of brain of a patient infected with yellow fever. Photograph, 1900-1920 .jpg"
-dest_files=["res://.godot/imported/Yellow fever: section of brain of a patient infected with yellow fever. Photograph, 1900-1920 .jpg-0bdcc4efa56c970c717b6c832216ce35.ctex"]
+source_file="res://Assets/UI/virus images/influenza/Drawing of the 1918 Influenza Showing congestion of vessels.jpg"
+dest_files=["res://.godot/imported/Drawing of the 1918 Influenza Showing congestion of vessels.jpg-054c5ac6382ecee35b82ffd0ab74ea1a.ctex"]
 
 [params]
 
